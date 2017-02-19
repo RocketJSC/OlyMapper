@@ -58,6 +58,12 @@ namespace OlyMapper
             // post playerid to character
             Console.WriteLine("Posting weight to characters.");
             Character.Calculate_Weight();
+            // posting region to locations
+            Console.WriteLine("Posting region to locations.");
+            Location.Set_Region();
+            // assign castle indicator
+            Console.WriteLine("Posting indicator to castle.");
+            Location.Castle_Indicator();
             // create directory for html files, if needed
             DirectoryInfo di = Directory.CreateDirectory(@"d:\Temp\turn162");
             Console.WriteLine("File Cleanup.");
@@ -321,11 +327,11 @@ namespace OlyMapper
         {
             HTML.Write_Home_HTML_File();
             HTML.Write_Main_Map_HTML_File();
-            Console.WriteLine(".Writing Main Map Leaves HTML pages.");
+            Console.WriteLine(".Writing Main Map Leaf HTML pages.");
             HTML.Write_Main_Map_Leaves_HTML_File();
-            Console.WriteLine(".Writing Faery Map Leaves HTML pages.");
+            Console.WriteLine(".Writing Faery Map Leaf HTML pages.");
             HTML.Write_Faery_Map_Leaves_HTML_File();
-            Console.WriteLine(".Writing Hades Map Leaves HTML pages.");
+            Console.WriteLine(".Writing Hades Map Leaf HTML pages.");
             HTML.Write_Hades_Map_Leaves_HTML_File();
         }
     }

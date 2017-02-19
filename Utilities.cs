@@ -219,7 +219,7 @@ namespace OlyMapper
             {
                 if (label.Contains("sacred"))
                 {
-                    label = label.Replace("sacred ", "s.");
+                    label = label.Replace("sacred grove", "s.grov");
                 }
                 else
                 {
@@ -285,7 +285,7 @@ namespace OlyMapper
                                                         {
                                                             if (label.Contains("mallorn"))
                                                             {
-                                                                label = label.Replace("mallorn ", "m.");
+                                                                label = label.Replace("mallorn grove", "m.grov");
                                                             }
                                                             else
                                                             {

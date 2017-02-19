@@ -20,7 +20,7 @@ namespace OlyMapper
         public string _LO_Hidden { get; set; }
         public string _LO_Shrouded { get; set; }
         public string _LO_Barrier { get; set; }
-        public string _LO_Civ_Level { get; set; }
+        public int _LO_Civ_Level { get; set; }
         public string _SL_Safe { get; set; }
         public string _SL_Shaft_Depth { get; set; }
         public int _SL_Damage { get; set; }
@@ -38,6 +38,8 @@ namespace OlyMapper
         public List<string> _Item_List { get; set; }
         public string _First_Line { get; set; }
         public List<string> _Trade_List { get; set; }
+        public string _castle_id { get; set; }
+        public int _Region_id { get; set; }
         public static void Add(string InputKey, string InputString)
         {
             JObject j1 = JObject.Parse(InputString);
@@ -104,11 +106,12 @@ namespace OlyMapper
                         mysh = (JArray)j1.SelectToken("LO.sh");
                         Location._LO_Shrouded = mysh[0].ToString();
                     }
+                    Location._LO_Civ_Level = 0;
                     if (j1.SelectToken("LO.lc") != null && j1.SelectToken("LO.lc").HasValues)
                     {
                         JArray mylc;
                         mylc = (JArray)j1.SelectToken("LO.lc");
-                        Location._LO_Civ_Level = mylc[0].ToString();
+                        Location._LO_Civ_Level = Convert.ToInt32(mylc[0]);
                     }
                     if (j1.SelectToken("LO.ba") != null && j1.SelectToken("LO.ba").HasValues)
                     {
@@ -198,6 +201,7 @@ namespace OlyMapper
                         mynca = mync.ToObject<List<string>>();
                         Location._SL_Near_Cities = mynca.ToList();
                     }
+                    Location._LI_Where = 0;
                     if (j1.SelectToken("LI.wh") != null && j1.SelectToken("LI.wh").HasValues)
                     {
                         JArray mywh;
@@ -246,6 +250,90 @@ namespace OlyMapper
                         _location._Loc_Type = "port city";
                     }
                 }
+            }
+        }
+        public static void Set_Region()
+        {
+            foreach (Location _myloc in Program._locations)
+            {
+                if (_myloc._LI_Where != 0)
+                {
+                    Location _myloc2 = Program._locations.Find(x => x._LocId == _myloc._LI_Where);
+                    if (_myloc2._Loc_Type.Equals("region"))
+                    {
+                        _myloc._Region_id = _myloc2._LocId;
+                    }
+                    else
+                    {
+                        Location _myloc3 = Program._locations.Find(x => x._LocId == _myloc2._LI_Where);
+                        if (_myloc3._Loc_Type.Equals("region"))
+                        {
+                            _myloc._Region_id = _myloc3._LocId;
+                        }
+                        else
+                        {
+                            Location _myloc4 = Program._locations.Find(x => x._LocId == _myloc3._LI_Where);
+                            if (_myloc4._Loc_Type.Equals("region"))
+                            {
+                                _myloc._Region_id = _myloc4._LocId;
+                            }
+                            else
+                            {
+                                Location _myloc5 = Program._locations.Find(x => x._LocId == _myloc4._LI_Where);
+                                if (_myloc4._Loc_Type.Equals("region"))
+                                {
+                                    _myloc._Region_id = _myloc4._LocId;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        public static void Castle_Indicator()
+        {
+            string[] indicators = new string[] { "!", "@", "#", "%", "^","*","-","+","~","=","a","b","c","d","e","f","g","h","j"};
+            List<Location> mycastles = Program._locations.FindAll(x => x._Loc_Type.Equals("castle"));
+            //Program._players.Sort((x, y) => x._FactionId.CompareTo(y._FactionId));
+            mycastles.Sort((x,y) => x._Region_id.CompareTo(y._Region_id));
+            int counter = 0;
+            int saveregion = 0;
+            foreach (Location castle in mycastles)
+            {
+                if (saveregion != castle._Region_id)
+                {
+                    counter = 0;
+                    saveregion = castle._Region_id;
+                    castle._castle_id = indicators[counter];
+                    counter++;
+                }
+                else
+                {
+                    castle._castle_id = indicators[counter];
+                    counter++;
+                }
+            }
+        }
+        public static string Return_CI(Location province)
+        {
+            if (province._LI_Here_List != null)
+            {
+                foreach (string _hereid in province._LI_Here_List)
+                {
+                    Character garr = Program._characters.Find(z => z._CharId == Convert.ToInt32(_hereid));
+                    if (garr != null)
+                    {
+                        if (garr._Char_Type.Equals("garrison"))                    
+                        {
+                            return Program._locations.Find(y => y._LocId == garr._MI_Garrison_Castle)._castle_id;
+                        }
+                    }
+                }
+                return null;
+            }
+            else
+            {
+                return null;
             }
         }
     } 

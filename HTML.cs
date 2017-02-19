@@ -222,7 +222,19 @@ namespace OlyMapper
                                     {
                                         outline.Append("<td id=\"" + _myloc._LocId_Conv + "\" class =" + "\"");
                                         outline.Append(_myloc._Loc_Type + "\"" + ">");
+                                        if (_myloc._LO_Civ_Level > 0)
+                                        {
+                                            outline.Append("<b>");
+                                        }
                                         outline.Append(Utilities.format_anchor2(_myloc._LocId_Conv, _myloc._LocId_Conv));
+                                        if (_myloc._LO_Civ_Level > 0)
+                                        {
+                                            outline.Append("</b>");
+                                        }
+                                        if (Location.Return_CI(_myloc) != null)
+                                        {
+                                            outline.Append(Location.Return_CI(_myloc));
+                                        }
                                         if (_myloc._LI_Here_List != null)
                                         {
                                             if (_myloc._LI_Here_List.Count > 0 && !_myloc._Loc_Type.Equals("ocean"))
@@ -230,40 +242,129 @@ namespace OlyMapper
                                                 // >= 56760
                                                 Location loc1 = null;
                                                 Location loc2 = null;
+                                                Location city = null;
+                                                Location graveyard = null;
                                                 int Count = 0;
                                                 foreach (string _here_id in _myloc._LI_Here_List)
                                                 {
-                                                    if (Convert.ToInt32(_here_id) >= 56760)
+                                                    if (Convert.ToInt32(_here_id) >= 56760 && Convert.ToInt32(_here_id) <= 78999)
                                                     {
-                                                        Count ++;
-                                                        if (loc2 == null)
+                                                        Count++;
+                                                        if (Program._locations.Find(z => z._LocId == Convert.ToInt32(_here_id))._Loc_Type.Contains("city"))
                                                         {
-                                                            loc2 = Program._locations.Find(z => z._LocId == Convert.ToInt32(_here_id));
+                                                            city = Program._locations.Find(z => z._LocId == Convert.ToInt32(_here_id));
                                                         }
                                                         else
                                                         {
-                                                            if (loc1 == null)
+                                                            if (Program._locations.Find(z => z._LocId == Convert.ToInt32(_here_id))._Loc_Type.Contains("graveyard"))
                                                             {
-                                                                loc1 = Program._locations.Find(z => z._LocId == Convert.ToInt32(_here_id));
+                                                                graveyard = Program._locations.Find(z => z._LocId == Convert.ToInt32(_here_id));
+                                                            }
+                                                            else
+                                                            {
+                                                                if (loc1 == null)
+                                                                {
+                                                                    loc1 = Program._locations.Find(z => z._LocId == Convert.ToInt32(_here_id)); ;
+                                                                }
+                                                                else
+                                                                {
+                                                                    if (loc2 == null)
+                                                                    {
+                                                                        loc2 = Program._locations.Find(z => z._LocId == Convert.ToInt32(_here_id));
+                                                                    }
+                                                                }
                                                             }
                                                         }
                                                     }
                                                 }
-                                                if (loc1 != null)
+                                                if (city != null)
                                                 {
-                                                    if (Count > 2)
+                                                    if (loc2 == null)
                                                     {
-                                                        outline.Append("<br />many");
+                                                        loc2 = loc1;
+                                                    }
+                                                    loc1 = city;
+                                                }
+                                                if (graveyard != null)
+                                                {
+                                                    if (loc1 == null)
+                                                    {
+                                                        if (loc2 == null)
+                                                        {
+                                                            loc2 = loc1;
+                                                        }
+                                                        loc1 = graveyard;
                                                     }
                                                     else
                                                     {
-                                                        if (loc1._Loc_Type.Contains("city") || loc1._Loc_Type.Equals("graveyard"))
+                                                        if (loc2 == null)
                                                         {
-                                                            outline.Append("<br />" + Utilities.format_anchor2(loc1._LocId_Conv, loc1._Loc_Type));
+                                                            loc2 = graveyard;
+                                                        }
+                                                    }
+                                                }
+                                                if (Count > 2)
+                                                {
+                                                    outline.Append("<br />many");
+                                                }
+                                                else
+                                                {
+                                                    if (loc2 != null)
+                                                    {
+                                                        if (loc2._Loc_Type.Contains("city") || loc2._Loc_Type.Equals("graveyard"))
+                                                        {
+                                                            outline.Append("<br />");
+                                                            outline.Append(Utilities.format_anchor2(loc2._LocId_Conv,Utilities.format_loc_type(loc2._Loc_Type)));
                                                         }
                                                         else
                                                         {
-                                                            outline.Append("<br />" + Utilities.format_loc_type(loc1._Loc_Type));
+                                                            outline.Append("<br />");
+                                                            if (loc2._LO_Hidden != null)
+                                                            {
+                                                                if (loc2._LO_Hidden.Equals("1"))
+                                                                {
+                                                                    outline.Append("<i>");
+                                                                }
+                                                            }
+                                                            outline.Append(Utilities.format_loc_type(loc2._Loc_Type));
+                                                            if (loc2._LO_Hidden != null)
+                                                            {
+                                                                if (loc2._LO_Hidden.Equals("1"))
+                                                                {
+                                                                    outline.Append("</i>");
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        outline.Append("<br />&nbsp;");
+                                                    }
+                                                }
+                                                if (loc1 != null)
+                                                {
+                                                    if (loc1._Loc_Type.Contains("city") || loc1._Loc_Type.Equals("graveyard"))
+                                                    {
+                                                        outline.Append("<br />");
+                                                        outline.Append(Utilities.format_anchor2(loc1._LocId_Conv, Utilities.format_loc_type(loc1._Loc_Type)));
+                                                    }
+                                                    else
+                                                    {
+                                                        outline.Append("<br />");
+                                                        if (loc1._LO_Hidden != null)
+                                                        {
+                                                            if (loc1._LO_Hidden.Equals("1"))
+                                                            {
+                                                                outline.Append("<i>");
+                                                            }
+                                                        }
+                                                        outline.Append(Utilities.format_loc_type(loc1._Loc_Type));
+                                                        if (loc1._LO_Hidden != null)
+                                                        {
+                                                            if (loc1._LO_Hidden.Equals("1"))
+                                                            {
+                                                                outline.Append("<i>");
+                                                            }
                                                         }
                                                     }
                                                 }
@@ -271,21 +372,7 @@ namespace OlyMapper
                                                 {
                                                     outline.Append("<br />&nbsp;");
                                                 }
-                                                if (loc2 != null)
-                                                {
-                                                    if (loc2._Loc_Type.Contains("city") || loc2._Loc_Type.Equals("graveyard"))
-                                                    {
-                                                        outline.Append("<br />" + Utilities.format_anchor2(loc2._LocId_Conv, loc2._Loc_Type));
-                                                    }
-                                                    else
-                                                    {
-                                                        outline.Append("<br />" + Utilities.format_loc_type(loc2._Loc_Type));
-                                                    }
-                                                }
-                                                else
-                                                {
-                                                    outline.Append("<br />&nbsp;");
-                                                }
+                                                outline.Append("</td>");
                                             }
                                             else
                                             {
@@ -1367,14 +1454,7 @@ namespace OlyMapper
             // civ level only for provinces, not sublocations
             if (_myloc._LocId >= 10000 && _myloc._LocId < 18000)
             {
-                if (_myloc._LO_Civ_Level != null)
-                {
-                    outline3.Append(", " + (_myloc._LO_Civ_Level.Equals("0") ? "wilderness" : "civ-" + _myloc._LO_Civ_Level));
-                }
-                else
-                {
-                    outline3.Append(", wilderness");
-                }
+                outline3.Append(", " + (_myloc._LO_Civ_Level.Equals(0) ? "wilderness" : "civ-" + _myloc._LO_Civ_Level));
             }
             outline3.Append("</H3>");
             w.WriteLine(outline3);
@@ -1793,7 +1873,7 @@ namespace OlyMapper
                         {
                             if (firstline)
                             {
-                                w.WriteLine("<H4>Hidden Location Accessed by:</H4>");
+                                w.WriteLine("<H4>hidden location known by:</H4>");
                                 w.WriteLine("<ul>");
                                 firstline = false;
                             }
@@ -1811,7 +1891,8 @@ namespace OlyMapper
         {
             StringBuilder outline = new StringBuilder();
             outline.Append("<li>");
-            outline.Append(_my_dest_loc._Name + " ");
+            outline.Append(_my_dest_loc._Name);
+            outline.Append(" ");
             outline.Append(Utilities.format_anchor(_my_dest_loc._LocId_Conv));
             outline.Append(", " + _my_dest_loc._Loc_Type);
             if (_my_dest_loc._LO_Hidden != null)
