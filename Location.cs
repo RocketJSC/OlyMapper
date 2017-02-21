@@ -336,5 +336,52 @@ namespace OlyMapper
                 return null;
             }
         }
+        public static bool FiftyMen(Location _myloc)
+        {
+            int nbr_men = 0;
+            if (_myloc._LI_Here_List != null)
+            {
+                foreach(string _mylochere in _myloc._LI_Here_List)
+                {
+                    
+                    if (Program._characters.Find(x => x._CharId == Convert.ToInt32(_mylochere)) != null)
+                    {
+                        Character _mychar = Program._characters.Find(x => x._CharId == Convert.ToInt32(_mylochere));
+                        int iterations = _mychar._Item_List.Count / 2;
+                        for (int i = 0; i < iterations; i++)
+                        {
+                            if (Program._items.Find(x=>x._ItemId == _mychar._Item_List[(i * 2) + 0])._IT_Prominent == "1")
+                            {
+                                nbr_men += _mychar._Item_List[(i * 2) + 1];
+                            }
+                        }
+                        // see if other characters stacked under
+                        if (_mychar._LI_Here_List != null)
+                        {
+                            foreach (string _mycharhere in _mychar._LI_Here_List)
+                            {
+                                // call recursively
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Ship _myship = Program._ships.Find(x=>x._ShipId == Convert.ToInt32(_myhere));
+                        if (_myship != null)
+                        {
+                            if (_myship._LI_Here_List != null)
+                            {
+
+                            }
+                        }
+                    }
+                }
+            }
+            if (nbr_men >= 50)
+            {
+                return true;
+            }
+            return false;
+        }
     } 
 }

@@ -11,7 +11,7 @@ namespace OlyMapper
     {
         public static void Write_Home_HTML_File()
         {
-            using (FileStream fs = new FileStream(@"d:\Temp\turn162\home.html", FileMode.Create))
+            using (FileStream fs = new FileStream(@"d:\Temp\turn163\home.html", FileMode.Create))
             {
                 using (StreamWriter w = new StreamWriter(fs, Encoding.UTF8))
                 {
@@ -45,12 +45,14 @@ namespace OlyMapper
                     w.WriteLine("</tr>");
                     w.WriteLine("</table>");
                     w.WriteLine("</BODY>");
+                    w.WriteLine("</HTML>");
                 }
+                fs.Close();
             }
         }
         public static void Write_Main_Map_HTML_File()
         {
-            using (FileStream fs = new FileStream(@"d:\Temp\turn162\main_map.html", FileMode.Create))
+            using (FileStream fs = new FileStream(@"d:\Temp\turn163\main_map.html", FileMode.Create))
             {
                 using (StreamWriter w = new StreamWriter(fs, Encoding.UTF8))
                 {
@@ -116,6 +118,7 @@ namespace OlyMapper
                     w.WriteLine("</BODY>");
                     w.WriteLine("</html>");
                 }
+                fs.Close();
             }
         }
         public static void Write_Main_Map_Leaves_HTML_File()
@@ -128,7 +131,7 @@ namespace OlyMapper
                 for (int outerx = 0; outerx < 7; outerx++)
                 {
                     CurrentPoint = StartingPoint + (outerx * 10);
-                    using (FileStream fs = new FileStream(@"d:\Temp\turn162\main_map_leaf_" + Utilities.to_oid(CurrentPoint.ToString()) + ".html", FileMode.Create))
+                    using (FileStream fs = new FileStream(@"d:\Temp\turn163\main_map_leaf_" + Utilities.to_oid(CurrentPoint.ToString()) + ".html", FileMode.Create))
                     {
                         using (StreamWriter w = new StreamWriter(fs, Encoding.UTF8))
                         {
@@ -220,7 +223,18 @@ namespace OlyMapper
                                     Location _myloc = Program._locations.Find(z => z._LocId == Cell);
                                     if (_myloc != null)
                                     {
-                                        outline.Append("<td id=\"" + _myloc._LocId_Conv + "\" class =" + "\"");
+                                        // determine if province has more than 50 men in it - set border to red
+                                        if (Location.FiftyMen(_myloc))
+                                        {
+                                            outline.Append("<td style=\"border: 1px solid red\" ");
+                                        }
+                                        else
+                                        {
+                                            outline.Append("<td ");
+                                        }
+                                        // border: 1px solid black
+                                        // write cell
+                                        outline.Append("id=\"" + _myloc._LocId_Conv + "\" class =" + "\"");
                                         outline.Append(_myloc._Loc_Type + "\"" + ">");
                                         if (_myloc._LO_Civ_Level > 0)
                                         {
@@ -425,7 +439,9 @@ namespace OlyMapper
                             }
                             w.WriteLine("</table>");
                             w.WriteLine("</BODY>");
+                            w.WriteLine("</HTML>");
                         }
+                        fs.Close();
                     }
                 }
             }
@@ -440,7 +456,7 @@ namespace OlyMapper
                 for (int outerx = 0; outerx < 7; outerx++)
                 {
                     CurrentPoint = StartingPoint + (outerx * 10);
-                    using (FileStream fs = new FileStream(@"d:\Temp\turn162\faery_map_leaf_" + Utilities.to_oid(CurrentPoint.ToString()) + ".html", FileMode.Create))
+                    using (FileStream fs = new FileStream(@"d:\Temp\turn163\faery_map_leaf_" + Utilities.to_oid(CurrentPoint.ToString()) + ".html", FileMode.Create))
                     {
                         using (StreamWriter w = new StreamWriter(fs, Encoding.UTF8))
                         {
@@ -650,7 +666,9 @@ namespace OlyMapper
                             }
                             w.WriteLine("</table>");
                             w.WriteLine("</BODY>");
+                            w.WriteLine("</HTML>");
                         }
+                        fs.Close();
                     }
                 }
             }
@@ -665,7 +683,7 @@ namespace OlyMapper
                 for (int outerx = 0; outerx < 7; outerx++)
                 {
                     CurrentPoint = StartingPoint + (outerx * 10);
-                    using (FileStream fs = new FileStream(@"d:\Temp\turn162\hades_map_leaf_" + Utilities.to_oid(CurrentPoint.ToString()) + ".html", FileMode.Create))
+                    using (FileStream fs = new FileStream(@"d:\Temp\turn163\hades_map_leaf_" + Utilities.to_oid(CurrentPoint.ToString()) + ".html", FileMode.Create))
                     {
                         using (StreamWriter w = new StreamWriter(fs, Encoding.UTF8))
                         {
@@ -875,14 +893,16 @@ namespace OlyMapper
                             }
                             w.WriteLine("</table>");
                             w.WriteLine("</BODY>");
+                            w.WriteLine("</HTML>");
                         }
+                        fs.Close();
                     }
                 }
             }
         }
         public static void Write_Ship_HTML_File(Ship _myship)
         {
-            using (FileStream fs = new FileStream(@"d:\Temp\turn162\" + _myship._ShipId + ".html", FileMode.Create))
+            using (FileStream fs = new FileStream(@"d:\Temp\turn163\" + _myship._ShipId + ".html", FileMode.Create))
             {
                 using (StreamWriter w = new StreamWriter(fs, Encoding.UTF8))
                 {
@@ -1028,7 +1048,7 @@ namespace OlyMapper
         }
         public static void Write_Char_HTML_File(Character _mychar)
         {
-            using (FileStream fs = new FileStream(@"d:\Temp\turn162\" + _mychar._CharId + ".html", FileMode.Create))
+            using (FileStream fs = new FileStream(@"d:\Temp\turn163\" + _mychar._CharId + ".html", FileMode.Create))
             {
                 using (StreamWriter w = new StreamWriter(fs, Encoding.UTF8))
                 {
@@ -1243,7 +1263,7 @@ namespace OlyMapper
                         if (Program._skills.Find(x => x._SkillId == Convert.ToInt32(_skill)) != null)
                         {
                             Skill _myskill = Program._skills.Find(x => x._SkillId == Convert.ToInt32(_skill));
-                            w.WriteLine("<li>" + _myskill._Name + " [" + _myskill._SkillId + "]</li>");
+                            w.WriteLine("<li>" + (_myskill._SK_Required_Skill != 0 ? "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" : "") + _myskill._Name + " [" + _myskill._SkillId + "]</li>");
                         }
                     }
                     if (_know == "1")
@@ -1377,7 +1397,7 @@ namespace OlyMapper
 
         public static void Write_Loc_HTML_File(Location _myloc)
         {
-            using (FileStream fs = new FileStream(@"d:\Temp\turn162\" + _myloc._LocId_Conv + ".html", FileMode.Create))
+            using (FileStream fs = new FileStream(@"d:\Temp\turn163\" + _myloc._LocId_Conv + ".html", FileMode.Create))
             {
                 using (StreamWriter w = new StreamWriter(fs, Encoding.UTF8))
                 {
@@ -1620,7 +1640,8 @@ namespace OlyMapper
                 w.WriteLine("<ul>");
                 foreach (String skill in _myloc._SL_Teaches)
                 {
-                    w.WriteLine("<li>" + Program._skills.Find(x => x._SkillId == Convert.ToInt32(skill))._Name + " [" + skill + "]</li>");
+                    Skill _myskill = Program._skills.Find(x => x._SkillId == Convert.ToInt32(skill));
+                    w.WriteLine("<li>" + _myskill._Name + " [" + skill + "]</li>");
                 }
                 w.WriteLine("</ul>");
             }
@@ -1631,32 +1652,87 @@ namespace OlyMapper
             // Market Report
             if (_myloc._Trade_List != null)
             {
-                w.WriteLine("<H4>Market Report:</H4>");
-                w.WriteLine("<table border=\"1\" cellpadding=\"5\">");
-                w.WriteLine("<tr><th>trade</th><th>who</th><th>price</th><th>qty</th><th>wt/ea</th><th>item</th></tr>");
-                int num_items = _myloc._Trade_List.Count / 8;
-                for (int i = 0; i < num_items; i++)
+                // create consolidated trade list (location and characters)
+                List<Trade> _trades = new List<Trade>();
+                int iterations = _myloc._Trade_List.Count / 8;
+                for (int i = 0; i < iterations; i++)
                 {
                     if (_myloc._Trade_List[(i * 8) + 0] == "1"
                     || _myloc._Trade_List[(i * 8) + 0] == "2")
                     {
+                        Itemz _myitem = Program._items.Find(x=>x._ItemId == Convert.ToInt32(_myloc._Trade_List[(i*8)+1]));
+                        if (_myitem != null)
+                        {
+                            _trades.Add(new Trade
+                            {
+                                _ItemId = _myitem._ItemId,
+                                _ItemId_Conv = _myitem._ItemId_Conv,
+                                _Who_id = _myloc._LocId,
+                                _Who_id_Conv = _myloc._LocId_Conv,
+                                _Who_Type = 1,
+                                _Trade_Kind = Convert.ToInt32(_myloc._Trade_List[(i*8) + 0]),
+                                _Number = Convert.ToInt32(_myloc._Trade_List[(i * 8) + 2]),
+                                _Price = Convert.ToInt32(_myloc._Trade_List[(i * 8) + 3]),
+                                _Weight = _myitem._Weight,
+                                _Item_Name = _myitem._Name
+                            });
+                        }
+                    }
+                }
+                List<Character> _chartradelist = Program._characters.FindAll(x=>x._LI_Where == _myloc._LocId && x._Trade_List != null);
+                if (_chartradelist.Count > 0)
+                {
+                    foreach (Character _mychar in _chartradelist)
+                    {
+                        int iterations2 = _mychar._Trade_List.Count / 8;
+                        for (int i = 0; i < iterations2; i++)
+                        {
+                            if (_mychar._Trade_List[(i * 8) + 0] == "1"
+                            || _mychar._Trade_List[(i * 8) + 0] == "2")
+                            {
+                                Itemz _myitem = Program._items.Find(x => x._ItemId == Convert.ToInt32(_mychar._Trade_List[(i * 8) + 1]));
+                                if (_myitem != null)
+                                {
+                                    _trades.Add(new Trade
+                                    {
+                                        _ItemId = _myitem._ItemId,
+                                        _ItemId_Conv = _myitem._ItemId_Conv,
+                                        _Who_id = _mychar._CharId,
+                                        _Who_id_Conv = _mychar._CharId.ToString(),
+                                        _Who_Type = 2,
+                                        _Trade_Kind = Convert.ToInt32(_mychar._Trade_List[(i * 8) + 0]),
+                                        _Number = Convert.ToInt32(_mychar._Trade_List[(i * 8) + 2]),
+                                        _Price = Convert.ToInt32(_mychar._Trade_List[(i * 8) + 3]),
+                                        _Weight = _myitem._Weight,
+                                        _Item_Name = _myitem._Name
+                                    });
+                                }
+                            }
+                        }
+                    }
+                }
+                List<Trade> _trades_sorted = _trades.OrderBy(z => z._Trade_Kind).ThenBy(a=>a._Who_id_Conv).ThenBy(b => b._ItemId_Conv).ToList();
+                //  write report
+                w.WriteLine("<H4>Market Report:</H4>");
+                w.WriteLine("<table border=\"1\" cellpadding=\"5\">");
+                w.WriteLine("<tr><th>trade</th><th>who</th><th>price</th><th>qty</th><th>wt/ea</th><th>item</th></tr>");
+                foreach (Trade _mytrade in _trades_sorted)
+                {
                         StringBuilder outline = new StringBuilder();
-                        Itemz _myitem = Program._items.Find(x => x._ItemId == Convert.ToInt32(_myloc._Trade_List[(i * 8) + 1]));
                         outline.Append("<tr><td>");
-                        outline.Append(_myloc._Trade_List[(i * 8) + 0] == "1" ? "buy" : "sell");
+                        outline.Append(_mytrade._Trade_Kind == 1 ? "buy" : "sell");
                         outline.Append("</td><td>");
-                        outline.Append(_myloc._LocId_Conv);
+                        outline.Append(_mytrade._Who_id_Conv);
                         outline.Append("</td><td>");
-                        outline.Append(_myloc._Trade_List[(i * 8) + 3]);
+                        outline.Append(_mytrade._Price);
                         outline.Append("</td><td>");
-                        outline.Append(_myloc._Trade_List[(i * 8) + 2]);
+                        outline.Append(_mytrade._Number);
                         outline.Append("</td><td>");
-                        outline.Append(_myitem._Weight);
+                        outline.Append(_mytrade._Weight);
                         outline.Append("</td><td>");
-                        outline.Append(_myitem._Name + " [" + _myitem._ItemId_Conv + "]");
+                        outline.Append(_mytrade._Item_Name + " [" + _mytrade._ItemId_Conv + "]");
                         outline.Append("</td></tr>");
                         w.WriteLine(outline);
-                    }
                 }
                 w.WriteLine("</Table>");
             }
@@ -2146,7 +2222,7 @@ namespace OlyMapper
             }
             // loaded
             // defense
-            if (_myship._SL_Defense != null)
+            if (_myship._SL_Defense != 0)
             {
                 outline.Append(", defense " + _myship._SL_Defense);
             }
@@ -2185,6 +2261,60 @@ namespace OlyMapper
                     }
                 }
                 w.WriteLine("</ul>");
+            }
+        }
+        public static void Generate_Item_List_HTML()
+        {
+            using (FileStream fs = new FileStream(@"d:\Temp\turn163\master_item_list.html", FileMode.Create))
+            {
+                using (StreamWriter w = new StreamWriter(fs, Encoding.UTF8))
+                {
+                    w.WriteLine("<HTML>");
+                    w.WriteLine("<HEAD>");
+                    w.WriteLine("<TITLE>Olympia Master Item List</TITLE>");
+                    w.WriteLine("</HEAD>");
+                    w.WriteLine("<BODY>");
+                    w.WriteLine("<h3>Olympia Master Item List</h3>");
+                    w.WriteLine("<table border=\"1\">");
+                    w.WriteLine("<tr>");
+                    w.WriteLine("<th>Item</th><th>Item Type</th><th>Weight</th><th>Man Item</th><th>Prominent</th><th>Animal</th><th>Land Cap</th><th>Riding cap</th><th>Flying Cap</th><th>Who Has</th><th>Notes</th>");
+                    w.WriteLine("</tr>");
+                    foreach (Itemz _item in Program._items)
+                    {
+                        w.WriteLine("<tr>");
+                        w.WriteLine("<td>" + _item._Name + " [" + _item._ItemId_Conv + "]</td>");
+                        w.WriteLine("<td>" + (_item._Item_Type != "0"?_item._Item_Type:"std item") + "</td>");
+                        w.WriteLine("<td>" + _item._Weight + "</td>");
+                        w.WriteLine("<td>" + (_item._IT_Man_Item == "1" ? "yes":"") + "</td>");
+                        w.WriteLine("<td>" + (_item._IT_Prominent == "1" ? "yes" : "") + "</td>");
+                        w.WriteLine("<td>" + (_item._IT_Animal == "1" ? "yes" : "") + "</td>");
+                        w.WriteLine("<td>" + _item._Land_Capacity + "</td>");
+                        w.WriteLine("<td>" + _item._Ride_Capacity + "</td>");
+                        w.WriteLine("<td>" + _item._Fly_Capacity + "</td>");
+                        if (_item._IT_Who_Has != 0)
+                        {
+                            if (Program._characters.Find(x=>x._CharId == _item._IT_Who_Has) != null)
+                            {
+                                Character _mychar = Program._characters.Find(x => x._CharId == _item._IT_Who_Has);
+                                w.WriteLine("<td>" + _mychar._Name + " " + Utilities.format_anchor(_mychar._CharId.ToString()) + "</td>");
+                            }
+                            else
+                            {
+                                w.WriteLine("<td>&nbsp;</td>");
+                            }
+                        }
+                        else
+                        {
+                            w.WriteLine("<td>&nbsp;</td>");
+                        }
+                        w.WriteLine("<td>" + Itemz.Determine_Use(_item) + "</td>");
+                        w.WriteLine("</tr>");
+                    }
+                    w.WriteLine("</table>");
+                    w.WriteLine("</BODY>");
+                    w.WriteLine("</HTML>");
+                }
+                fs.Close();
             }
         }
     }

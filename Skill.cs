@@ -13,6 +13,7 @@ namespace OlyMapper
         public string _Name { get; set; }
         public string _First_Line { get; set; }
         public int _SK_Time_to_learn { get; set; }
+        public int _SK_Required_Skill { get; set; }
         public static void Add(string InputKey, string InputString)
         {
             JObject j1 = JObject.Parse(InputString);
@@ -50,6 +51,13 @@ namespace OlyMapper
                     JArray mytl;
                     mytl = (JArray)j1.SelectToken("SK.tl");
                     Skill._SK_Time_to_learn = Convert.ToInt32(mytl[0]);
+                }
+                Skill._SK_Required_Skill = 0;
+                if (j1.SelectToken("SK.rs") != null && j1.SelectToken("SK.rs").HasValues)
+                {
+                    JArray myrs;
+                    myrs = (JArray)j1.SelectToken("SK.rs");
+                    Skill._SK_Required_Skill = Convert.ToInt32(myrs[0]);
                 }
             }
         }

@@ -44,6 +44,10 @@ namespace OlyMapper
         public List<string> _Neutral_List { get; set; }
         public List<string> _Hostile_List { get; set; }
         public int Accumulated_Weight { get; set; }
+        public int Accumulated_Land_Cap { get; set; }
+        public int Accumulated_Riding_Cap { get; set; }
+        public int Accumulated_Flying_Cap { get; set; }
+        public int Accumulated_Men { get; set; }
         public static void Add(string InputKey, string InputString)
         {
             JObject j1 = JObject.Parse(InputString);
@@ -66,7 +70,12 @@ namespace OlyMapper
             {
                 _CharId = Convert.ToInt32(InputKey),
                 _First_Line = myfl[0].ToString(),
-                _Char_Type = mychartype
+                _Char_Type = mychartype,
+                Accumulated_Weight = 0,
+                Accumulated_Riding_Cap = 0,
+                Accumulated_Men = 0,
+                Accumulated_Land_Cap = 0,
+                Accumulated_Flying_Cap = 0
             });
             var Character = (Program._characters.Find(x => x._CharId == Convert.ToInt32(InputKey)));
             if (Character != null)
@@ -305,6 +314,10 @@ namespace OlyMapper
             foreach (Character _myChar in Program._characters)
             {
                 _myChar.Accumulated_Weight = 0;
+                _myChar.Accumulated_Land_Cap = 0;
+                _myChar.Accumulated_Riding_Cap = 0;
+                _myChar.Accumulated_Flying_Cap = 0;
+                _myChar.Accumulated_Men = 0;
                 if (_myChar._Item_List != null)
                 {
                     int iterations = _myChar._Item_List.Count() / 2;
@@ -316,6 +329,13 @@ namespace OlyMapper
                         if (_myitem != null)
                         {
                             _myChar.Accumulated_Weight += (_myitem._Weight * _qty);
+                            _myChar.Accumulated_Land_Cap += (_qty * _myitem._Land_Capacity);
+                            _myChar.Accumulated_Riding_Cap += (_qty * _myitem._Ride_Capacity);
+                            _myChar.Accumulated_Flying_Cap += (_qty * _myitem._Fly_Capacity);
+                            if (_myitem._IT_Prominent == "1" || _myitem._ItemId == 81)
+                            {
+                                _myChar.Accumulated_Men += _qty;
+                            }
                         }
                     }
                 }

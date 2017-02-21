@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
+using System.Text.RegularExpressions;                                           
 
 namespace OlyMapper
 {
@@ -36,7 +36,7 @@ namespace OlyMapper
             _skills = new List<Skill>();
             _ships = new List<Ship>();
             _storms = new List<Storm>();
-            JObject o1 = JObject.Parse(File.ReadAllText(@"d:\temp\lib-162.json"));
+            JObject o1 = JObject.Parse(File.ReadAllText(@"d:\temp\lib-163.json"));
             Process_JSON_File(o1);
             // Display totals
             Console.WriteLine("+ Loaded " + _locations.Count + " locations");
@@ -65,10 +65,33 @@ namespace OlyMapper
             Console.WriteLine("Posting indicator to castle.");
             Location.Castle_Indicator();
             // create directory for html files, if needed
-            DirectoryInfo di = Directory.CreateDirectory(@"d:\Temp\turn162");
+            DirectoryInfo di = Directory.CreateDirectory(@"d:\Temp\turn163");
             Console.WriteLine("File Cleanup.");
             // delete existing files in directory
-            System.IO.DirectoryInfo dd = new DirectoryInfo(@"d:\Temp\turn162");
+            Cleanup_Files();
+            Console.WriteLine("Writing HTML pages.");
+            // dump items
+            Console.WriteLine("+ Writing Master Item List HTML page.");
+            HTML.Generate_Item_List_HTML();
+            Console.WriteLine("+ Writing Province HTML pages.");
+            Generate_Province_Pages();
+            Console.WriteLine("+ Writing City HTML pages.");
+            Generate_City_Pages();
+            Console.WriteLine("+ Writing Sublocation HTML pages.");
+            Generate_Sublocation_Pages();
+            Console.WriteLine("+ Writing Character HTML pages.");
+            Generate_Char_Pages();
+            Console.WriteLine("+ Writing Ship HTML pages.");
+            Generate_Ship_Pages();
+            Console.WriteLine("Writing Glue HTML pages.");
+            Generate_Glue_Pages();
+            Console.WriteLine("Program Finished.  Press <ENTER> to Close.");
+            Console.ReadLine();
+        }
+
+        private static void Cleanup_Files()
+        {
+            System.IO.DirectoryInfo dd = new DirectoryInfo(@"d:\Temp\turn163");
             foreach (FileInfo file in dd.GetFiles())
             {
                 if ((file.Name != "grey.gif") && (file.Name != "map.css") && (file.Name != "map.gif"))
@@ -76,20 +99,6 @@ namespace OlyMapper
                     file.Delete();
                 }
             }
-            Console.WriteLine("Writing Province HTML pages.");
-            Generate_Province_Pages();
-            Console.WriteLine("Writing City HTML pages.");
-            Generate_City_Pages();
-            Console.WriteLine("Writing Sublocation HTML pages.");
-            Generate_Sublocation_Pages();
-            Console.WriteLine("Writing Character HTML pages.");
-            Generate_Char_Pages();
-            Console.WriteLine("Writing Ship HTML pages.");
-            Generate_Ship_Pages();
-            Console.WriteLine("Writing Glue HTML pages.");
-            Generate_Glue_Pages();
-            Console.WriteLine("Program Finished.  Press <ENTER> to Close.");
-            Console.ReadLine();
         }
 
         private static void Generate_Province_Pages()

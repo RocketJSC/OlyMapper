@@ -57,6 +57,7 @@
     <Compile Include="Ship.cs" />
     <Compile Include="Skill.cs" />
     <Compile Include="Storm.cs" />
+    <Compile Include="Trade.cs" />
     <Compile Include="Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
