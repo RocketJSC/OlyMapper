@@ -253,7 +253,7 @@ namespace OlyMapper
                                 }
                                 else
                                 {
-                                    outline.Append(", target no longer exists");
+                                    outline.Append(", target [" + _myitem._IM_Project_Cast + "] no longer exists");
                                 }
                             }
                         }

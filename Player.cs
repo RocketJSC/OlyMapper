@@ -85,7 +85,11 @@ namespace OlyMapper
                 {
                     JArray myfn;
                     myfn = (JArray)j1.SelectToken("PL.fn");
-                    Player._Full_Name = myfn[0].ToString();
+                    for (int i = 0; i < myfn.Count; i++)
+                    {
+                        Player._Full_Name = (Player._Full_Name + " " + myfn[i].ToString()).TrimStart();
+                    }
+                    //Player._Full_Name = myfn[0].ToString();
                 }
                 if (j1.SelectToken("PL.em") != null && j1.SelectToken("PL.em").HasValues)
                 {

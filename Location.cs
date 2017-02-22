@@ -40,6 +40,7 @@ namespace OlyMapper
         public List<string> _Trade_List { get; set; }
         public string _castle_id { get; set; }
         public int _Region_id { get; set; }
+        public int _nbr_men { get; set; }
         public static void Add(string InputKey, string InputString)
         {
             JObject j1 = JObject.Parse(InputString);
@@ -78,7 +79,8 @@ namespace OlyMapper
                 //_LO_Province_Destination = mypda.ToList(),
                 //_Item_List = myila.ToList(),
                 _Loc_Type = myloctype,
-                _Name = myna[0].ToString()
+                _Name = myna[0].ToString(),
+                _nbr_men = 0
             });
             //foreach (var Location in Program._locations)
             var Location = (Program._locations.Find(x => x._LocId == Convert.ToInt32(InputKey)));
@@ -256,6 +258,7 @@ namespace OlyMapper
         {
             foreach (Location _myloc in Program._locations)
             {
+                _myloc._nbr_men = Count_Process_Loc(_myloc._nbr_men, _myloc);
                 if (_myloc._LI_Where != 0)
                 {
                     Location _myloc2 = Program._locations.Find(x => x._LocId == _myloc._LI_Where);
@@ -336,52 +339,73 @@ namespace OlyMapper
                 return null;
             }
         }
-        public static bool FiftyMen(Location _myloc)
+        private static int Count_Process_Loc(int nbr_men, Location _myloc)
         {
-            int nbr_men = 0;
             if (_myloc._LI_Here_List != null)
             {
-                foreach(string _mylochere in _myloc._LI_Here_List)
+                foreach (string _mylochere in _myloc._LI_Here_List)
                 {
-                    
                     if (Program._characters.Find(x => x._CharId == Convert.ToInt32(_mylochere)) != null)
                     {
-                        Character _mychar = Program._characters.Find(x => x._CharId == Convert.ToInt32(_mylochere));
-                        int iterations = _mychar._Item_List.Count / 2;
-                        for (int i = 0; i < iterations; i++)
-                        {
-                            if (Program._items.Find(x=>x._ItemId == _mychar._Item_List[(i * 2) + 0])._IT_Prominent == "1")
-                            {
-                                nbr_men += _mychar._Item_List[(i * 2) + 1];
-                            }
-                        }
-                        // see if other characters stacked under
-                        if (_mychar._LI_Here_List != null)
-                        {
-                            foreach (string _mycharhere in _mychar._LI_Here_List)
-                            {
-                                // call recursively
-                            }
-                        }
+                        nbr_men = Count_Process_Char(nbr_men, _mylochere);
                     }
                     else
                     {
-                        Ship _myship = Program._ships.Find(x=>x._ShipId == Convert.ToInt32(_myhere));
+                        Ship _myship = Program._ships.Find(x => x._ShipId == Convert.ToInt32(_mylochere));
                         if (_myship != null)
                         {
                             if (_myship._LI_Here_List != null)
                             {
-
+                                foreach (int _myshiphere in _myship._LI_Here_List)
+                                {
+                                    nbr_men = Count_Process_Char(nbr_men, _myshiphere.ToString());
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (Program._locations.Find(x => x._LocId == Convert.ToInt32(_mylochere)) != null)
+                            {
+                                Location _mylochere2 = Program._locations.Find(x => x._LocId == Convert.ToInt32(_mylochere));
+                                nbr_men = Count_Process_Loc(nbr_men, _mylochere2);
                             }
                         }
                     }
                 }
             }
-            if (nbr_men >= 50)
+            return nbr_men;
+        }
+
+        private static int Count_Process_Char(int nbr_men, string _mylochere)
+        {
+            Character _mychar = Program._characters.Find(x => x._CharId == Convert.ToInt32(_mylochere));
+            if (_mychar._Item_List != null)
             {
-                return true;
+
+                // ignore city garrison, but not stuff under them
+                if (_mychar._Char_Type.Equals("garrison") && _mychar._LI_Where >= 56760 && _mychar._LI_Where <= 58759)
+                { }
+                else
+                {
+                    int iterations = _mychar._Item_List.Count / 2;
+                    for (int i = 0; i < iterations; i++)
+                    {
+                        if (Program._items.Find(x => x._ItemId == _mychar._Item_List[(i * 2) + 0])._IT_Prominent == "1")
+                        {
+                            nbr_men += _mychar._Item_List[(i * 2) + 1];
+                        }
+                    }
+                }
             }
-            return false;
+            // see if other characters stacked under
+            if (_mychar._LI_Here_List != null)
+            {
+                foreach (string _mycharhere in _mychar._LI_Here_List)
+                {
+                    nbr_men = Count_Process_Char(nbr_men, _mycharhere);
+                }
+            }
+            return nbr_men;
         }
     } 
 }

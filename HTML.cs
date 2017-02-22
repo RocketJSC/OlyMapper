@@ -24,13 +24,14 @@ namespace OlyMapper
                     w.WriteLine("<tr>");
                     w.WriteLine("<th>");
                     w.WriteLine("<ul>Maps<br>");
-                    w.WriteLine("<li>Main</li>");
+                    w.WriteLine("<li><a href=\"main_map.html\">Main</a></li>");
                     w.WriteLine("<li>Hades</li>");
                     w.WriteLine("<li>Faery</li>");
                     w.WriteLine("</ul>");
                     w.WriteLine("</th>");
                     w.WriteLine("<th>");
                     w.WriteLine("<ul>Reports<br>");
+                    w.WriteLine("<li><a href=\"master_item_list.html\">Items</a></li>");
                     w.WriteLine("<li>Characters</li>");
                     w.WriteLine("<li>Ships</li>");
                     w.WriteLine("</ul>");
@@ -224,9 +225,9 @@ namespace OlyMapper
                                     if (_myloc != null)
                                     {
                                         // determine if province has more than 50 men in it - set border to red
-                                        if (Location.FiftyMen(_myloc))
+                                        if (_myloc._nbr_men >= 50)
                                         {
-                                            outline.Append("<td style=\"border: 1px solid red\" ");
+                                            outline.Append("<td style=\"border: 2px solid red\" ");
                                         }
                                         else
                                         {
