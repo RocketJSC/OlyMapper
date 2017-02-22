@@ -73,6 +73,9 @@ namespace OlyMapper
             // dump items
             Console.WriteLine("+ Writing Master Item List HTML page.");
             HTML.Generate_Item_List_HTML();
+            // dump players
+            Console.WriteLine("+ Writing Master Player HTML page.");
+            HTML.Generate_Player_List_HTML();
             Console.WriteLine("+ Writing Province HTML pages.");
             Generate_Province_Pages();
             Console.WriteLine("+ Writing City HTML pages.");

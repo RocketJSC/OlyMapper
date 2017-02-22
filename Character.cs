@@ -19,21 +19,22 @@ namespace OlyMapper
         public int _CH_Break_Point { get; set; }
         public List<int> _CH_Contact { get; set; }
         public int _CH_Defense { get; set; }
-        public string _CH_Guard { get; set; }
+        public int _CH_Guard { get; set; }
         public int _CH_Health { get; set; }
         public int _CH_Lord { get; set; }
         public int _CH_LOY_Kind { get; set; }
         public int _CH_LOY_Rate { get; set; }
         public int _CH_Missile { get; set; }
-        public string _CH_Prisoner { get; set; }
+        public int _CH_Prisoner { get; set; }
         public string _CH_Rank { get; set; }
         public List<string> _CH_Skills_List { get; set; }
-        public string _CM_Magician { get; set; }
+        public int _CM_Magician { get; set; }
         public int _CM_Pledged_To { get; set; }
-        public string _CM_Max_Aura { get; set; }
-        public string _CM_Cur_Aura { get; set; }
+        public int _CM_Max_Aura { get; set; }
+        public int _CM_Cur_Aura { get; set; }
         public string _CM_Vision_Protect { get; set; }
-        public string _CM_Hide_Self { get; set; }
+        public int _CM_Hide_Self { get; set; }
+        public List<int> _CM_Already_Visioned { get; set; }
         public int _LI_Where { get; set; }
         public List<string> _LI_Here_List { get; set; }
         public int _MI_Garrison_Castle { get; set; }
@@ -71,6 +72,7 @@ namespace OlyMapper
                 _CharId = Convert.ToInt32(InputKey),
                 _First_Line = myfl[0].ToString(),
                 _Char_Type = mychartype,
+                _PlayerId = 0,
                 Accumulated_Weight = 0,
                 Accumulated_Riding_Cap = 0,
                 Accumulated_Men = 0,
@@ -128,11 +130,12 @@ namespace OlyMapper
                     mydf = (JArray)j1.SelectToken("CH.df");
                     Character._CH_Defense = Convert.ToInt32(mydf[0]);
                 }
+                Character._CH_Guard = 0;
                 if (j1.SelectToken("CH.gu") != null && j1.SelectToken("CH.gu").HasValues)
                 {
                     JArray mygu;
                     mygu = (JArray)j1.SelectToken("CH.gu");
-                    Character._CH_Guard = mygu[0].ToString();
+                    Character._CH_Guard = Convert.ToInt32(mygu[0]);
                 }
                 if (j1.SelectToken("CH.he") != null && j1.SelectToken("CH.he").HasValues)
                 {
@@ -166,11 +169,12 @@ namespace OlyMapper
                     mymi = (JArray)j1.SelectToken("CH.mi");
                     Character._CH_Missile = Convert.ToInt32(mymi[0]);
                 }
+                Character._CH_Prisoner = 0;
                 if (j1.SelectToken("CH.pr") != null && j1.SelectToken("CH.pr").HasValues)
                 {
                     JArray mypr;
                     mypr = (JArray)j1.SelectToken("CH.pr");
-                    Character._CH_Prisoner = mypr[0].ToString();
+                    Character._CH_Prisoner = Convert.ToInt32(mypr[0]);
                 }
                 if (j1.SelectToken("CH.ra") != null && j1.SelectToken("CH.ra").HasValues)
                 {
@@ -199,30 +203,47 @@ namespace OlyMapper
                     myvp = (JArray)j1.SelectToken("CM.vp");
                     Character._CM_Vision_Protect = myvp[0].ToString();
                 }
+                Character._CM_Magician = 0;
                 if (j1.SelectToken("CM.im") != null && j1.SelectToken("CM.im").HasValues)
                 {
                     JArray myim;
                     myim = (JArray)j1.SelectToken("CM.im");
-                    Character._CM_Magician = myim[0].ToString();
+                    Character._CM_Magician = Convert.ToInt32(myim[0]);
                 }
+                Character._CM_Max_Aura = 0;
                 if (j1.SelectToken("CM.ma") != null && j1.SelectToken("CM.ma").HasValues)
                 {
                     JArray myma;
                     myma = (JArray)j1.SelectToken("CM.ma");
-                    Character._CM_Max_Aura = myma[0].ToString();
+                    Character._CM_Max_Aura = Convert.ToInt32(myma[0]);
                 }
+                Character._CM_Cur_Aura = 0;
                 if (j1.SelectToken("CM.ca") != null && j1.SelectToken("CM.ca").HasValues)
                 {
                     JArray myca;
                     myca = (JArray)j1.SelectToken("CM.ca");
-                    Character._CM_Cur_Aura = myca[0].ToString();
+                    Character._CM_Cur_Aura = Convert.ToInt32(myca[0]);
                 }
+                Character._CM_Hide_Self = 0;
                 if (j1.SelectToken("CM.hs") != null && j1.SelectToken("CM.hs").HasValues)
                 {
                     JArray myhs;
                     myhs = (JArray)j1.SelectToken("CM.hs");
-                    Character._CM_Hide_Self = myhs[0].ToString();
+                    Character._CM_Hide_Self = Convert.ToInt32(myhs[0]);
                 }
+                if (j1.SelectToken("CM.vi") != null && j1.SelectToken("CM.vi").HasValues)
+                {
+                    JArray myvi;
+                    myvi = (JArray)j1.SelectToken("CM.vi");
+                    List<int> myvia;
+                    myvia = myvi.ToObject<List<int>>();
+                    Character._CM_Already_Visioned = new List<int>();
+                    for (int i = 0; i < myvi.Count; i++)
+                    {
+                        Character._CM_Already_Visioned.Add (Convert.ToInt32(myvia[i]));
+                    }
+                }
+                Character._LI_Where = 0;
                 if (j1.SelectToken("LI.wh") != null && j1.SelectToken("LI.wh").HasValues)
                 {
                     JArray mywh;
@@ -294,7 +315,7 @@ namespace OlyMapper
         }
         public static void Post_PlayerId()
         {
-            foreach(Player _myplayer in Program._players)
+            foreach (Player _myplayer in Program._players)
             {
                 if (_myplayer._Unit_List != null)
                 {
@@ -328,7 +349,7 @@ namespace OlyMapper
                         Itemz _myitem = Program._items.Find(x => x._ItemId == _item);
                         if (_myitem != null)
                         {
-                            _myChar.Accumulated_Weight += (_myitem._Weight * _qty);
+                            _myChar.Accumulated_Weight += (_myitem._Weight * _qty) + 100;
                             _myChar.Accumulated_Land_Cap += (_qty * _myitem._Land_Capacity);
                             _myChar.Accumulated_Riding_Cap += (_qty * _myitem._Ride_Capacity);
                             _myChar.Accumulated_Flying_Cap += (_qty * _myitem._Fly_Capacity);
@@ -340,6 +361,103 @@ namespace OlyMapper
                     }
                 }
             }
+        }
+        public static bool Is_Priest(Character _mychar)
+        {
+            if (_mychar._CH_Skills_List != null)
+            {
+                int iterations = _mychar._CH_Skills_List.Count / 4;
+                for (int i = 0; i < iterations; i++)
+                {
+                    if (_mychar._CH_Skills_List[(i * 4) + 0] == "750")
+                    {
+                        if (!_mychar._CH_Skills_List[(i * 4) + 1].Equals("0"))
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+        public static string Mage_Type(Character _mychar)
+        {
+            if (_mychar._CM_Magician == 1)
+            {
+                if (_mychar._CM_Max_Aura <= 5)
+                {
+                    return "";
+                }
+                else
+                {
+                    if (_mychar._CM_Max_Aura <= 10)
+                    {
+                        return "conjurer";
+                    }
+                    else
+                    {
+                        if (_mychar._CM_Max_Aura <= 15)
+                        {
+                            return "mage";
+                        }
+                        else
+                        {
+                            if (_mychar._CM_Max_Aura <= 20)
+                            {
+                                return "wizard";
+                            }
+                            else
+                            {
+                                if (_mychar._CM_Max_Aura <= 30)
+                                {
+                                    return "sorcerer";
+                                }
+                                else
+                                {
+                                    if (_mychar._CM_Max_Aura <= 40)
+                                    {
+                                        return "6th black circle";
+                                    }
+                                    else
+                                    {
+                                        if (_mychar._CM_Max_Aura <= 50)
+                                        {
+                                            return "5th black circle";
+                                        }
+                                        else
+                                        {
+                                            if (_mychar._CM_Max_Aura <= 60)
+                                            {
+                                                return "4th black circle";
+                                            }
+                                            else
+                                            {
+                                                if (_mychar._CM_Max_Aura <= 70)
+                                                {
+                                                    return "3rd black circle";
+                                                }
+                                                else
+                                                {
+
+                                                    if (_mychar._CM_Max_Aura <= 80)
+                                                    {
+                                                        return "2nd black circle";
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                return "";
+            }
+            return "master of the black arts";
         }
     }
 }

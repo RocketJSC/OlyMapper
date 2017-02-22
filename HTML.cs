@@ -231,7 +231,21 @@ namespace OlyMapper
                                         }
                                         else
                                         {
-                                            outline.Append("<td ");
+                                            if (_myloc._ships_found)
+                                            {
+                                                outline.Append("<td style=\"border: 2px solid yellow\" ");
+                                            }
+                                            else
+                                            {
+                                                if (_myloc._enemy_found)
+                                                {
+                                                    outline.Append("<td style=\"border: 2px solid orange\" ");
+                                                }
+                                                else
+                                                {
+                                                    outline.Append("<td ");
+                                                }
+                                            }
                                         }
                                         // border: 1px solid black
                                         // write cell
@@ -1062,7 +1076,12 @@ namespace OlyMapper
                     w.WriteLine("</HEAD>");
                     w.WriteLine("<BODY>");
                     Write_Char_Page_Header(_mychar, w);
+                    if (_mychar._CH_Prisoner ==  1)
+                    {
+                        w.WriteLine("<p>" + _mychar._Name + " [" + _mychar._CharId + "] is being held prisoner.</p>");
+                    }
                     Write_Char_Basic_Info(_mychar, w);
+
                     w.WriteLine("</BODY>");
                     w.WriteLine("</HTML>");
                 }
@@ -1216,29 +1235,20 @@ namespace OlyMapper
                 }
             }
             // concealed
-            if (_myChar._CM_Hide_Self != null)
+            if (_myChar._CM_Hide_Self == 1)
             {
-                if (_myChar._CM_Hide_Self == "1")
-                {
-                    w.WriteLine("<tr>");
-                    w.WriteLine("<td>Concealed:</td>");
-                    w.WriteLine("<td>Yes (but not sure if alone)</td>");
-                    w.WriteLine("</tr>");
-                }
+                w.WriteLine("<tr>");
+                w.WriteLine("<td>Concealed:</td>");
+                w.WriteLine("<td>Yes (but not sure if alone)</td>");
+                w.WriteLine("</tr>");
             }
             // aura
-            if (_myChar._CM_Magician != null)
+            if (_myChar._CM_Magician == 1)
             {
-                if (_myChar._CM_Magician == "1")
+                w.WriteLine("<tr><td>Current Aura:</td><td>" + _myChar._CM_Cur_Aura + "</td></tr>");
+                if (_myChar._CM_Max_Aura != 0)
                 {
-                    if (_myChar._CM_Cur_Aura != null)
-                    {
-                        w.WriteLine("<tr><td>Current Aura:</td><td>" + _myChar._CM_Cur_Aura + "</td></tr>");
-                    }
-                    if (_myChar._CM_Max_Aura != null)
-                    {
-                        w.WriteLine("<tr><td>Max Aura:</td><td>" + _myChar._CM_Max_Aura + "</td></tr>");
-                    }
+                    w.WriteLine("<tr><td>Max Aura:</td><td>" + _myChar._CM_Max_Aura + "</td></tr>");
                 }
             }
             w.WriteLine("</table>");
@@ -1324,8 +1334,19 @@ namespace OlyMapper
                 w.WriteLine("<tr><td></td><td></td><td style=\"text-align:right\">" + total_weight + "</td></tr>");
                 w.WriteLine("</table>");
             }
+            else
+            {
+                w.WriteLine("<p>" + _myChar._Name + " [" + _myChar._CharId + "] has no possessions.</p>");
+            }
             // capacity
-            w.WriteLine("<p>Capacity:</p>");
+            outline.Clear();
+            outline.Append("<p>Capacity: ");
+            outline.Append(_myChar.Accumulated_Weight + "/" + 
+                            _myChar.Accumulated_Land_Cap + " (" + 
+                            (((float)_myChar.Accumulated_Weight/(float)_myChar.Accumulated_Land_Cap) * 100) +
+                            "%)");
+            outline.Append("</p>");
+            w.WriteLine(outline);
             // pending trades
             if (_myChar._Trade_List != null)
             {
@@ -1798,12 +1819,21 @@ namespace OlyMapper
             {
                 outline.Append(", " + _myChar._Char_Type);
             }
-            if (_myChar._CH_Guard != null)
+            if (_myChar._CH_Prisoner ==  1)
             {
-                if (_myChar._CH_Guard.Equals("1"))
-                {
-                    outline.Append(", on guard");
-                }
+                outline.Append(", prisoner");
+            }
+            if (Character.Is_Priest(_myChar))
+            {
+                outline.Append(", priest");
+            }
+            if (_myChar._CM_Magician == 1)
+            {
+                outline.Append(", " + Character.Mage_Type(_myChar));
+            }
+            if (_myChar._CH_Guard == 1)
+            {
+                outline.Append(", on guard");
             }
             //concealed
             if (_myChar._CM_Hide_Self != null)
@@ -2309,6 +2339,45 @@ namespace OlyMapper
                             w.WriteLine("<td>&nbsp;</td>");
                         }
                         w.WriteLine("<td>" + Itemz.Determine_Use(_item) + "</td>");
+                        w.WriteLine("</tr>");
+                    }
+                    w.WriteLine("</table>");
+                    w.WriteLine("</BODY>");
+                    w.WriteLine("</HTML>");
+                }
+                fs.Close();
+            }
+        }
+        public static void Generate_Player_List_HTML()
+        {
+            using (FileStream fs = new FileStream(@"d:\Temp\turn163\master_player_list.html", FileMode.Create))
+            {
+                using (StreamWriter w = new StreamWriter(fs, Encoding.UTF8))
+                {
+                    w.WriteLine("<HTML>");
+                    w.WriteLine("<HEAD>");
+                    w.WriteLine("<TITLE>Olympia Master Player List</TITLE>");
+                    w.WriteLine("</HEAD>");
+                    w.WriteLine("<BODY>");
+                    w.WriteLine("<h3>Olympia Master Player List</h3>");
+                    w.WriteLine("<table border=\"1\">");
+                    w.WriteLine("<tr>");
+                    w.WriteLine("<th>Player</th><th>Name</th><th>Player Type</th><th># Units</th>");
+                    w.WriteLine("</tr>");
+                    foreach (Player _player in Program._players)
+                    {
+                        w.WriteLine("<tr>");
+                        w.WriteLine("<td>" + _player._FactionId_Conv + "</td>");
+                        w.WriteLine("<td>" + _player._Name + "</td>");
+                        w.WriteLine("<td>" + _player._Player_Type + "</td>");
+                        if (_player._Unit_List != null)
+                        {
+                            w.WriteLine("<td>" + _player._Unit_List.Count + "</td>");
+                        }
+                        else
+                        {
+                            w.WriteLine("<td>&nbsp;</td>");
+                        }
                         w.WriteLine("</tr>");
                     }
                     w.WriteLine("</table>");

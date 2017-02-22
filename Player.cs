@@ -13,6 +13,7 @@ namespace OlyMapper
         public string _FactionId_Conv { get; set; }
         public String _First_Line { get; set; }
         public string _Name { get; set; }
+        public string _Player_Type { get; set; }
         public string _Full_Name { get; set; }
         public string _Email_Address { get; set; }
         public int _Fast_Study_Points { get; set; }
@@ -29,6 +30,8 @@ namespace OlyMapper
             JObject j1 = JObject.Parse(InputString);
             JArray myna;
             JArray myfl;
+            string myplayertypea;
+            string myplayertype;
             if (j1.SelectToken("na") != null && j1.SelectToken("na").HasValues)
             {
                 myna = (JArray)j1.SelectToken("na");
@@ -40,10 +43,14 @@ namespace OlyMapper
             if (j1.SelectToken("firstline") != null && j1.SelectToken("firstline").HasValues)
             {
                 myfl = (JArray)j1.SelectToken("firstline");
+                myplayertypea = myfl.ToString().Substring(myfl.ToString().IndexOf("player ") + 7);
+                myplayertype = myplayertypea.ToString().Substring(0, myplayertypea.IndexOf("\""));
             }
             else
             {
                 myfl = null;
+                myplayertypea = null;
+                myplayertype = null;
             }
 
             Program._players.Add(new Player
@@ -51,7 +58,8 @@ namespace OlyMapper
                 _FactionId = Convert.ToInt32(InputKey),
                 _FactionId_Conv = Utilities.to_oid(InputKey),
                 _First_Line = myfl[0].ToString(),
-                _Name = myna[0].ToString()
+                _Name = myna[0].ToString(),
+                _Player_Type = myplayertype
             });
             //foreach (var Location in Program._locations)
             var Player = (Program._players.Find(x => x._FactionId == Convert.ToInt32(InputKey)));

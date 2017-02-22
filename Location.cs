@@ -41,6 +41,8 @@ namespace OlyMapper
         public string _castle_id { get; set; }
         public int _Region_id { get; set; }
         public int _nbr_men { get; set; }
+        public bool _ships_found { get; set; }
+        public bool _enemy_found { get; set; }
         public static void Add(string InputKey, string InputString)
         {
             JObject j1 = JObject.Parse(InputString);
@@ -258,7 +260,11 @@ namespace OlyMapper
         {
             foreach (Location _myloc in Program._locations)
             {
-                _myloc._nbr_men = Count_Process_Loc(_myloc._nbr_men, _myloc);
+                var return_tuple = new Tuple<int, bool, bool>(_myloc._nbr_men, _myloc._ships_found, _myloc._enemy_found);
+                return_tuple = Count_Process_Loc(_myloc._nbr_men, _myloc, _myloc._ships_found, _myloc._enemy_found);
+                _myloc._nbr_men = return_tuple.Item1;
+                _myloc._ships_found = return_tuple.Item2;
+                _myloc._enemy_found = return_tuple.Item3;
                 if (_myloc._LI_Where != 0)
                 {
                     Location _myloc2 = Program._locations.Find(x => x._LocId == _myloc._LI_Where);
@@ -339,26 +345,39 @@ namespace OlyMapper
                 return null;
             }
         }
-        private static int Count_Process_Loc(int nbr_men, Location _myloc)
+        private static Tuple <int, bool, bool> Count_Process_Loc(int nbr_men, Location _myloc, bool shipsfound, bool enemyfound)
         {
+            var return_tuple = new Tuple<int, bool, bool>(nbr_men, shipsfound, enemyfound);
             if (_myloc._LI_Here_List != null)
             {
                 foreach (string _mylochere in _myloc._LI_Here_List)
                 {
                     if (Program._characters.Find(x => x._CharId == Convert.ToInt32(_mylochere)) != null)
                     {
-                        nbr_men = Count_Process_Char(nbr_men, _mylochere);
+                        return_tuple = Count_Process_Char(nbr_men, _mylochere, shipsfound, enemyfound);
+                        nbr_men = return_tuple.Item1;
+                        shipsfound = return_tuple.Item2;
+                        enemyfound = return_tuple.Item3;
                     }
                     else
                     {
                         Ship _myship = Program._ships.Find(x => x._ShipId == Convert.ToInt32(_mylochere));
                         if (_myship != null)
                         {
+                            shipsfound = true;
+                            var temp_tuple = new Tuple<int, bool, bool>(nbr_men, shipsfound, enemyfound);
+                            return_tuple = temp_tuple;
+                            nbr_men = return_tuple.Item1;
+                            shipsfound = return_tuple.Item2;
+                            enemyfound = return_tuple.Item3;
                             if (_myship._LI_Here_List != null)
                             {
                                 foreach (int _myshiphere in _myship._LI_Here_List)
                                 {
-                                    nbr_men = Count_Process_Char(nbr_men, _myshiphere.ToString());
+                                    return_tuple = Count_Process_Char(nbr_men, _myshiphere.ToString(), shipsfound, enemyfound);
+                                    nbr_men = return_tuple.Item1;
+                                    shipsfound = return_tuple.Item2;
+                                    enemyfound = return_tuple.Item3;
                                 }
                             }
                         }
@@ -367,17 +386,20 @@ namespace OlyMapper
                             if (Program._locations.Find(x => x._LocId == Convert.ToInt32(_mylochere)) != null)
                             {
                                 Location _mylochere2 = Program._locations.Find(x => x._LocId == Convert.ToInt32(_mylochere));
-                                nbr_men = Count_Process_Loc(nbr_men, _mylochere2);
+                                return_tuple = Count_Process_Loc(nbr_men, _mylochere2, shipsfound, enemyfound);
+                                nbr_men = return_tuple.Item1;
+                                shipsfound = return_tuple.Item2;
+                                enemyfound = return_tuple.Item3;
                             }
                         }
                     }
                 }
             }
-            return nbr_men;
+            return return_tuple;
         }
-
-        private static int Count_Process_Char(int nbr_men, string _mylochere)
+        private static Tuple<int, bool, bool> Count_Process_Char(int nbr_men, string _mylochere, bool shipsfound, bool enemyfound)
         {
+            var return_tuple = new Tuple<int, bool, bool>(nbr_men, shipsfound, enemyfound);
             Character _mychar = Program._characters.Find(x => x._CharId == Convert.ToInt32(_mylochere));
             if (_mychar._Item_List != null)
             {
@@ -395,17 +417,29 @@ namespace OlyMapper
                             nbr_men += _mychar._Item_List[(i * 2) + 1];
                         }
                     }
+                    if (Program._players.Find(x=>x._FactionId == _mychar._PlayerId)._FactionId_Conv.Equals("100"))
+                    {
+                        enemyfound = true;
+                    }
                 }
+                var temp_tuple = new Tuple<int, bool, bool>(nbr_men, shipsfound, enemyfound);
+                return_tuple = temp_tuple;
+                nbr_men = return_tuple.Item1;
+                shipsfound = return_tuple.Item2;
+                enemyfound = return_tuple.Item3;
             }
             // see if other characters stacked under
             if (_mychar._LI_Here_List != null)
             {
                 foreach (string _mycharhere in _mychar._LI_Here_List)
                 {
-                    nbr_men = Count_Process_Char(nbr_men, _mycharhere);
+                    return_tuple = Count_Process_Char(nbr_men, _mycharhere, shipsfound, enemyfound);
+                    nbr_men = return_tuple.Item1;
+                    shipsfound = return_tuple.Item2;
+                    enemyfound = return_tuple.Item3;
                 }
             }
-            return nbr_men;
+            return return_tuple;
         }
     } 
 }
