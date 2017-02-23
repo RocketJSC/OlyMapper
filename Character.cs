@@ -50,6 +50,7 @@ namespace OlyMapper
         public int Accumulated_Riding_Cap { get; set; }
         public int Accumulated_Flying_Cap { get; set; }
         public int Accumulated_Men { get; set; }
+        public int Ultimate_Lord { get; set; }
         public static void Add(string InputKey, string InputString)
         {
             JObject j1 = JObject.Parse(InputString);
@@ -78,7 +79,8 @@ namespace OlyMapper
                 Accumulated_Riding_Cap = 0,
                 Accumulated_Men = 0,
                 Accumulated_Land_Cap = 0,
-                Accumulated_Flying_Cap = 0
+                Accumulated_Flying_Cap = 0,
+                Ultimate_Lord = 0
             });
             var Character = (Program._characters.Find(x => x._CharId == Convert.ToInt32(InputKey)));
             if (Character != null)
@@ -369,6 +371,10 @@ namespace OlyMapper
                             }
                         }
                     }
+                }
+                if (_myChar._CM_Pledged_To != 0)
+                {
+                    _myChar.Ultimate_Lord = Utilities.Chase_Pledge_Chain(_myChar._CharId);
                 }
             }
         }

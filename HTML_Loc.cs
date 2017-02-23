@@ -143,14 +143,23 @@ namespace OlyMapper
                             w.WriteLine(outline);
                             outline.Clear();
                             //// ruled by
-                            // not doing for now because I'll have to follow the pledge chain
                             if (_my_dest_loc._LI_Here_List != null)
                             {
                                 Character _my_dest_char2 = Program._characters.Find(x => x._CharId == Convert.ToInt32(_my_dest_loc._LI_Here_List[0]));
                                 if (_my_dest_char2 != null)
                                 {
                                     outline.Append("<br>Ruled by ");
-                                    outline.Append("'too lazy to calculate for now'");
+                                    Character top_dog;
+                                    if (_my_dest_char2.Ultimate_Lord != 0)
+                                    {
+                                        top_dog = Program._characters.Find(x => x._CharId == _my_dest_char2.Ultimate_Lord);
+                                    }
+                                    else
+                                    {
+                                        top_dog = _my_dest_char2;
+                                    }
+                                    outline.Append(top_dog._Name + " " + Utilities.format_anchor(top_dog._CharId.ToString()));
+                                    outline.Append(", " + Utilities.xlate_rank(top_dog._CH_Rank));
                                     //outline.Append(_my_dest_char2._Name);
                                     //outline.Append("," + _my_dest_char2._CH_Rank);
                                     w.WriteLine(outline);

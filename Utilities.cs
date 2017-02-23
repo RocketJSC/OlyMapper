@@ -348,5 +348,14 @@ namespace OlyMapper
                 default: return "Undefined";
             }
         }
+        public static int Chase_Pledge_Chain(int in_char_id)
+        {
+            if (Program._characters.Find(x=>x._CharId == in_char_id)._CM_Pledged_To != 0)
+            {
+                int return_char_id = Chase_Pledge_Chain(Program._characters.Find(x => x._CharId == in_char_id)._CM_Pledged_To);
+                return return_char_id;
+            }
+            return in_char_id;
+        }
     }
 }
