@@ -29,6 +29,7 @@ namespace OlyMapper
                 _Loc_Type = "",
                 _First_Line = ""
             });
+            string path = "d:\\temp\\turn164";
             Console.WriteLine("Reading JSON file.");
             _players = new List<Player>();
             _items = new List<Itemz>();
@@ -36,7 +37,7 @@ namespace OlyMapper
             _skills = new List<Skill>();
             _ships = new List<Ship>();
             _storms = new List<Storm>();
-            JObject o1 = JObject.Parse(File.ReadAllText(@"d:\temp\lib-163.json"));
+            JObject o1 = JObject.Parse(File.ReadAllText(@"d:\temp\libnext-164.json"));
             Process_JSON_File(o1);
             // Display totals
             Console.WriteLine("+ Loaded " + _locations.Count + " locations");
@@ -65,36 +66,39 @@ namespace OlyMapper
             Console.WriteLine("Posting indicator to castle.");
             Location.Castle_Indicator();
             // create directory for html files, if needed
-            DirectoryInfo di = Directory.CreateDirectory(@"d:\Temp\turn163");
+            DirectoryInfo di = Directory.CreateDirectory(path);
             Console.WriteLine("File Cleanup.");
             // delete existing files in directory
-            Cleanup_Files();
+            Cleanup_Files(path);
+            // copy css and gif files to new directory if needed
+            Console.WriteLine("Copying critical support files.");
+            Copy_Critical_Files(path);
             Console.WriteLine("Writing HTML pages.");
             // dump items
             Console.WriteLine("+ Writing Master Item List HTML page.");
-            HTML.Generate_Item_List_HTML();
+            HTML.Generate_Item_List_HTML(path);
             // dump players
             Console.WriteLine("+ Writing Master Player HTML page.");
-            HTML.Generate_Player_List_HTML();
+            HTML.Generate_Player_List_HTML(path);
             Console.WriteLine("+ Writing Province HTML pages.");
-            Generate_Province_Pages();
+            Generate_Province_Pages(path);
             Console.WriteLine("+ Writing City HTML pages.");
-            Generate_City_Pages();
+            Generate_City_Pages(path);
             Console.WriteLine("+ Writing Sublocation HTML pages.");
-            Generate_Sublocation_Pages();
+            Generate_Sublocation_Pages(path);
             Console.WriteLine("+ Writing Character HTML pages.");
-            Generate_Char_Pages();
+            Generate_Char_Pages(path);
             Console.WriteLine("+ Writing Ship HTML pages.");
-            Generate_Ship_Pages();
+            Generate_Ship_Pages(path);
             Console.WriteLine("Writing Glue HTML pages.");
-            Generate_Glue_Pages();
+            Generate_Glue_Pages(path);
             Console.WriteLine("Program Finished.  Press <ENTER> to Close.");
             Console.ReadLine();
         }
 
-        private static void Cleanup_Files()
+        private static void Cleanup_Files(string path)
         {
-            System.IO.DirectoryInfo dd = new DirectoryInfo(@"d:\Temp\turn163");
+            System.IO.DirectoryInfo dd = new DirectoryInfo(path);
             foreach (FileInfo file in dd.GetFiles())
             {
                 if ((file.Name != "grey.gif") && (file.Name != "map.css") && (file.Name != "map.gif"))
@@ -104,7 +108,7 @@ namespace OlyMapper
             }
         }
 
-        private static void Generate_Province_Pages()
+        private static void Generate_Province_Pages(string path)
         {
             foreach (Location _myloc in _locations.FindAll(x => x._LocId >= 10000 && x._LocId <= 49999))
             {
@@ -131,7 +135,7 @@ namespace OlyMapper
                             {
                                 if (!_myloc._Loc_Type.Equals("region"))
                                 {
-                                    HTML.Write_Loc_HTML_File(_myloc);
+                                    HTML_Loc.Write_Loc_HTML_File(_myloc, path);
                                 }
                                 else
                                 {
@@ -143,7 +147,7 @@ namespace OlyMapper
                 }
             }
         }
-        private static void Generate_City_Pages()
+        private static void Generate_City_Pages( string path)
         {
             foreach (Location _myloc in _locations.FindAll(x => x._LocId >= 56760 && x._LocId <= 58759))
             {
@@ -170,7 +174,7 @@ namespace OlyMapper
                             {
                                 if (!_myloc._Loc_Type.Equals("region"))
                                 {
-                                    HTML.Write_Loc_HTML_File(_myloc);
+                                    HTML_Loc.Write_Loc_HTML_File(_myloc, path);
                                 }
                                 else
                                 {
@@ -182,7 +186,7 @@ namespace OlyMapper
                 }
             }
         }
-        private static void Generate_Sublocation_Pages()
+        private static void Generate_Sublocation_Pages(string path)
         {
             foreach (Location _myloc in _locations.FindAll(x => x._LocId >= 59000 && x._LocId <= 78999))
             {
@@ -209,7 +213,7 @@ namespace OlyMapper
                             {
                                 if (!_myloc._Loc_Type.Equals("region"))
                                 {
-                                    HTML.Write_Loc_HTML_File(_myloc);
+                                    HTML_Loc.Write_Loc_HTML_File(_myloc, path);
                                 }
                                 else
                                 {
@@ -221,7 +225,7 @@ namespace OlyMapper
                 }
             }
         }
-        private static void Generate_Char_Pages()
+        private static void Generate_Char_Pages(string path)
         {
             foreach (Character _mychar in _characters)
             {
@@ -229,7 +233,7 @@ namespace OlyMapper
                 {
                     if (!_mychar._Char_Type.Contains("garr"))
                     {
-                        HTML.Write_Char_HTML_File(_mychar);
+                        HTML_Char.Write_Char_HTML_File(_mychar, path);
                     }
                     else
                     {
@@ -238,13 +242,13 @@ namespace OlyMapper
                 }
             }
         }
-        private static void Generate_Ship_Pages()
+        private static void Generate_Ship_Pages(string path)
         {
             foreach (Ship _myship in _ships)
             {
                 if (_myship._ShipId != 0)
                 {
-                    HTML.Write_Ship_HTML_File(_myship);
+                    HTML_Ship.Write_Ship_HTML_File(_myship, path);
                 }
             }
         }
@@ -335,16 +339,34 @@ namespace OlyMapper
                 }
             }
         }
-        private static void Generate_Glue_Pages()
+        private static void Generate_Glue_Pages(string path)
         {
-            HTML.Write_Home_HTML_File();
-            HTML.Write_Main_Map_HTML_File();
+            HTML.Write_Home_HTML_File(path);
+            HTML.Write_Main_Map_HTML_File(path);
             Console.WriteLine(".Writing Main Map Leaf HTML pages.");
-            HTML.Write_Main_Map_Leaves_HTML_File();
+            HTML.Write_Main_Map_Leaves_HTML_File(path);
             Console.WriteLine(".Writing Faery Map Leaf HTML pages.");
-            HTML.Write_Faery_Map_Leaves_HTML_File();
+            HTML.Write_Faery_Map_Leaves_HTML_File(path);
             Console.WriteLine(".Writing Hades Map Leaf HTML pages.");
-            HTML.Write_Hades_Map_Leaves_HTML_File();
+            HTML.Write_Hades_Map_Leaves_HTML_File(path);
+        }
+        public static void Copy_Critical_Files(string path)
+        {
+            if (!System.IO.File.Exists(System.IO.Path.Combine(path,"map.css")))
+            {
+                // copy map.css
+                System.IO.File.Copy(System.IO.Path.Combine("d:\\temp", "map.css"), System.IO.Path.Combine(path,"map.css"),false);
+            }
+            if (!System.IO.File.Exists(System.IO.Path.Combine(path, "map.gif")))
+            {
+                // copy map.css
+                System.IO.File.Copy(System.IO.Path.Combine("d:\\temp", "map.gif"), System.IO.Path.Combine(path, "map.gif"), false);
+            }
+            if (!System.IO.File.Exists(System.IO.Path.Combine(path, "grey.gif")))
+            {
+                // copy map.css
+                System.IO.File.Copy(System.IO.Path.Combine("d:\\temp", "grey.gif"), System.IO.Path.Combine(path, "grey.gif"), false);
+            }
         }
     }
 }

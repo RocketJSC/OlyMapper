@@ -15,7 +15,7 @@ namespace OlyMapper
         public string _First_Line { get; set; }
         public int _PlayerId { get; set; }
         public int _CH_Attack { get; set; }
-        public string _CH_Behind { get; set; }
+        public int _CH_Behind { get; set; }
         public int _CH_Break_Point { get; set; }
         public List<int> _CH_Contact { get; set; }
         public int _CH_Defense { get; set; }
@@ -26,7 +26,8 @@ namespace OlyMapper
         public int _CH_LOY_Rate { get; set; }
         public int _CH_Missile { get; set; }
         public int _CH_Prisoner { get; set; }
-        public string _CH_Rank { get; set; }
+        public int _CH_Rank { get; set; }
+        public int _CH_Sick { get; set; }
         public List<string> _CH_Skills_List { get; set; }
         public int _CM_Magician { get; set; }
         public int _CM_Pledged_To { get; set; }
@@ -104,11 +105,12 @@ namespace OlyMapper
                     myat = (JArray)j1.SelectToken("CH.at");
                     Character._CH_Attack = Convert.ToInt32(myat[0]);
                 }
+                Character._CH_Behind = 0;
                 if (j1.SelectToken("CH.bh") != null && j1.SelectToken("CH.bh").HasValues)
                 {
                     JArray mybh;
                     mybh = (JArray)j1.SelectToken("CH.bh");
-                    Character._CH_Behind = mybh[0].ToString();
+                    Character._CH_Behind = Convert.ToInt32(mybh[0]);
                 }
                 if (j1.SelectToken("CH.bp") != null && j1.SelectToken("CH.bp").HasValues)
                 {
@@ -176,11 +178,19 @@ namespace OlyMapper
                     mypr = (JArray)j1.SelectToken("CH.pr");
                     Character._CH_Prisoner = Convert.ToInt32(mypr[0]);
                 }
+                Character._CH_Rank = 0;
                 if (j1.SelectToken("CH.ra") != null && j1.SelectToken("CH.ra").HasValues)
                 {
                     JArray myra;
                     myra = (JArray)j1.SelectToken("CH.ra");
-                    Character._CH_Rank = myra[0].ToString();
+                    Character._CH_Rank = Convert.ToInt32(myra[0]);
+                }
+                Character._CH_Sick = 0;
+                if (j1.SelectToken("CH.si") != null && j1.SelectToken("CH.si").HasValues)
+                {
+                    JArray mysi;
+                    mysi = (JArray)j1.SelectToken("CH.si");
+                    Character._CH_Sick = Convert.ToInt32(mysi[0]);
                 }
                 if (j1.SelectToken("CH.sl") != null && j1.SelectToken("CH.sl").HasValues)
                 {

@@ -50,6 +50,9 @@
   <ItemGroup>
     <Compile Include="Character.cs" />
     <Compile Include="HTML.cs" />
+    <Compile Include="HTML_Char.cs" />
+    <Compile Include="HTML_Loc.cs" />
+    <Compile Include="HTML_Ship.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Player.cs" />

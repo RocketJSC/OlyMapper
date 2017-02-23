@@ -17,7 +17,7 @@ namespace OlyMapper
         //public List<string> _LI_Inner_Locations { get; set; }
         public List<string> _LI_Here_List { get; set; }
         public List<int> _LO_Province_Destination { get; set; }
-        public string _LO_Hidden { get; set; }
+        public int _LO_Hidden { get; set; }
         public string _LO_Shrouded { get; set; }
         public string _LO_Barrier { get; set; }
         public int _LO_Civ_Level { get; set; }
@@ -98,11 +98,12 @@ namespace OlyMapper
                         mypda = mypd.ToObject<List<int>>();
                         Location._LO_Province_Destination = mypda.ToList();
                     }
+                    Location._LO_Hidden = 0;
                     if (j1.SelectToken("LO.hi") != null && j1.SelectToken("LO.hi").HasValues)
                     {
                         JArray myhi;
                         myhi = (JArray)j1.SelectToken("LO.hi");
-                        Location._LO_Hidden = myhi[0].ToString();
+                        Location._LO_Hidden = Convert.ToInt32(myhi[0]);
                     }
                     if (j1.SelectToken("LO.sh") != null && j1.SelectToken("LO.sh").HasValues)
                     {
