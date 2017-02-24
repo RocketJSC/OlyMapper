@@ -826,9 +826,6 @@ namespace OlyMapper
                 w.WriteLine("</ul>");
             }
         }
-
-
-
         public static void Write_Ships_HTML(Ship _myship, StreamWriter w)
         {
             StringBuilder outline = new StringBuilder();
@@ -839,7 +836,7 @@ namespace OlyMapper
             // bound storm
             if (_myship._SL_Bound_Storm != 0)
             {
-                outline.Append(", Storm " + _myship._SL_Bound_Storm);
+                outline.Append(", Storm " + _myship._SL_Bound_Storm + " (strength: " + Program._storms.Find(x=>x._StormId == _myship._SL_Bound_Storm)._Storm_Strength + ")");
             }
             // loaded
             // defense

@@ -63,6 +63,7 @@
     <Compile Include="Storm.cs" />
     <Compile Include="Trade.cs" />
     <Compile Include="Utilities.cs" />
+    <Compile Include="Weight.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

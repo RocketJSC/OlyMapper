@@ -342,36 +342,10 @@ namespace OlyMapper
                 }
             }
         }
-        public static void Calculate_Weight()
+        public static void Determine_Ultimate_Lord()
         {
             foreach (Character _myChar in Program._characters)
             {
-                _myChar.Accumulated_Weight = 0;
-                _myChar.Accumulated_Land_Cap = 0;
-                _myChar.Accumulated_Riding_Cap = 0;
-                _myChar.Accumulated_Flying_Cap = 0;
-                _myChar.Accumulated_Men = 0;
-                if (_myChar._Item_List != null)
-                {
-                    int iterations = _myChar._Item_List.Count() / 2;
-                    for (int i = 0; i < iterations; i++)
-                    {
-                        int _item = _myChar._Item_List[(i * 2)];
-                        int _qty = _myChar._Item_List[(i * 2) + 1];
-                        Itemz _myitem = Program._items.Find(x => x._ItemId == _item);
-                        if (_myitem != null)
-                        {
-                            _myChar.Accumulated_Weight += (_myitem._Weight * _qty) + 100;
-                            _myChar.Accumulated_Land_Cap += (_qty * _myitem._Land_Capacity);
-                            _myChar.Accumulated_Riding_Cap += (_qty * _myitem._Ride_Capacity);
-                            _myChar.Accumulated_Flying_Cap += (_qty * _myitem._Fly_Capacity);
-                            if (_myitem._IT_Prominent == "1" || _myitem._ItemId == 81)
-                            {
-                                _myChar.Accumulated_Men += _qty;
-                            }
-                        }
-                    }
-                }
                 if (_myChar._CM_Pledged_To != 0)
                 {
                     _myChar.Ultimate_Lord = Utilities.Chase_Pledge_Chain(_myChar._CharId);
@@ -474,6 +448,14 @@ namespace OlyMapper
                 return "";
             }
             return "master of the black arts";
+        }
+        public static bool Is_Magician(Character mychar)
+        {
+            if (mychar._CM_Magician > 1)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

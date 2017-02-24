@@ -22,6 +22,9 @@ namespace OlyMapper
         public string _IT_Prominent { get; set; }
         public string _IT_Man_Item { get; set; }
         public string _IT_Animal { get; set; }
+        public int _IT_Attack { get; set; }
+        public int _IT_Defense { get; set; }
+        public int _IT_Missile { get; set; }
         public int _IT_Who_Has { get; set; }
         public int _IM_Aura_Bonus { get; set; }
         public int _IM_May_Study { get; set; }
@@ -134,6 +137,27 @@ namespace OlyMapper
                     JArray myun;
                     myun = (JArray)j1.SelectToken("IT.un");
                     Itemz._IT_Who_Has = Convert.ToInt32(myun[0]);
+                }
+                Itemz._IT_Attack = 0;
+                if (j1.SelectToken("IT.at") != null && j1.SelectToken("IT.at").HasValues)
+                {
+                    JArray myat;
+                    myat = (JArray)j1.SelectToken("IT.at");
+                    Itemz._IT_Attack = Convert.ToInt32(myat[0]);
+                }
+                Itemz._IT_Defense = 0;
+                if (j1.SelectToken("IT.df") != null && j1.SelectToken("IT.df").HasValues)
+                {
+                    JArray mydf;
+                    mydf = (JArray)j1.SelectToken("IT.df");
+                    Itemz._IT_Defense = Convert.ToInt32(mydf[0]);
+                }
+                Itemz._IT_Missile = 0;
+                if (j1.SelectToken("IT.mi") != null && j1.SelectToken("IT.mi").HasValues)
+                {
+                    JArray mymi;
+                    mymi = (JArray)j1.SelectToken("IT.mi");
+                    Itemz._IT_Missile = Convert.ToInt32(mymi[0]);
                 }
                 Itemz._IM_Aura = 0;
                 if (j1.SelectToken("IM.au") != null && j1.SelectToken("IM.au").HasValues)
@@ -417,6 +441,51 @@ namespace OlyMapper
                 }
             }
             return "";
+        }
+        public static bool Is_Fighter(Itemz myitem)
+        {
+            if (myitem._IT_Attack > 0
+                || myitem._IT_Defense > 0
+                || myitem._IT_Missile > 0
+                || myitem._ItemId == 18)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static Weight Add_Item_Weight(Itemz myitem, int qty, Weight myweight)
+        {
+            int item_weight = myitem._Weight * qty;
+            if (myitem._Land_Capacity > 0)
+            {
+                myweight._land_cap += myitem._Land_Capacity * qty;
+            }
+            else
+            {
+                myweight._land_weight += item_weight;
+            }
+            if (myitem._Ride_Capacity > 0)
+            {
+                myweight._ride_cap += myitem._Ride_Capacity * qty;
+            }
+            else
+            {
+                myweight._ride_weight +=  item_weight;
+            }
+            if (myitem._Fly_Capacity > 0)
+            {
+                myweight._fly_cap += myitem._Fly_Capacity * qty;
+            }
+            else
+            {
+                myweight._fly_weight += item_weight;
+            }
+            myweight._total_weight += item_weight;
+            if(myitem._IT_Animal == "1")
+            {
+                myweight._animals += qty;
+            }
+            return myweight;
         }
     }
 }

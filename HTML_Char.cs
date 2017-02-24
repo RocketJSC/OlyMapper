@@ -102,12 +102,54 @@ namespace OlyMapper
 
         private static void Write_Char_Capacity(Character _myChar, StreamWriter w)
         {
+            Weight myweight = new Weight()
+            {
+                _animals = 0,
+                _total_weight = 0,
+                _land_cap = 0,
+                _land_weight = 0,
+                _ride_cap = 0,
+                _ride_weight = 0,
+                _fly_cap = 0,
+                _fly_weight = 0
+            };
+            if (_myChar._Item_List != null)
+            {
+                // shortcut.  what if not normal guy??
+                Itemz myitem = Program._items.Find(x => x._ItemId == 10);
+                myweight = Itemz.Add_Item_Weight(myitem, 1, myweight);
+                myitem = null;
+
+                int iterations = _myChar._Item_List.Count / 2;
+                for (int i = 0; i < iterations; i++)
+                {
+                    if (Program._items.Find(x=>x._ItemId == _myChar._Item_List[i * 2]) != null)
+                    {
+                        myitem = Program._items.Find(x => x._ItemId == _myChar._Item_List[i * 2]);
+                        myweight = Itemz.Add_Item_Weight(myitem, (_myChar._Item_List[(i * 2) + 1]), myweight);
+                    }
+                }
+            }
             StringBuilder outline = new StringBuilder();
             outline.Append("<p>Capacity: ");
-            outline.Append(_myChar.Accumulated_Weight + "/" +
-                            _myChar.Accumulated_Land_Cap + " (" +
-                            (((float)_myChar.Accumulated_Weight / (float)_myChar.Accumulated_Land_Cap) * 100) +
-                            "%)");
+            string land_pct = "";
+            if (myweight._land_cap > 0)
+            {
+                land_pct = " land (" + ((myweight._land_weight * 100) / myweight._land_cap).ToString("N0") + "%)";
+            }
+            outline.AppendFormat("{0}/{1}{2}", myweight._land_weight.ToString("N0"), myweight._land_cap.ToString("N0"), land_pct);
+            string ride_pct = "";
+            if (myweight._ride_cap > 0)
+            {
+                ride_pct = " ride (" + ((myweight._ride_weight * 100) / myweight._ride_cap).ToString("N0") + "%)";
+                outline.AppendFormat(" {0}/{1}{2}", myweight._ride_weight.ToString("N0"), myweight._ride_cap.ToString("N0"), ride_pct);
+            }
+            string fly_pct = "";
+            if (myweight._fly_cap > 0)
+            {
+                fly_pct = " fly: (" + ((myweight._fly_weight * 100) / myweight._fly_cap).ToString("N0") + "%)";
+                outline.AppendFormat(" {0}/{1}{2}", myweight._fly_weight.ToString("N0"), myweight._fly_cap.ToString("N0"), fly_pct);
+            }
             outline.Append("</p>");
             w.WriteLine(outline);
         }
@@ -120,30 +162,65 @@ namespace OlyMapper
                 int iterations = _myChar._Item_List.Count() / 2;
                 w.WriteLine("Inventory:");
                 w.WriteLine("<table>");
-                w.WriteLine("<tr><td style=\"text-align:right\">qty</td><td style=\"text-align:left\">name</td><td style=\"text-align:right\">weight</td></tr>");
+                w.WriteLine("<tr><td style=\"text-align:right\">qty</td><td style=\"text-align:left\">name</td><td style=\"text-align:right\">weight</td><td style=\"text-align:left\">&nbsp;</td></tr>");
                 w.WriteLine("<tr><td style=\"text-align:right\">---</td><td style=\"text-align:left\">----</td><td style=\"text-align:right\">-----</td></tr>");
                 for (int i = 0; i < iterations; i++)
                 {
                     int _item = _myChar._Item_List[(i * 2)];
                     int _qty = _myChar._Item_List[(i * 2) + 1];
                     w.WriteLine("<tr>");
-                    w.WriteLine("<td style=\"text-align:right\">" + _qty + "</td>");
+                    w.WriteLine("<td style=\"text-align:right\">" + _qty.ToString("N0") + "</td>");
                     Itemz _myitem = Program._items.Find(x => x._ItemId == _item);
                     if (_myitem != null)
                     {
                         w.WriteLine("<td style=\"text-align:left\">" + (_qty == 1 ? _myitem._Name : _myitem._Plural) + " [" + Utilities.to_oid(_item.ToString()) + "]</td>");
-                        w.WriteLine("<td style=\"text-align:right\">" + (_myitem._Weight * _qty) + "</td>");
+                        w.WriteLine("<td style=\"text-align:right\">" + (_myitem._Weight * _qty).ToString("N0") + "</td>");
                         total_weight += (_myitem._Weight * _qty);
+                        StringBuilder outline = new StringBuilder();
+                        outline.Append("<td>");
+                        if (_myitem._Fly_Capacity > 0)
+                        {
+                            outline.Append("fly " + (_myitem._Fly_Capacity * _qty).ToString("N0"));
+                        }
+                        else
+                        {
+                            if (_myitem._Ride_Capacity > 0)
+                            {
+                                outline.Append("ride " + (_myitem._Ride_Capacity * _qty).ToString("N0"));
+                            }
+                            else
+                            {
+                                if (_myitem._Land_Capacity > 0)
+                                {
+                                    outline.Append("cap " + (_myitem._Land_Capacity * _qty).ToString("N0"));
+                                }
+                            }
+                        }
+                        if (Itemz.Is_Fighter(_myitem))
+                        {
+                            outline.AppendFormat(" ({0},{1},{2})", _myitem._IT_Attack, _myitem._IT_Defense, _myitem._IT_Missile);
+                        }
+
+                        outline.Append(_myitem._IM_Attack_Bonus > 0 ? ("+" + _myitem._IM_Attack_Bonus + " attack"):"");
+                        outline.Append(_myitem._IM_Defense_Bonus > 0 ? ("+" + _myitem._IM_Defense_Bonus + " defense") : "");
+                        outline.Append(_myitem._IM_Missile_Bonus > 0 ? ("+" + _myitem._IM_Missile_Bonus + " missile") : "");
+                        if (Character.Is_Magician(_myChar) && _myitem._IM_Aura_Bonus > 0)
+                        {
+                            outline.AppendFormat("+{0} aura)", _myitem._IM_Aura_Bonus);
+                        }
+                        outline.Append("</td>");
+                        w.WriteLine(outline);
                     }
                     else
                     {
                         w.WriteLine("<td>" + "undefined" + "</td>");
                         w.WriteLine("<td>" + 0 + "</td>");
+                        w.WriteLine("<td>&nbsp;</td>");
                     }
                     w.WriteLine("</tr>");
                 }
-                w.WriteLine("<tr><td></td><td></td><td style=\"text-align:right\">=====</td></tr>");
-                w.WriteLine("<tr><td></td><td></td><td style=\"text-align:right\">" + total_weight + "</td></tr>");
+                w.WriteLine("<tr><td></td><td></td><td style=\"text-align:right\">=====</td><td>&nbsp;</td></tr>");
+                w.WriteLine("<tr><td></td><td></td><td style=\"text-align:right\">" + total_weight.ToString("N0") + "</td><td>&nbsp;</td></tr>");
                 w.WriteLine("</table>");
             }
             else

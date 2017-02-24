@@ -565,7 +565,7 @@ namespace OlyMapper
                                     Location _myloc = Program._locations.Find(z => z._LocId == Cell);
                                     if (_myloc != null)
                                     {
-                                        outline.Append("<td id=\"" + _myloc._LocId_Conv + "\" class =" + "\"");
+                                        outline.Append("<td id=\"" + _myloc._LocId_Conv + "\"class =" + "\"");
                                         outline.Append(_myloc._Loc_Type + "\"" + ">");
                                         outline.Append(Utilities.format_anchor2(_myloc._LocId_Conv, _myloc._LocId_Conv));
                                         if (_myloc._LI_Here_List != null)

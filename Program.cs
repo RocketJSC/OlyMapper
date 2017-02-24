@@ -29,7 +29,7 @@ namespace OlyMapper
                 _Loc_Type = "",
                 _First_Line = ""
             });
-            string path = "d:\\temp\\turn164";
+            string path = "d:\\Olympia\\turn164";
             Console.WriteLine("Reading JSON file.");
             _players = new List<Player>();
             _items = new List<Itemz>();
@@ -37,7 +37,7 @@ namespace OlyMapper
             _skills = new List<Skill>();
             _ships = new List<Ship>();
             _storms = new List<Storm>();
-            JObject o1 = JObject.Parse(File.ReadAllText(@"d:\temp\libnext-164.json"));
+            JObject o1 = JObject.Parse(File.ReadAllText(@"d:\Olympia\libnext-164.json"));
             Process_JSON_File(o1);
             // Display totals
             Console.WriteLine("+ Loaded " + _locations.Count + " locations");
@@ -58,7 +58,7 @@ namespace OlyMapper
             Character.Post_PlayerId();
             // post playerid to character
             Console.WriteLine("Posting weight to characters.");
-            Character.Calculate_Weight();
+            Character.Determine_Ultimate_Lord();
             // posting region to locations
             Console.WriteLine("Posting region to locations.");
             Location.Set_Region();
