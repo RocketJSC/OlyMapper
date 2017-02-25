@@ -25,6 +25,7 @@ namespace OlyMapper
         public int _CH_LOY_Kind { get; set; }
         public int _CH_LOY_Rate { get; set; }
         public int _CH_Missile { get; set; }
+        public int _CH_NPC_Unit_Type { get; set; }
         public int _CH_Prisoner { get; set; }
         public int _CH_Rank { get; set; }
         public int _CH_Sick { get; set; }
@@ -167,11 +168,19 @@ namespace OlyMapper
                     mylr = (JArray)j1.SelectToken("CH.lr");
                     Character._CH_LOY_Rate = Convert.ToInt32(mylr[0]);
                 }
+                Character._CH_Missile = 0;
                 if (j1.SelectToken("CH.mi") != null && j1.SelectToken("CH.mi").HasValues)
                 {
                     JArray mymi;
                     mymi = (JArray)j1.SelectToken("CH.mi");
                     Character._CH_Missile = Convert.ToInt32(mymi[0]);
+                }
+                Character._CH_NPC_Unit_Type = 0;
+                if (j1.SelectToken("CH.ni") != null && j1.SelectToken("CH.ni").HasValues)
+                {
+                    JArray myni;
+                    myni = (JArray)j1.SelectToken("CH.ni");
+                    Character._CH_NPC_Unit_Type = Convert.ToInt32(myni[0]);
                 }
                 Character._CH_Prisoner = 0;
                 if (j1.SelectToken("CH.pr") != null && j1.SelectToken("CH.pr").HasValues)

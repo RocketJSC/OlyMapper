@@ -226,29 +226,35 @@ namespace OlyMapper
                                     if (_myloc != null)
                                     {
                                         // determine if province has more than 50 men in it - set border to red
-                                        if (_myloc._nbr_men >= 50)
+                                        if (_myloc._LO_Barrier > 0)
                                         {
-                                            outline.Append("<td style=\"border: 2px solid red\" ");
+                                            outline.Append("<td style=\"border: 2px solid purple\" ");
                                         }
                                         else
                                         {
-                                            if (_myloc._ships_found)
+                                            if (_myloc._nbr_men >= 50)
                                             {
-                                                outline.Append("<td style=\"border: 2px solid yellow\" ");
+                                                outline.Append("<td style=\"border: 2px solid red\" ");
                                             }
                                             else
                                             {
-                                                if (_myloc._enemy_found)
+                                                if (_myloc._ships_found)
                                                 {
-                                                    outline.Append("<td style=\"border: 2px solid orange\" ");
+                                                    outline.Append("<td style=\"border: 2px solid yellow\" ");
                                                 }
                                                 else
                                                 {
-                                                    outline.Append("<td ");
+                                                    if (_myloc._enemy_found)
+                                                    {
+                                                        outline.Append("<td style=\"border: 2px solid orange\" ");
+                                                    }
+                                                    else
+                                                    {
+                                                        outline.Append("<td ");
+                                                    }
                                                 }
                                             }
                                         }
-                                        // border: 1px solid black
                                         // write cell
                                         outline.Append("id=\"" + _myloc._LocId_Conv + "\" class =" + "\"");
                                         outline.Append(_myloc._Loc_Type + "\"" + ">");

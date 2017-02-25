@@ -19,7 +19,7 @@ namespace OlyMapper
         public List<int> _LO_Province_Destination { get; set; }
         public int _LO_Hidden { get; set; }
         public string _LO_Shrouded { get; set; }
-        public string _LO_Barrier { get; set; }
+        public int _LO_Barrier { get; set; }
         public int _LO_Civ_Level { get; set; }
         public string _SL_Safe { get; set; }
         public string _SL_Shaft_Depth { get; set; }
@@ -70,8 +70,6 @@ namespace OlyMapper
                 myloctypea = null;
                 myloctype = null;
             }
-
-
             Program._locations.Add(new Location
             {
                 _LocId = Convert.ToInt32(InputKey),
@@ -118,11 +116,12 @@ namespace OlyMapper
                         mylc = (JArray)j1.SelectToken("LO.lc");
                         Location._LO_Civ_Level = Convert.ToInt32(mylc[0]);
                     }
+                    Location._LO_Barrier = 0;
                     if (j1.SelectToken("LO.ba") != null && j1.SelectToken("LO.ba").HasValues)
                     {
                         JArray myba;
                         myba = (JArray)j1.SelectToken("LO.ba");
-                        Location._LO_Barrier = myba[0].ToString();
+                        Location._LO_Barrier = Convert.ToInt32(myba[0]);
                     }
                     if (j1.SelectToken("SL.sh") != null && j1.SelectToken("SL.sh").HasValues)
                     {

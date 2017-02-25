@@ -26,6 +26,7 @@ namespace OlyMapper
                     w.WriteLine("<BODY>");
                     Write_Loc_Map_Anchor(_myloc, w);
                     Write_Loc_Page_Header(_myloc, w);
+                    Write_Barrier(_myloc, w);
                     Write_Controlled_By(_myloc, w);
                     Write_Routes_Out(_myloc, w);
                     Write_Nearby_Cities(_myloc, w);
@@ -46,6 +47,14 @@ namespace OlyMapper
                     w.WriteLine("</HTML>");
                 }
                 fs.Close();
+            }
+        }
+
+        private static void Write_Barrier(Location _myloc, StreamWriter w)
+        {
+            if (_myloc._LO_Barrier > 0)
+            {
+                w.WriteLine("<p>A magical barrier surrounds {0} [{1}].</p>", _myloc._Name, _myloc._LocId_Conv);
             }
         }
 
@@ -427,99 +436,106 @@ namespace OlyMapper
             outline.Append(_my_dest_loc._Name + " ");
             outline.Append(Utilities.format_anchor(_my_dest_loc._LocId_Conv));
             // determine days to move
-            if (from_type == "ocean")
+            if (_my_dest_loc._LO_Barrier > 0)
             {
-                if (_my_dest_loc._Loc_Type == "ocean")
-                {
-                    outline.Append(", 3 days");
-                }
-                else
-                {
-                    if ((_my_dest_loc._Loc_Type.Contains("city")))
-                    {
-                        outline.Append(", ");
-                        outline.Append(Program._locations.Find(x => x._LocId == _my_dest_loc._LI_Where)._Name);
-                        outline.Append(", 1 day");
-                    }
-                    else
-                    {
-                        outline.Append(", ");
-                        outline.Append(Program._locations.Find(x => x._LocId == _my_dest_loc._LI_Where)._Name);
-                        if (_my_dest_loc._Loc_Type == "mountain")
-                        {
-                            outline.Append(", impassible");
-                        }
-                        else
-                        {
-                            outline.Append(", 2 days");
-                        }
-                    }
-                }
+                outline.Append(", impassable<br>&nbsp;&nbsp;&nbsp;A magical barrier prevents entry.");
             }
             else
             {
-                if (_my_dest_loc._Loc_Type == "plain")
+                if (from_type == "ocean")
                 {
-                    outline.Append(", 7 days");
-                }
-                else
-                {
-                    if (_my_dest_loc._Loc_Type == "forest")
+                    if (_my_dest_loc._Loc_Type == "ocean")
                     {
-                        outline.Append(", 8 days");
+                        outline.Append(", 3 days");
                     }
                     else
                     {
-                        if (_my_dest_loc._Loc_Type == "mountain")
+                        if ((_my_dest_loc._Loc_Type.Contains("city")))
                         {
-                            outline.Append(", 10 days");
+                            outline.Append(", ");
+                            outline.Append(Program._locations.Find(x => x._LocId == _my_dest_loc._LI_Where)._Name);
+                            outline.Append(", 1 day");
                         }
                         else
                         {
-                            if (_my_dest_loc._Loc_Type == "swamp")
+                            outline.Append(", ");
+                            outline.Append(Program._locations.Find(x => x._LocId == _my_dest_loc._LI_Where)._Name);
+                            if (_my_dest_loc._Loc_Type == "mountain")
                             {
-                                outline.Append(", 14 days");
+                                outline.Append(", impassable");
                             }
                             else
                             {
-                                if (_my_dest_loc._Loc_Type == "desert")
+                                outline.Append(", 2 days");
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    if (_my_dest_loc._Loc_Type == "plain")
+                    {
+                        outline.Append(", 7 days");
+                    }
+                    else
+                    {
+                        if (_my_dest_loc._Loc_Type == "forest")
+                        {
+                            outline.Append(", 8 days");
+                        }
+                        else
+                        {
+                            if (_my_dest_loc._Loc_Type == "mountain")
+                            {
+                                outline.Append(", 10 days");
+                            }
+                            else
+                            {
+                                if (_my_dest_loc._Loc_Type == "swamp")
                                 {
-                                    outline.Append(", 8 days");
+                                    outline.Append(", 14 days");
                                 }
                                 else
                                 {
-                                    if (_my_dest_loc._Loc_Type == "ocean")
+                                    if (_my_dest_loc._Loc_Type == "desert")
                                     {
-                                        outline.Append(", ");
-                                        outline.Append(Program._locations.Find(x => x._LocId == _my_dest_loc._LI_Where)._Name);
-                                        if (from_type == "mountain")
-                                        {
-                                            outline.Append(", impassible");
-                                        }
-                                        else
-                                        {
-                                            // see if contains city, if so, impassible
-                                            Boolean contains_city = false;
-                                            foreach (int destloc in _my_dest_loc._LO_Province_Destination)
-                                            {
-                                                if ((Program._locations.Find(x => x._LocId == destloc)._Loc_Type.Contains("city")))
-                                                {
-                                                    contains_city = true;
-                                                }
-                                            }
-                                            if (!contains_city)
-                                            {
-                                                outline.Append(", 2 days");
-                                            }
-                                            else
-                                            {
-                                                outline.Append(", impassible");
-                                            }
-                                        }
+                                        outline.Append(", 8 days");
                                     }
                                     else
                                     {
-                                        //Console.WriteLine("undefined: " + _my_dest_loc._Loc_Type);
+                                        if (_my_dest_loc._Loc_Type == "ocean")
+                                        {
+                                            outline.Append(", ");
+                                            outline.Append(Program._locations.Find(x => x._LocId == _my_dest_loc._LI_Where)._Name);
+                                            if (from_type == "mountain")
+                                            {
+                                                outline.Append(", impassable");
+                                            }
+                                            else
+                                            {
+                                                // see if contains city, if so, impassible
+                                                Boolean contains_city = false;
+                                                foreach (int destloc in _my_dest_loc._LO_Province_Destination)
+                                                {
+                                                    if ((Program._locations.Find(x => x._LocId == destloc)._Loc_Type.Contains("city")))
+                                                    {
+                                                        contains_city = true;
+                                                    }
+                                                }
+                                                if (!contains_city)
+                                                {
+                                                    outline.Append(", 2 days");
+                                                }
+                                                else
+                                                {
+                                                    outline.Append(", impassable");
+                                                }
+                                            }
+                                        }
+                                        else
+                                        {
+                                            //Console.WriteLine("undefined: " + _my_dest_loc._Loc_Type);
+                                        }
                                     }
                                 }
                             }
@@ -530,7 +546,7 @@ namespace OlyMapper
             outline.Append("</li>");
             w.WriteLine(outline);
             // check to see if was moving to city from ocean
-            // if so, need to write impassible line
+            // if so, need to write impassable line for province
             if (from_type.Contains("ocean") && _my_dest_loc._Loc_Type.Contains("city"))
             {
                 StringBuilder outlinein = new StringBuilder();
@@ -542,7 +558,7 @@ namespace OlyMapper
                 outlinein.Append(Utilities.format_anchor(_my_dest_locin._LocId_Conv));
                 outlinein.Append(", ");
                 outlinein.Append(Program._locations.Find(x => x._LocId == _my_dest_locin._LI_Where)._Name);
-                outlinein.Append(", impassible");
+                outlinein.Append(", impassable");
                 outlinein.Append("</li>");
                 w.WriteLine(outlinein);
             }

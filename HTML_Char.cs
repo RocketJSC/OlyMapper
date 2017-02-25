@@ -116,7 +116,8 @@ namespace OlyMapper
             if (_myChar._Item_List != null)
             {
                 // shortcut.  what if not normal guy??
-                Itemz myitem = Program._items.Find(x => x._ItemId == 10);
+                int unit_type = (_myChar._CH_NPC_Unit_Type != 0 ? _myChar._CH_NPC_Unit_Type : 10);
+                Itemz myitem = Program._items.Find(x => x._ItemId == unit_type);
                 myweight = Itemz.Add_Item_Weight(myitem, 1, myweight);
                 myitem = null;
 
