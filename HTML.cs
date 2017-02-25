@@ -33,15 +33,16 @@ namespace OlyMapper
                     w.WriteLine("<th>");
                     w.WriteLine("<ul>Reports<br>");
                     w.WriteLine("<li><a href=\"master_item_list.html\">Items</a></li>");
+                    w.WriteLine("<li><a href=\"master_player_list.html\">Players</a></li>");
                     w.WriteLine("<li>Characters</li>");
-                    w.WriteLine("<li>Ships</li>");
+                    w.WriteLine("<li><a href=\"master_ship_list.html\">Ships</a></li>");
                     w.WriteLine("</ul>");
                     w.WriteLine("</th>");
                     w.WriteLine("<th>");
                     w.WriteLine("<ul>Links<br>");
-                    w.WriteLine("<li>Olympia Rules</li>");
-                    w.WriteLine("<li>Olympia Orders</li>");
-                    w.WriteLine("<li>Olympia Skills</li>");
+                    w.WriteLine("<li><a href=\"http://shadowlandgames.com/olympia/rules.html\">Olympia Rules</a></li>");
+                    w.WriteLine("<li><a href=\"http://shadowlandgames.com/olympia/orders.html\">Olympia Orders</a></li>");
+                    w.WriteLine("<li><a href=\"http://shadowlandgames.com/olympia/skills.html\">Olympia Skills</a></li>");
                     w.WriteLine("</ul>");
                     w.WriteLine("</th>");
                     w.WriteLine("</tr>");
@@ -1007,6 +1008,105 @@ namespace OlyMapper
                         else
                         {
                             w.WriteLine("<td>&nbsp;</td>");
+                        }
+                        w.WriteLine("</tr>");
+                    }
+                    w.WriteLine("</table>");
+                    w.WriteLine("</BODY>");
+                    w.WriteLine("</HTML>");
+                }
+                fs.Close();
+            }
+        }
+        public static void Generate_Ship_List_HTML(string path)
+        {
+            using (FileStream fs = new FileStream(System.IO.Path.Combine(path, "master_ship_list.html"), FileMode.Create))
+            {
+                using (StreamWriter w = new StreamWriter(fs, Encoding.UTF8))
+                {
+                    w.WriteLine("<HTML>");
+                    w.WriteLine("<HEAD>");
+                    w.WriteLine("<TITLE>Olympia Master Ship List</TITLE>");
+                    w.WriteLine("</HEAD>");
+                    w.WriteLine("<BODY>");
+                    w.WriteLine("<h3>Olympia Master Ship List</h3>");
+                    w.WriteLine("<table border=\"1\" style=\"border-collapse: collapse\">");
+                    w.WriteLine("<tr>");
+                    w.WriteLine("<th>Id</th><th>Type</th><th>Captain</th><th>Location</th><th>Damage</th><th>Load</th><th>Storm (strength)</th>");
+                    w.WriteLine("</tr>");
+                    foreach (Ship _ship in Program._ships)
+                    {
+                        w.WriteLine("<tr>");
+                        w.WriteLine("<td>{0} {1}</td>", _ship._Name,Utilities.format_anchor(_ship._ShipId.ToString()));
+                        w.WriteLine("<td>{0}&nbsp;&nbsp;</td>", _ship._Ship_Type);
+                        List<Stack> ship_stack = new List<Stack>();
+                        int level = 0;
+                        ship_stack = Stack.chase_structure(_ship._ShipId, ship_stack, level);
+                        if (ship_stack.Count > 0)
+                        {
+                            bool printed_captain = false;
+                            foreach (Stack stack_entry in ship_stack.Where(x => x._entity_type == "char"))
+                            {
+                                Character mychar = Program._characters.Find(x => x._CharId == stack_entry._entityid);
+                                if (mychar != null)
+                                {
+                                    w.WriteLine("<td>{0} {1}</td>", mychar._Name, Utilities.format_anchor(mychar._CharId.ToString()));
+                                    printed_captain = true;
+                                    break;
+                                }
+                            }
+                            if (!printed_captain)
+                            {
+                                w.WriteLine("<td>{0}</td>", "&nbsp;");
+                            }
+                        }
+                        else
+                        {
+                            w.WriteLine("<td>{0}</td>", "&nbsp;");
+                        }
+                        if (_ship._LI_Where != 0)
+                        {
+                            Location myloc = Program._locations.Find(x => x._LocId == _ship._LI_Where);
+                            if (myloc != null)
+                            {
+                                w.WriteLine("<td>{0} {1}</td>", myloc._Name, Utilities.format_anchor(myloc._LocId_Conv));
+                            }
+                            else
+                            {
+                                w.WriteLine("<td>{0}</td>", "&nbsp;");
+                            }
+                        }
+                        else
+                        {
+                            w.WriteLine("<td>{0}</td>", "&nbsp;");
+                        }
+                        w.WriteLine("<td>{0}%</td>", _ship._SL_Damage);
+                        if (ship_stack.Count > 0)
+                        {
+                            int total_weight = Ship.determine_ship_weight(ship_stack);
+                            // adjust capacity for damage
+                            int actual_capacity = _ship._SL_Capacity - ((_ship._SL_Capacity * _ship._SL_Damage) / 100);
+                            w.WriteLine("<td>{0}%</td>", ((total_weight * 100) / actual_capacity)); // calculate load
+                        }
+                        else
+                        {
+                            w.WriteLine("<td>{0}</td>", "&nbsp;");
+                        }
+                        if (_ship._SL_Bound_Storm != 0)
+                        {
+                            Storm bound_storm = Program._storms.Find(x=>x._StormId == _ship._SL_Bound_Storm);
+                            if (bound_storm != null)
+                            {
+                                w.WriteLine("<td>{0} [{1}] ({2})</td>", bound_storm._Storm_Type, bound_storm._StormId, bound_storm._Storm_Strength);
+                            }
+                            else
+                            {
+                                w.WriteLine("<td>{0}</td>", _ship._SL_Bound_Storm);
+                            }
+                        }
+                        else
+                        {
+                            w.WriteLine("<td>{0}</td>", "&nbsp;");
                         }
                         w.WriteLine("</tr>");
                     }

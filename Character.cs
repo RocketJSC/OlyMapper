@@ -466,5 +466,38 @@ namespace OlyMapper
             }
             return false;
         }
+        public static Weight determine_unit_weights(Character _myChar)
+        {
+            Weight myweight = new Weight()
+            {
+                _animals = 0,
+                _total_weight = 0,
+                _land_cap = 0,
+                _land_weight = 0,
+                _ride_cap = 0,
+                _ride_weight = 0,
+                _fly_cap = 0,
+                _fly_weight = 0
+            };
+            if (_myChar._Item_List != null)
+            {
+                int unit_type = (_myChar._CH_NPC_Unit_Type != 0 ? _myChar._CH_NPC_Unit_Type : 10);
+                Itemz myitem = Program._items.Find(x => x._ItemId == unit_type);
+                myweight = Itemz.Add_Item_Weight(myitem, 1, myweight);
+                myitem = null;
+
+                int iterations = _myChar._Item_List.Count / 2;
+                for (int i = 0; i < iterations; i++)
+                {
+                    if (Program._items.Find(x => x._ItemId == _myChar._Item_List[i * 2]) != null)
+                    {
+                        myitem = Program._items.Find(x => x._ItemId == _myChar._Item_List[i * 2]);
+                        myweight = Itemz.Add_Item_Weight(myitem, (_myChar._Item_List[(i * 2) + 1]), myweight);
+                    }
+                }
+            }
+
+            return myweight;
+        }
     }
 }

@@ -72,22 +72,28 @@ namespace OlyMapper
                 }
             }
         }
-
         private static void Write_Ship_Seen_Here(Ship _myship, StreamWriter w)
         {
-            if (_myship._LI_Here_List != null)
+            List<Stack> ship_stack = new List<Stack>();
+            int level = 0;
+            ship_stack = Stack.chase_structure(_myship._ShipId, ship_stack, level);
+            if (ship_stack.Count > 1)
             {
                 string label1 = "Seen Here:";
-                foreach (int _charonship in _myship._LI_Here_List)
+                foreach (Stack stack_entry in ship_stack.Where(x => x._entity_type == "char"))
                 {
-                    if (Program._characters.Find(x => x._CharId == _charonship) != null)
+                    if (Program._characters.Find(x => x._CharId == stack_entry._entityid) != null)
                     {
-                        Character _mychar = Program._characters.Find(x => x._CharId == _charonship);
+                        Character _mychar = Program._characters.Find(x => x._CharId == stack_entry._entityid);
                         w.WriteLine("<tr>");
                         w.WriteLine("<td>" + label1 + "</td>");
                         label1 = "";
                         StringBuilder outline = new StringBuilder();
                         outline.Append("<td>");
+                        for (int i = 0; i < (stack_entry._entity_level - 1); i++)
+                        {
+                            outline.Append("*&nbsp;&nbsp;");
+                        }
                         outline.Append(_mychar._Name + " " + Utilities.format_anchor(_mychar._CharId.ToString()));
                         outline.Append("</td>");
                         w.WriteLine(outline);
@@ -146,17 +152,14 @@ namespace OlyMapper
             w.WriteLine("<td>Loaded:</td>");
             outline.Append("<td>");
             // calculate load of all passengers
-            if (_myship._LI_Here_List != null)
+            List<Stack> ship_stack = new List<Stack>();
+            int level = 0;
+            ship_stack = Stack.chase_structure(_myship._ShipId, ship_stack, level);
+            if (ship_stack.Count > 1)
             {
-                int total_weight = 0;
-                foreach (int _mycharid in _myship._LI_Here_List)
-                {
-                    if (Program._characters.Find(x => x._CharId == _mycharid) != null)
-                    {
-                        total_weight += Program._characters.Find(x => x._CharId == _mycharid).Accumulated_Weight;
-                    }
-                }
-                outline.Append((float)((((float)_myship._LI_Here_List.Count * 100) + (float)total_weight) / (float)_myship._SL_Capacity) * 100 + "%");
+                int total_weight = Ship.determine_ship_weight(ship_stack);
+                int actual_capacity = _myship._SL_Capacity - ((_myship._SL_Capacity * _myship._SL_Damage) / 100);
+                outline.Append(((total_weight * 100) / actual_capacity) + "%");
             }
             else
             {
@@ -166,7 +169,6 @@ namespace OlyMapper
             w.WriteLine(outline);
             w.WriteLine("</tr>");
         }
-
         private static void Write_Ship_Pct_Complete(Ship _myship, StreamWriter w)
         {
             if (_myship._SL_Effort_Given < _myship._SL_Effort_Required)

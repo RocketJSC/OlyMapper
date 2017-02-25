@@ -45,7 +45,8 @@ namespace OlyMapper
             Program._storms.Add(new Storm
             {
                 _StormId = Convert.ToInt32(InputKey),
-                _First_Line = myfl[0].ToString()
+                _First_Line = myfl[0].ToString(),
+                _Storm_Type = mystormtype
             });
             //foreach (var Location in Program._locations)
             var Storm = (Program._storms.Find(x => x._StormId == Convert.ToInt32(InputKey)));

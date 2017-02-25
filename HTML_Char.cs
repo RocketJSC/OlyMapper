@@ -102,35 +102,7 @@ namespace OlyMapper
 
         private static void Write_Char_Capacity(Character _myChar, StreamWriter w)
         {
-            Weight myweight = new Weight()
-            {
-                _animals = 0,
-                _total_weight = 0,
-                _land_cap = 0,
-                _land_weight = 0,
-                _ride_cap = 0,
-                _ride_weight = 0,
-                _fly_cap = 0,
-                _fly_weight = 0
-            };
-            if (_myChar._Item_List != null)
-            {
-                // shortcut.  what if not normal guy??
-                int unit_type = (_myChar._CH_NPC_Unit_Type != 0 ? _myChar._CH_NPC_Unit_Type : 10);
-                Itemz myitem = Program._items.Find(x => x._ItemId == unit_type);
-                myweight = Itemz.Add_Item_Weight(myitem, 1, myweight);
-                myitem = null;
-
-                int iterations = _myChar._Item_List.Count / 2;
-                for (int i = 0; i < iterations; i++)
-                {
-                    if (Program._items.Find(x=>x._ItemId == _myChar._Item_List[i * 2]) != null)
-                    {
-                        myitem = Program._items.Find(x => x._ItemId == _myChar._Item_List[i * 2]);
-                        myweight = Itemz.Add_Item_Weight(myitem, (_myChar._Item_List[(i * 2) + 1]), myweight);
-                    }
-                }
-            }
+            Weight myweight = Character.determine_unit_weights(_myChar);
             StringBuilder outline = new StringBuilder();
             outline.Append("<p>Capacity: ");
             string land_pct = "";
@@ -154,7 +126,6 @@ namespace OlyMapper
             outline.Append("</p>");
             w.WriteLine(outline);
         }
-
         private static void Write_Char_Inventory(Character _myChar, StreamWriter w)
         {
             int total_weight = 0;

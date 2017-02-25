@@ -126,5 +126,18 @@ namespace OlyMapper
                 }
             }
         }
+        public static int determine_ship_weight(List<Stack> ship_stack)
+        {
+            int total_weight = 0;
+            foreach (Stack stack_entry in ship_stack.Where(x => x._entity_type == "char"))
+            {
+                if (Program._characters.Find(x => x._CharId == stack_entry._entityid) != null)
+                {
+                    total_weight += Character.determine_unit_weights(Program._characters.Find(x => x._CharId == stack_entry._entityid))._total_weight;
+                }
+            }
+
+            return total_weight;
+        }
     }
 }

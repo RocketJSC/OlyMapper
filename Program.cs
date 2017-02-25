@@ -80,6 +80,9 @@ namespace OlyMapper
             // dump players
             Console.WriteLine("+ Writing Master Player HTML page.");
             HTML.Generate_Player_List_HTML(path);
+            // dump ships
+            Console.WriteLine("+ Writing Master Ship HTML page.");
+            HTML.Generate_Ship_List_HTML(path);
             Console.WriteLine("+ Writing Province HTML pages.");
             Generate_Province_Pages(path);
             Console.WriteLine("+ Writing City HTML pages.");

@@ -641,7 +641,7 @@ namespace OlyMapper
             }
             if (ships_docked)
             {
-                w.WriteLine("<H4>Ships docked at port:</H4>");
+                w.WriteLine("<H4>" + (_myloc._Loc_Type != "ocean" ? "Ships docked at port:" : "Ships sighted:") + "</H4>");
                 w.WriteLine("<ul>");
                 print_inner = true;
                 foreach (String _my_inner in _myloc._LI_Here_List)
