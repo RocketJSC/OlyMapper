@@ -95,6 +95,8 @@ namespace OlyMapper
             Generate_Ship_Pages(path);
             Console.WriteLine("Writing Glue HTML pages.");
             Generate_Glue_Pages(path);
+            Console.WriteLine("Writing Faction Accept/Admit Files.");
+            Resources.Generate_Admit_Accept_Faction_Files(path);
             Console.WriteLine("Program Finished.  Press <ENTER> to Close.");
             Console.ReadLine();
         }

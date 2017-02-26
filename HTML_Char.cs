@@ -68,6 +68,7 @@ namespace OlyMapper
             Write_Char_Inventory(_myChar, w);
             Write_Char_Capacity(_myChar, w);
             Write_Char_Pending_Trades(_myChar, w);
+            Write_Visions_Received(_myChar, w);
         }
 
         private static void Write_Char_Pending_Trades(Character _myChar, StreamWriter w)
@@ -516,6 +517,49 @@ namespace OlyMapper
                 else
                 {
                     outline.Append(", in " + _myloc2._Name);
+                }
+            }
+        }
+        private static void Write_Visions_Received(Character _myChar, StreamWriter w)
+        {
+            if (_myChar._CM_Already_Visioned != null)
+            {
+                if (_myChar._CM_Already_Visioned.Count > 0)
+                {
+                    w.WriteLine("<p>Visions Received:</p>");
+                    w.WriteLine("<table>");
+                    int rows = (int)((_myChar._CM_Already_Visioned.Count / 2) + 0.5);
+                    for (int i = 0; i < rows; i++)
+                    {
+                        w.WriteLine("<tr>");
+                        Character mycharl = Program._characters.Find(x=>x._CharId == _myChar._CM_Already_Visioned[i]);
+                        if (mycharl != null)
+                        {
+                            w.WriteLine("<td>{0} {1}</td>", mycharl._Name, Utilities.format_anchor(mycharl._CharId.ToString()));
+                        }
+                        else
+                        {
+                            w.WriteLine("<td>missing {0}</td>", _myChar._CM_Already_Visioned[i]);
+                        }
+                        if ((i + rows) <= _myChar._CM_Already_Visioned.Count)
+                        {
+                            Character mycharr = Program._characters.Find(x => x._CharId == _myChar._CM_Already_Visioned[i + rows]);
+                            if (mycharr != null)
+                            {
+                                w.WriteLine("<td>{0} {1}</td>", mycharr._Name, Utilities.format_anchor(mycharr._CharId.ToString()));
+                            }
+                            else
+                            {
+                                w.WriteLine("<td>missing {0}</td>", _myChar._CM_Already_Visioned[i]);
+                            }
+                        }
+                        else
+                        {
+                            w.WriteLine("<td>&nbsp;</td>");
+                        }
+                        w.WriteLine("</tr>");
+                    }
+                    w.WriteLine("</table>");
                 }
             }
         }
