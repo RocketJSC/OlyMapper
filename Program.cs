@@ -37,7 +37,7 @@ namespace OlyMapper
             _skills = new List<Skill>();
             _ships = new List<Ship>();
             _storms = new List<Storm>();
-            JObject o1 = JObject.Parse(File.ReadAllText(@"d:\Olympia\libnext-164.json"));
+            JObject o1 = JObject.Parse(File.ReadAllText(@"d:\Olympia\lib-164.json"));
             Process_JSON_File(o1);
             // Display totals
             Console.WriteLine("+ Loaded " + _locations.Count + " locations");
@@ -76,7 +76,11 @@ namespace OlyMapper
             Console.WriteLine("Writing HTML pages.");
             // dump items
             Console.WriteLine("+ Writing Master Item List HTML page.");
-            HTML.Generate_Item_List_HTML(path);
+            HTML_Item.Generate_Item_List_HTML(path);
+            Console.WriteLine("+ Writing Master Healing Potion List HTML page.");
+            HTML_Item.Generate_Healing_Potion_List_HTML(path);
+            Console.WriteLine("+ Writing Master Project Cast Potion List HTML page.");
+            HTML_Item.Generate_Projected_Cast_Potion_List_HTML(path);
             // dump players
             Console.WriteLine("+ Writing Master Player HTML page.");
             HTML.Generate_Player_List_HTML(path);
@@ -360,17 +364,17 @@ namespace OlyMapper
             if (!System.IO.File.Exists(System.IO.Path.Combine(path,"map.css")))
             {
                 // copy map.css
-                System.IO.File.Copy(System.IO.Path.Combine("d:\\temp", "map.css"), System.IO.Path.Combine(path,"map.css"),false);
+                System.IO.File.Copy(System.IO.Path.Combine("d:\\Olympia", "map.css"), System.IO.Path.Combine(path,"map.css"),false);
             }
             if (!System.IO.File.Exists(System.IO.Path.Combine(path, "map.gif")))
             {
                 // copy map.css
-                System.IO.File.Copy(System.IO.Path.Combine("d:\\temp", "map.gif"), System.IO.Path.Combine(path, "map.gif"), false);
+                System.IO.File.Copy(System.IO.Path.Combine("d:\\Olympia", "map.gif"), System.IO.Path.Combine(path, "map.gif"), false);
             }
             if (!System.IO.File.Exists(System.IO.Path.Combine(path, "grey.gif")))
             {
                 // copy map.css
-                System.IO.File.Copy(System.IO.Path.Combine("d:\\temp", "grey.gif"), System.IO.Path.Combine(path, "grey.gif"), false);
+                System.IO.File.Copy(System.IO.Path.Combine("d:\\Olympia", "grey.gif"), System.IO.Path.Combine(path, "grey.gif"), false);
             }
         }
     }

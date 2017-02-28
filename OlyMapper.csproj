@@ -49,8 +49,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
+    <Compile Include="CurrentLocation.cs" />
     <Compile Include="HTML.cs" />
     <Compile Include="HTML_Char.cs" />
+    <Compile Include="HTML_Item.cs" />
     <Compile Include="HTML_Loc.cs" />
     <Compile Include="HTML_Ship.cs" />
     <Compile Include="Item.cs" />
@@ -61,6 +63,7 @@
     <Compile Include="Resources.cs" />
     <Compile Include="Ship.cs" />
     <Compile Include="Skill.cs" />
+    <Compile Include="SkillXref.cs" />
     <Compile Include="Stack.cs" />
     <Compile Include="Storm.cs" />
     <Compile Include="Trade.cs" />

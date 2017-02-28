@@ -22,7 +22,7 @@ namespace OlyMapper
         public int _LO_Barrier { get; set; }
         public int _LO_Civ_Level { get; set; }
         public string _SL_Safe { get; set; }
-        public string _SL_Shaft_Depth { get; set; }
+        public int _SL_Shaft_Depth { get; set; }
         public int _SL_Damage { get; set; }
         public int _SL_Defense { get; set; }
         public string _SL_Castle_Level { get; set; }
@@ -43,6 +43,8 @@ namespace OlyMapper
         public int _nbr_men { get; set; }
         public bool _ships_found { get; set; }
         public bool _enemy_found { get; set; }
+        public string Calc_CurrentLoc { get; set; }
+        public int Calc_CurrentRegion { get; set; }
         public static void Add(string InputKey, string InputString)
         {
             JObject j1 = JObject.Parse(InputString);
@@ -143,11 +145,12 @@ namespace OlyMapper
                         myde = (JArray)j1.SelectToken("SL.de");
                         Location._SL_Defense = Convert.ToInt32(myde[0]);
                     }
+                    Location._SL_Shaft_Depth = 0;
                     if (j1.SelectToken("SL.sd") != null && j1.SelectToken("SL.sd").HasValues)
                     {
                         JArray mysd;
                         mysd = (JArray)j1.SelectToken("SL.sd");
-                        Location._SL_Shaft_Depth = mysd[0].ToString();
+                        Location._SL_Shaft_Depth = Convert.ToInt32(mysd[0]);
                     }
                     if (j1.SelectToken("SL.cl") != null && j1.SelectToken("SL.cl").HasValues)
                     {
@@ -258,6 +261,29 @@ namespace OlyMapper
         }
         public static void Set_Region()
         {
+            foreach(Character mychar in Program._characters)
+            {
+                CurrentLocation mycurrloc = new CurrentLocation();
+                mycurrloc._current_loctype = 0;
+                CurrentLocation myfinalcurrloc = CurrentLocation.Where_Am_I(mychar._CharId, mycurrloc);
+                mychar.Calc_CurrentLoc = myfinalcurrloc._current_loc;
+                mychar.Calc_CurrentRegion = myfinalcurrloc._current_region;
+            }
+            foreach (Ship myship in Program._ships)
+            {
+                CurrentLocation mycurrloc = new CurrentLocation();
+                CurrentLocation myfinalcurrloc = CurrentLocation.Where_Am_I(myship._ShipId, mycurrloc);
+                myship.Calc_CurrentLoc = myfinalcurrloc._current_loc;
+                myship.Calc_CurrentRegion = myfinalcurrloc._current_region;
+            }
+            foreach (Location myloc in Program._locations.Where(c=>c._LocId != 0 && !c._Loc_Type.Equals("region")))
+            {
+                CurrentLocation mycurrloc = new CurrentLocation();
+                CurrentLocation myfinalcurrloc = CurrentLocation.Where_Am_I(myloc._LocId, mycurrloc);
+                myloc.Calc_CurrentLoc = myfinalcurrloc._current_loc;
+                myloc.Calc_CurrentRegion = myfinalcurrloc._current_region;
+            }
+            // not sure what to do about this
             foreach (Location _myloc in Program._locations)
             {
                 var return_tuple = new Tuple<int, bool, bool>(_myloc._nbr_men, _myloc._ships_found, _myloc._enemy_found);

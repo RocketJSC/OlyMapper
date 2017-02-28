@@ -22,6 +22,8 @@ namespace OlyMapper
         public int _SL_Bound_Storm { get; set; }
         public int _SL_Effort_Required { get; set; }
         public int _SL_Effort_Given { get; set; }
+        public string Calc_CurrentLoc { get; set; }
+        public int Calc_CurrentRegion { get; set; }
         public static void Add(string InputKey, string InputString)
         {
             JObject j1 = JObject.Parse(InputString);

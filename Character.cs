@@ -52,6 +52,8 @@ namespace OlyMapper
         public int Accumulated_Flying_Cap { get; set; }
         public int Accumulated_Men { get; set; }
         public int Ultimate_Lord { get; set; }
+        public string Calc_CurrentLoc { get; set; }
+        public int Calc_CurrentRegion { get; set; }
         public static void Add(string InputKey, string InputString)
         {
             JObject j1 = JObject.Parse(InputString);

@@ -704,9 +704,9 @@ namespace OlyMapper
             if (_my_dest_loc._Loc_Type.Contains("mine"))
             {
                 // level
-                if (_my_dest_loc._SL_Shaft_Depth != null)
+                if (_my_dest_loc._SL_Shaft_Depth != 0)
                 {
-                    outline.Append(", level " + _my_dest_loc._SL_Shaft_Depth);
+                    outline.Append(", level " + _my_dest_loc._SL_Shaft_Depth / 3);
                 }
             }
             // % completed

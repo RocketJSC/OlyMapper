@@ -33,6 +33,8 @@ namespace OlyMapper
                     w.WriteLine("<th>");
                     w.WriteLine("<ul>Reports<br>");
                     w.WriteLine("<li><a href=\"master_item_list.html\">Items</a></li>");
+                    w.WriteLine("<li><a href=\"master_healing_potion_list.html\">Healing Potions</a></li>");
+                    w.WriteLine("<li><a href=\"master_projected_cast_potion_list.html\">Projected Cast Potions</a></li>");
                     w.WriteLine("<li><a href=\"master_player_list.html\">Players</a></li>");
                     w.WriteLine("<li>Characters</li>");
                     w.WriteLine("<li><a href=\"master_ship_list.html\">Ships</a></li>");
@@ -357,20 +359,14 @@ namespace OlyMapper
                                                         else
                                                         {
                                                             outline.Append("<br />");
-                                                            if (loc2._LO_Hidden != null)
+                                                            if (loc2._LO_Hidden.Equals(1))
                                                             {
-                                                                if (loc2._LO_Hidden.Equals("1"))
-                                                                {
-                                                                    outline.Append("<i>");
-                                                                }
+                                                                outline.Append("<i>");
                                                             }
                                                             outline.Append(Utilities.format_loc_type(loc2._Loc_Type));
-                                                            if (loc2._LO_Hidden != null)
+                                                            if (loc2._LO_Hidden.Equals(1))
                                                             {
-                                                                if (loc2._LO_Hidden.Equals("1"))
-                                                                {
-                                                                    outline.Append("</i>");
-                                                                }
+                                                                outline.Append("</i>");
                                                             }
                                                         }
                                                     }
@@ -389,20 +385,14 @@ namespace OlyMapper
                                                     else
                                                     {
                                                         outline.Append("<br />");
-                                                        if (loc1._LO_Hidden != null)
+                                                        if (loc1._LO_Hidden.Equals(1))
                                                         {
-                                                            if (loc1._LO_Hidden.Equals("1"))
-                                                            {
-                                                                outline.Append("<i>");
-                                                            }
+                                                            outline.Append("<i>");
                                                         }
                                                         outline.Append(Utilities.format_loc_type(loc1._Loc_Type));
-                                                        if (loc1._LO_Hidden != null)
+                                                        if (loc1._LO_Hidden.Equals(1))
                                                         {
-                                                            if (loc1._LO_Hidden.Equals("1"))
-                                                            {
-                                                                outline.Append("<i>");
-                                                            }
+                                                            outline.Append("<i>");
                                                         }
                                                     }
                                                 }
@@ -925,51 +915,62 @@ namespace OlyMapper
                 }
             }
         }
-        public static void Generate_Item_List_HTML(string path)
+        public static void Generate_Skill_Xref_List_HTML(string path)
         {
-            using (FileStream fs = new FileStream(System.IO.Path.Combine(path, "master_item_list.html"), FileMode.Create))
+            using (FileStream fs = new FileStream(System.IO.Path.Combine(path, "master_skill_xref_list.html"), FileMode.Create))
             {
                 using (StreamWriter w = new StreamWriter(fs, Encoding.UTF8))
                 {
+                    List<SkillXref> _skillxref = new List<SkillXref>();
+                    foreach (Location myloc in Program._locations.Where(f=>f._Loc_Type == "city"))
+                    {
+                        if (myloc._SL_Teaches != null)
+                        {
+                            foreach (String myskillid in myloc._SL_Teaches)                            {
+                                _skillxref.Add(new SkillXref
+                                {
+                                    _skillid = Convert.ToInt32(myskillid),
+                                    _locid = Convert.ToInt32(myloc._LocId)
+                                });
+                            }
+                        }
+                    }
                     w.WriteLine("<HTML>");
                     w.WriteLine("<HEAD>");
-                    w.WriteLine("<TITLE>Olympia Master Item List</TITLE>");
+                    w.WriteLine("<TITLE>Olympia Master Skill Xref List</TITLE>");
                     w.WriteLine("</HEAD>");
                     w.WriteLine("<BODY>");
-                    w.WriteLine("<h3>Olympia Master Item List</h3>");
+                    w.WriteLine("<h3>Olympia Master Skill Xref List</h3>");
                     w.WriteLine("<table border=\"1\">");
                     w.WriteLine("<tr>");
-                    w.WriteLine("<th>Item</th><th>Item Type</th><th>Weight</th><th>Man Item</th><th>Prominent</th><th>Animal</th><th>Land Cap</th><th>Riding cap</th><th>Flying Cap</th><th>Who Has</th><th>Notes</th>");
+                    w.WriteLine("<th>Skill</th><th>Location</th>");
                     w.WriteLine("</tr>");
-                    foreach (Itemz _item in Program._items)
+                    Skill myskill = null;
+                    string label;
+                    List<SkillXref> _skillxref_sorted = _skillxref.OrderBy(z => z._skillid).ThenBy(y => y._locid).ToList();
+                    foreach (SkillXref myskillxref in _skillxref_sorted)
                     {
-                        w.WriteLine("<tr>");
-                        w.WriteLine("<td>" + _item._Name + " [" + _item._ItemId_Conv + "]</td>");
-                        w.WriteLine("<td>" + (_item._Item_Type != "0"?_item._Item_Type:"std item") + "</td>");
-                        w.WriteLine("<td>" + _item._Weight + "</td>");
-                        w.WriteLine("<td>" + (_item._IT_Man_Item == "1" ? "yes":"") + "</td>");
-                        w.WriteLine("<td>" + (_item._IT_Prominent == "1" ? "yes" : "") + "</td>");
-                        w.WriteLine("<td>" + (_item._IT_Animal == "1" ? "yes" : "") + "</td>");
-                        w.WriteLine("<td>" + _item._Land_Capacity + "</td>");
-                        w.WriteLine("<td>" + _item._Ride_Capacity + "</td>");
-                        w.WriteLine("<td>" + _item._Fly_Capacity + "</td>");
-                        if (_item._IT_Who_Has != 0)
+                        if (myskill != null)
                         {
-                            if (Program._characters.Find(x=>x._CharId == _item._IT_Who_Has) != null)
+                            if (myskill._SkillId == myskillxref._skillid)
                             {
-                                Character _mychar = Program._characters.Find(x => x._CharId == _item._IT_Who_Has);
-                                w.WriteLine("<td>" + _mychar._Name + " " + Utilities.format_anchor(_mychar._CharId.ToString()) + "</td>");
+                                label = "";
                             }
                             else
                             {
-                                w.WriteLine("<td>&nbsp;</td>");
+                                myskill = Program._skills.Find(t=>t._SkillId == myskillxref._skillid);
+                                label = myskill._Name + " [" + myskill._SkillId + "]";
                             }
                         }
                         else
                         {
-                            w.WriteLine("<td>&nbsp;</td>");
+
                         }
-                        w.WriteLine("<td>" + Itemz.Determine_Use(_item) + "</td>");
+                        w.WriteLine("<tr>");
+                        w.WriteLine("<td>");
+                        w.WriteLine("</td>");
+                        w.WriteLine("<td>");
+                        w.WriteLine("</td>");
                         w.WriteLine("</tr>");
                     }
                     w.WriteLine("</table>");
