@@ -30,7 +30,6 @@ namespace OlyMapper
             JObject j1 = JObject.Parse(InputString);
             JArray myna;
             JArray myfl;
-            string myplayertypea;
             string myplayertype;
             if (j1.SelectToken("na") != null && j1.SelectToken("na").HasValues)
             {
@@ -43,13 +42,12 @@ namespace OlyMapper
             if (j1.SelectToken("firstline") != null && j1.SelectToken("firstline").HasValues)
             {
                 myfl = (JArray)j1.SelectToken("firstline");
-                myplayertypea = myfl.ToString().Substring(myfl.ToString().IndexOf("player ") + 7);
-                myplayertype = myplayertypea.ToString().Substring(0, myplayertypea.IndexOf("\""));
+                string[] type_array = myfl[0].ToString().Split(default(string[]), StringSplitOptions.RemoveEmptyEntries);
+                myplayertype = type_array[2];
             }
             else
             {
                 myfl = null;
-                myplayertypea = null;
                 myplayertype = null;
             }
 

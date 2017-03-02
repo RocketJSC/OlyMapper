@@ -27,18 +27,16 @@ namespace OlyMapper
             {
                 myna = null;
             }
-            string mystormtypea;
             string mystormtype;
             if (j1.SelectToken("firstline") != null && j1.SelectToken("firstline").HasValues)
             {
                 myfl = (JArray)j1.SelectToken("firstline");
-                mystormtypea = myfl.ToString().Substring(myfl.ToString().IndexOf("storm ") + 6);
-                mystormtype = mystormtypea.ToString().Substring(0, mystormtypea.IndexOf("\""));
+                string[] type_array = myfl[0].ToString().Split(default(string[]), StringSplitOptions.RemoveEmptyEntries);
+                mystormtype = type_array[2];
             }
             else
             {
                 myfl = null;
-                mystormtypea = null;
                 mystormtype = null;
             }
 

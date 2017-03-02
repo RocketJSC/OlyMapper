@@ -30,6 +30,7 @@ namespace OlyMapper
                     Write_Controlled_By(_myloc, w);
                     Write_Routes_Out(_myloc, w);
                     Write_Nearby_Cities(_myloc, w);
+                    Write_Structure_Basic_Info(_myloc, w);
                     Write_Skills_Report(_myloc, w);
                     Write_Market_Report(_myloc, w);
                     // Print Here List (Inner Locations and Seen Here)
@@ -896,6 +897,56 @@ namespace OlyMapper
                 }
                 w.WriteLine("</ul>");
             }
+        }
+        private static void Write_Structure_Basic_Info(Location _myloc, StreamWriter w)
+        {
+            if (_myloc._SL_Defense > 0 || _myloc._SL_Damage > 0 || (_myloc._SL_Effort_Given < _myloc._SL_Effort_Required))
+            {
+                StringBuilder outline = new StringBuilder();
+                w.WriteLine("<table>");
+                Write_Structure_Pct_Complete(_myloc, w);
+                Write_Structure_Defense(_myloc, w);
+                Write_Structure_Damaged(_myloc, w);
+                Write_Structure_Level(_myloc, w);
+                w.WriteLine("</table>");
+            }
+        }
+        private static void Write_Structure_Damaged(Location _myloc, StreamWriter w)
+        {
+            w.WriteLine("<tr>");
+            w.WriteLine("<td>Damaged:</td>");
+            w.WriteLine("<td>" + _myloc._SL_Damage + "%</td>");
+            w.WriteLine("</tr>");
+        }
+
+        private static void Write_Structure_Defense(Location _myloc, StreamWriter w)
+        {
+            w.WriteLine("<tr>");
+            w.WriteLine("<td>Defense:</td>");
+            w.WriteLine("<td>" + _myloc._SL_Defense + "</td>");
+            w.WriteLine("</tr>");
+        }
+        private static void Write_Structure_Pct_Complete(Location _myloc, StreamWriter w)
+        {
+            if (_myloc._SL_Effort_Given < _myloc._SL_Effort_Required)
+            {
+                w.WriteLine("<tr>");
+                w.WriteLine("<td>Percent Complete:</td>");
+                w.WriteLine("<td>" + ((float)_myloc._SL_Effort_Given / (float)_myloc._SL_Effort_Required) * 100f + "%</td>");
+                w.WriteLine("</tr>");
+            }
+            w.WriteLine("<tr>");
+        }
+        private static void Write_Structure_Level(Location _myloc, StreamWriter w)
+        {
+            if (_myloc._SL_Shaft_Depth > 0)
+            {
+                w.WriteLine("<tr>");
+                w.WriteLine("<td>Level:</td>");
+                w.WriteLine("<td>" + (_myloc._SL_Shaft_Depth / 3) + "</td>");
+                w.WriteLine("</tr>");
+            }
+            w.WriteLine("<tr>");
         }
     }
 }

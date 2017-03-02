@@ -10,9 +10,9 @@ namespace OlyMapper
 {
     class HTML
     {
-        public static void Write_Home_HTML_File(string path)
+        public static void Write_Index_HTML_File(string path)
         {
-            using (FileStream fs = new FileStream(System.IO.Path.Combine(path,"home.html"), FileMode.Create))
+            using (FileStream fs = new FileStream(System.IO.Path.Combine(path,"index.html"), FileMode.Create))
             {
                 using (StreamWriter w = new StreamWriter(fs, Encoding.UTF8))
                 {
@@ -329,7 +329,7 @@ namespace OlyMapper
                                                 }
                                             }
                                         }
-                                        outline.Append("\">");
+                                        outline.Append(">");
                                         // write cell
                                         if (_myloc._LO_Civ_Level > 0)
                                         {

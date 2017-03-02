@@ -58,18 +58,16 @@ namespace OlyMapper
         {
             JObject j1 = JObject.Parse(InputString);
             JArray myfl;
-            string mychartypea;
             string mychartype;
             if (j1.SelectToken("firstline") != null && j1.SelectToken("firstline").HasValues)
             {
                 myfl = (JArray)j1.SelectToken("firstline");
-                mychartypea = myfl.ToString().Substring(myfl.ToString().IndexOf("char ") + 5);
-                mychartype = mychartypea.ToString().Substring(0, mychartypea.IndexOf("\""));
+                string[] type_array = myfl[0].ToString().Split(default(string[]), StringSplitOptions.RemoveEmptyEntries);
+                mychartype = type_array[2];
             }
             else
             {
                 myfl = null;
-                mychartypea = null;
                 mychartype = null;
             }
             Program._characters.Add(new Character

@@ -96,6 +96,8 @@ namespace OlyMapper
             Generate_City_Pages(path);
             Console.WriteLine("+ Writing Sublocation HTML pages.");
             Generate_Sublocation_Pages(path);
+            Console.WriteLine("+ Writing Structure HTML pages.");
+            Generate_Structure_Pages(path);
             Console.WriteLine("+ Writing Character HTML pages.");
             Generate_Char_Pages(path);
             Console.WriteLine("+ Writing Ship HTML pages.");
@@ -217,23 +219,27 @@ namespace OlyMapper
                         }
                         else
                         {
-                            if (_myloc._SL_Capacity.CompareTo(0) > 0 || _myloc._SL_Defense.CompareTo(0) > 0 || _myloc._SL_Effort_Required.CompareTo(0) > 0)
+                            if (!_myloc._Loc_Type.Equals("region"))
                             {
-                                //Write_Subloc_HTML_File(_myloc);
+                                HTML_Loc.Write_Loc_HTML_File(_myloc, path);
                             }
                             else
                             {
-                                if (!_myloc._Loc_Type.Equals("region"))
-                                {
-                                    HTML_Loc.Write_Loc_HTML_File(_myloc, path);
-                                }
-                                else
-                                {
-                                    Console.WriteLine(_myloc._LocId + " | " + _myloc._LocId_Conv + "|" + _myloc._Name + "|" + _myloc._Loc_Type + "|" + _myloc._First_Line);
-                                }
+                                Console.WriteLine(_myloc._LocId + " | " + _myloc._LocId_Conv + "|" + _myloc._Name + "|" + _myloc._Loc_Type + "|" + _myloc._First_Line);
                             }
                         }
                     }
+                }
+            }
+        }
+        private static void Generate_Structure_Pages(string path)
+        {
+            foreach (Location _myloc in _locations.FindAll(x => x._LocId > 0 && x._LocId <= 9999))
+            {
+                //
+                if (_myloc._LocId != 0)
+                {
+                    HTML_Loc.Write_Loc_HTML_File(_myloc, path);
                 }
             }
         }
@@ -353,7 +359,7 @@ namespace OlyMapper
         }
         private static void Generate_Glue_Pages(string path)
         {
-            HTML.Write_Home_HTML_File(path);
+            HTML.Write_Index_HTML_File(path);
             HTML.Write_Main_Map_HTML_File(path);
             HTML.Write_Hades_Map_HTML_File(path);
             Console.WriteLine(".Writing Main Map Leaf HTML pages.");

@@ -58,18 +58,16 @@ namespace OlyMapper
             {
                 myna = null;
             }
-            string myloctypea;
             string myloctype;
             if (j1.SelectToken("firstline") != null && j1.SelectToken("firstline").HasValues)
             {
                 myfl = (JArray)j1.SelectToken("firstline");
-                myloctypea = myfl.ToString().Substring(myfl.ToString().IndexOf("loc ") + 4);
-                myloctype = myloctypea.ToString().Substring(0, myloctypea.IndexOf("\""));
+                string[] type_array = myfl[0].ToString().Split(default(string[]), StringSplitOptions.RemoveEmptyEntries);
+                myloctype = type_array[2];
             }
             else
             {
                 myfl = null;
-                myloctypea = null;
                 myloctype = null;
             }
             Program._locations.Add(new Location

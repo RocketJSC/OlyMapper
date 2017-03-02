@@ -49,19 +49,17 @@ namespace OlyMapper
             {
                 myna = null;
             }
-            string myitemtypea;
             string myitemtype;
             if (j1.SelectToken("firstline") != null && j1.SelectToken("firstline").HasValues)
             {
                 myfl = (JArray)j1.SelectToken("firstline");
-                myitemtypea = myfl.ToString().Substring(myfl.ToString().IndexOf("item ") + 5);
-                myitemtype = myitemtypea.ToString().Substring(0, myitemtypea.IndexOf("\""));
+                string[] type_array = myfl[0].ToString().Split(default(string[]), StringSplitOptions.RemoveEmptyEntries);
+                myitemtype = type_array[2];
             }
             else
             {
                 myfl = null;
-                myitemtypea = null;
-                myitemtype = null;
+                 myitemtype = null;
             }
 
             Program._items.Add(new Itemz
