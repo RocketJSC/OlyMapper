@@ -87,6 +87,9 @@ namespace OlyMapper
             // dump ships
             Console.WriteLine("+ Writing Master Ship HTML page.");
             HTML.Generate_Ship_List_HTML(path);
+            // dump skills
+            Console.WriteLine("+ Writing Master Skill Xref HTML page.");
+            HTML.Generate_Skill_Xref_List_HTML(path);
             Console.WriteLine("+ Writing Province HTML pages.");
             Generate_Province_Pages(path);
             Console.WriteLine("+ Writing City HTML pages.");
@@ -110,10 +113,10 @@ namespace OlyMapper
             System.IO.DirectoryInfo dd = new DirectoryInfo(path);
             foreach (FileInfo file in dd.GetFiles())
             {
-                if ((file.Name != "grey.gif") && (file.Name != "map.css") && (file.Name != "map.gif"))
-                {
+                //if ((file.Name != "grey.gif") && (file.Name != "map.css") && (file.Name != "map.gif"))
+                //{
                     file.Delete();
-                }
+                //}
             }
         }
 
@@ -352,6 +355,7 @@ namespace OlyMapper
         {
             HTML.Write_Home_HTML_File(path);
             HTML.Write_Main_Map_HTML_File(path);
+            HTML.Write_Hades_Map_HTML_File(path);
             Console.WriteLine(".Writing Main Map Leaf HTML pages.");
             HTML.Write_Main_Map_Leaves_HTML_File(path);
             Console.WriteLine(".Writing Faery Map Leaf HTML pages.");
@@ -366,16 +370,26 @@ namespace OlyMapper
                 // copy map.css
                 System.IO.File.Copy(System.IO.Path.Combine("d:\\Olympia", "map.css"), System.IO.Path.Combine(path,"map.css"),false);
             }
-            if (!System.IO.File.Exists(System.IO.Path.Combine(path, "map.gif")))
-            {
-                // copy map.css
-                System.IO.File.Copy(System.IO.Path.Combine("d:\\Olympia", "map.gif"), System.IO.Path.Combine(path, "map.gif"), false);
-            }
+            //if (!System.IO.File.Exists(System.IO.Path.Combine(path, "map.gif")))
+            //{
+            //    // copy map.css
+            //    System.IO.File.Copy(System.IO.Path.Combine("d:\\Olympia", "map.gif"), System.IO.Path.Combine(path, "map.gif"), false);
+            //}
             if (!System.IO.File.Exists(System.IO.Path.Combine(path, "grey.gif")))
             {
                 // copy map.css
                 System.IO.File.Copy(System.IO.Path.Combine("d:\\Olympia", "grey.gif"), System.IO.Path.Combine(path, "grey.gif"), false);
             }
+            if (!System.IO.File.Exists(System.IO.Path.Combine(path, "main_thumbnail.gif")))
+            {
+                // copy map.css
+                System.IO.File.Copy(System.IO.Path.Combine("d:\\Olympia", "main_thumbnail.gif"), System.IO.Path.Combine(path, "main_thumbnail.gif"), false);
+            }
+            //if (!System.IO.File.Exists(System.IO.Path.Combine(path, "hades_thumbnail.gif")))
+            //{
+            //    // copy map.css
+            //    System.IO.File.Copy(System.IO.Path.Combine("d:\\Olympia", "hades_thumbnail.gif"), System.IO.Path.Combine(path, "hades_thumbnail.gif"), false);
+            //}
         }
     }
 }

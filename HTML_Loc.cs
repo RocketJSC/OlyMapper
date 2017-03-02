@@ -131,7 +131,7 @@ namespace OlyMapper
                                 if (_my_dest_loc2 != null)
                                 {
                                     // see if in city.  If so, get province location
-                                    if (!_my_dest_loc2._Loc_Type.Equals("city"))
+                                    if (!_my_dest_loc2._Loc_Type.Contains("city"))
                                     {
                                         outline.Append(" in ");
                                         outline.Append(_my_dest_loc2._Name + " ");
@@ -185,7 +185,7 @@ namespace OlyMapper
         {
             // Print Routes Out
             //if (!_myloc._Loc_Type.Contains("city"))
-            if (_myloc._LocId >= 10000 && _myloc._LocId < 18000)
+            if (_myloc._LocId >= 10000 && _myloc._LocId < 30000)
             {
                 if (_myloc._LO_Province_Destination != null)
                 {

@@ -10,5 +10,6 @@ namespace OlyMapper
     {
         public int _locid { get; set; }
         public int _skillid { get; set; }
+        public int _regionid { get; set; }
     }
 }

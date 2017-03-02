@@ -88,157 +88,154 @@ namespace OlyMapper
             var Location = (Program._locations.Find(x => x._LocId == Convert.ToInt32(InputKey)));
             if (Location != null)
             {
-                if (Location._LocId.Equals(Convert.ToInt32(InputKey)))
+                if (j1.SelectToken("LO.pd") != null && j1.SelectToken("LO.pd").HasValues)
                 {
-                    if (j1.SelectToken("LO.pd") != null && j1.SelectToken("LO.pd").HasValues)
-                    {
-                        JArray mypd;
-                        mypd = (JArray)j1.SelectToken("LO.pd");
-                        List<int> mypda;
-                        mypda = mypd.ToObject<List<int>>();
-                        Location._LO_Province_Destination = mypda.ToList();
-                    }
-                    Location._LO_Hidden = 0;
-                    if (j1.SelectToken("LO.hi") != null && j1.SelectToken("LO.hi").HasValues)
-                    {
-                        JArray myhi;
-                        myhi = (JArray)j1.SelectToken("LO.hi");
-                        Location._LO_Hidden = Convert.ToInt32(myhi[0]);
-                    }
-                    if (j1.SelectToken("LO.sh") != null && j1.SelectToken("LO.sh").HasValues)
-                    {
-                        JArray mysh;
-                        mysh = (JArray)j1.SelectToken("LO.sh");
-                        Location._LO_Shrouded = mysh[0].ToString();
-                    }
-                    Location._LO_Civ_Level = 0;
-                    if (j1.SelectToken("LO.lc") != null && j1.SelectToken("LO.lc").HasValues)
-                    {
-                        JArray mylc;
-                        mylc = (JArray)j1.SelectToken("LO.lc");
-                        Location._LO_Civ_Level = Convert.ToInt32(mylc[0]);
-                    }
-                    Location._LO_Barrier = 0;
-                    if (j1.SelectToken("LO.ba") != null && j1.SelectToken("LO.ba").HasValues)
-                    {
-                        JArray myba;
-                        myba = (JArray)j1.SelectToken("LO.ba");
-                        Location._LO_Barrier = Convert.ToInt32(myba[0]);
-                    }
-                    if (j1.SelectToken("SL.sh") != null && j1.SelectToken("SL.sh").HasValues)
-                    {
-                        JArray mysh;
-                        mysh = (JArray)j1.SelectToken("SL.sh");
-                        Location._SL_Safe = mysh[0].ToString();
-                    }
-                    Location._SL_Damage = 0;
-                    if (j1.SelectToken("SL.da") != null && j1.SelectToken("SL.da").HasValues)
-                    {
-                        JArray myda;
-                        myda = (JArray)j1.SelectToken("SL.da");
-                        Location._SL_Damage = Convert.ToInt32(myda[0]);
-                    }
-                    Location._SL_Defense = 0;
-                    if (j1.SelectToken("SL.de") != null && j1.SelectToken("SL.de").HasValues)
-                    {
-                        JArray myde;
-                        myde = (JArray)j1.SelectToken("SL.de");
-                        Location._SL_Defense = Convert.ToInt32(myde[0]);
-                    }
-                    Location._SL_Shaft_Depth = 0;
-                    if (j1.SelectToken("SL.sd") != null && j1.SelectToken("SL.sd").HasValues)
-                    {
-                        JArray mysd;
-                        mysd = (JArray)j1.SelectToken("SL.sd");
-                        Location._SL_Shaft_Depth = Convert.ToInt32(mysd[0]);
-                    }
-                    if (j1.SelectToken("SL.cl") != null && j1.SelectToken("SL.cl").HasValues)
-                    {
-                        JArray mycl;
-                        mycl = (JArray)j1.SelectToken("SL.cl");
-                        Location._SL_Castle_Level = mycl[0].ToString();
-                    }
-                    Location._SL_Capacity = 0;
-                    if (j1.SelectToken("SL.ca") != null && j1.SelectToken("SL.ca").HasValues)
-                    {
-                        JArray myca;
-                        myca = (JArray)j1.SelectToken("SL.ca");
-                        Location._SL_Capacity = Convert.ToInt32(myca[0]);
-                    }
-                    if (j1.SelectToken("SL.mo") != null && j1.SelectToken("SL.mo").HasValues)
-                    {
-                        JArray mymo;
-                        mymo = (JArray)j1.SelectToken("SL.mo");
-                        Location._SL_Moving = mymo[0].ToString();
-                    }
-                    if (j1.SelectToken("SL.te") != null && j1.SelectToken("SL.te").HasValues)
-                    {
-                        JArray myte;
-                        myte = (JArray)j1.SelectToken("SL.te");
-                        List<string> mytea;
-                        mytea = myte.ToObject<List<string>>();
-                        Location._SL_Teaches = mytea.ToList();
-                    }
-                    Location._SL_Effort_Required = 0;
-                    if (j1.SelectToken("SL.er") != null && j1.SelectToken("SL.er").HasValues)
-                    {
-                        JArray myer;
-                        myer = (JArray)j1.SelectToken("SL.er");
-                        Location._SL_Effort_Required = Convert.ToInt32(myer[0]);
-                    }
-                    Location._SL_Effort_Given = 0;
-                    if (j1.SelectToken("SL.eg") != null && j1.SelectToken("SL.eg").HasValues)
-                    {
-                        JArray myeg;
-                        myeg = (JArray)j1.SelectToken("SL.eg");
-                        Location._SL_Effort_Given = Convert.ToInt32(myeg[0]);
-                    }
-                    else
-                    if (j1.SelectToken("SL.bm") != null && j1.SelectToken("SL.bm").HasValues)
-                    {
-                        JArray mybm;
-                        mybm = (JArray)j1.SelectToken("SL.bm");
-                        Location._SL_Building_Materials = mybm[0].ToString();
-                    }
-                    if (j1.SelectToken("SL.nc") != null && j1.SelectToken("SL.nc").HasValues)
-                    {
-                        JArray mync;
-                        mync = (JArray)j1.SelectToken("SL.nc");
-                        List<string> mynca;
-                        mynca = mync.ToObject<List<string>>();
-                        Location._SL_Near_Cities = mynca.ToList();
-                    }
-                    Location._LI_Where = 0;
-                    if (j1.SelectToken("LI.wh") != null && j1.SelectToken("LI.wh").HasValues)
-                    {
-                        JArray mywh;
-                        mywh = (JArray)j1.SelectToken("LI.wh");
-                        Location._LI_Where = Convert.ToInt32(mywh[0].ToString());
-                    }
-                    if (j1.SelectToken("LI.hl") != null && j1.SelectToken("LI.hl").HasValues)
-                    {
-                        JArray myhl;
-                        List<string> myhla;
-                        myhl = (JArray)j1.SelectToken("LI.hl");
-                        myhla = myhl.ToObject<List<string>>();
-                        Location._LI_Here_List = myhla.ToList();
-                    }
-                    if (j1.SelectToken("il") != null && j1.SelectToken("il").HasValues)
-                    {
-                        JArray myil;
-                        List<string> myila;
-                        myil = (JArray)j1.SelectToken("il");
-                        myila = myil.ToObject<List<string>>();
-                        Location._Item_List = myila.ToList();
-                    }
-                    if (j1.SelectToken("tl") != null && j1.SelectToken("tl").HasValues)
-                    {
-                        JArray mytl;
-                        mytl = (JArray)j1.SelectToken("tl");
-                        List<string> mytla;
-                        mytla = mytl.ToObject<List<string>>();
-                        Location._Trade_List = mytla.ToList();
-                    }
+                    JArray mypd;
+                    mypd = (JArray)j1.SelectToken("LO.pd");
+                    List<int> mypda;
+                    mypda = mypd.ToObject<List<int>>();
+                    Location._LO_Province_Destination = mypda.ToList();
+                }
+                Location._LO_Hidden = 0;
+                if (j1.SelectToken("LO.hi") != null && j1.SelectToken("LO.hi").HasValues)
+                {
+                    JArray myhi;
+                    myhi = (JArray)j1.SelectToken("LO.hi");
+                    Location._LO_Hidden = Convert.ToInt32(myhi[0]);
+                }
+                if (j1.SelectToken("LO.sh") != null && j1.SelectToken("LO.sh").HasValues)
+                {
+                    JArray mysh;
+                    mysh = (JArray)j1.SelectToken("LO.sh");
+                    Location._LO_Shrouded = mysh[0].ToString();
+                }
+                Location._LO_Civ_Level = 0;
+                if (j1.SelectToken("LO.lc") != null && j1.SelectToken("LO.lc").HasValues)
+                {
+                    JArray mylc;
+                    mylc = (JArray)j1.SelectToken("LO.lc");
+                    Location._LO_Civ_Level = Convert.ToInt32(mylc[0]);
+                }
+                Location._LO_Barrier = 0;
+                if (j1.SelectToken("LO.ba") != null && j1.SelectToken("LO.ba").HasValues)
+                {
+                    JArray myba;
+                    myba = (JArray)j1.SelectToken("LO.ba");
+                    Location._LO_Barrier = Convert.ToInt32(myba[0]);
+                }
+                if (j1.SelectToken("SL.sh") != null && j1.SelectToken("SL.sh").HasValues)
+                {
+                    JArray mysh;
+                    mysh = (JArray)j1.SelectToken("SL.sh");
+                    Location._SL_Safe = mysh[0].ToString();
+                }
+                Location._SL_Damage = 0;
+                if (j1.SelectToken("SL.da") != null && j1.SelectToken("SL.da").HasValues)
+                {
+                    JArray myda;
+                    myda = (JArray)j1.SelectToken("SL.da");
+                    Location._SL_Damage = Convert.ToInt32(myda[0]);
+                }
+                Location._SL_Defense = 0;
+                if (j1.SelectToken("SL.de") != null && j1.SelectToken("SL.de").HasValues)
+                {
+                    JArray myde;
+                    myde = (JArray)j1.SelectToken("SL.de");
+                    Location._SL_Defense = Convert.ToInt32(myde[0]);
+                }
+                Location._SL_Shaft_Depth = 0;
+                if (j1.SelectToken("SL.sd") != null && j1.SelectToken("SL.sd").HasValues)
+                {
+                    JArray mysd;
+                    mysd = (JArray)j1.SelectToken("SL.sd");
+                    Location._SL_Shaft_Depth = Convert.ToInt32(mysd[0]);
+                }
+                if (j1.SelectToken("SL.cl") != null && j1.SelectToken("SL.cl").HasValues)
+                {
+                    JArray mycl;
+                    mycl = (JArray)j1.SelectToken("SL.cl");
+                    Location._SL_Castle_Level = mycl[0].ToString();
+                }
+                Location._SL_Capacity = 0;
+                if (j1.SelectToken("SL.ca") != null && j1.SelectToken("SL.ca").HasValues)
+                {
+                    JArray myca;
+                    myca = (JArray)j1.SelectToken("SL.ca");
+                    Location._SL_Capacity = Convert.ToInt32(myca[0]);
+                }
+                if (j1.SelectToken("SL.mo") != null && j1.SelectToken("SL.mo").HasValues)
+                {
+                    JArray mymo;
+                    mymo = (JArray)j1.SelectToken("SL.mo");
+                    Location._SL_Moving = mymo[0].ToString();
+                }
+                if (j1.SelectToken("SL.te") != null && j1.SelectToken("SL.te").HasValues)
+                {
+                    JArray myte;
+                    myte = (JArray)j1.SelectToken("SL.te");
+                    List<string> mytea;
+                    mytea = myte.ToObject<List<string>>();
+                    Location._SL_Teaches = mytea.ToList();
+                }
+                Location._SL_Effort_Required = 0;
+                if (j1.SelectToken("SL.er") != null && j1.SelectToken("SL.er").HasValues)
+                {
+                    JArray myer;
+                    myer = (JArray)j1.SelectToken("SL.er");
+                    Location._SL_Effort_Required = Convert.ToInt32(myer[0]);
+                }
+                Location._SL_Effort_Given = 0;
+                if (j1.SelectToken("SL.eg") != null && j1.SelectToken("SL.eg").HasValues)
+                {
+                    JArray myeg;
+                    myeg = (JArray)j1.SelectToken("SL.eg");
+                    Location._SL_Effort_Given = Convert.ToInt32(myeg[0]);
+                }
+                else
+                if (j1.SelectToken("SL.bm") != null && j1.SelectToken("SL.bm").HasValues)
+                {
+                    JArray mybm;
+                    mybm = (JArray)j1.SelectToken("SL.bm");
+                    Location._SL_Building_Materials = mybm[0].ToString();
+                }
+                if (j1.SelectToken("SL.nc") != null && j1.SelectToken("SL.nc").HasValues)
+                {
+                    JArray mync;
+                    mync = (JArray)j1.SelectToken("SL.nc");
+                    List<string> mynca;
+                    mynca = mync.ToObject<List<string>>();
+                    Location._SL_Near_Cities = mynca.ToList();
+                }
+                Location._LI_Where = 0;
+                if (j1.SelectToken("LI.wh") != null && j1.SelectToken("LI.wh").HasValues)
+                {
+                    JArray mywh;
+                    mywh = (JArray)j1.SelectToken("LI.wh");
+                    Location._LI_Where = Convert.ToInt32(mywh[0].ToString());
+                }
+                if (j1.SelectToken("LI.hl") != null && j1.SelectToken("LI.hl").HasValues)
+                {
+                    JArray myhl;
+                    List<string> myhla;
+                    myhl = (JArray)j1.SelectToken("LI.hl");
+                    myhla = myhl.ToObject<List<string>>();
+                    Location._LI_Here_List = myhla.ToList();
+                }
+                if (j1.SelectToken("il") != null && j1.SelectToken("il").HasValues)
+                {
+                    JArray myil;
+                    List<string> myila;
+                    myil = (JArray)j1.SelectToken("il");
+                    myila = myil.ToObject<List<string>>();
+                    Location._Item_List = myila.ToList();
+                }
+                if (j1.SelectToken("tl") != null && j1.SelectToken("tl").HasValues)
+                {
+                    JArray mytl;
+                    mytl = (JArray)j1.SelectToken("tl");
+                    List<string> mytla;
+                    mytla = mytl.ToObject<List<string>>();
+                    Location._Trade_List = mytla.ToList();
                 }
             }
         }
@@ -282,6 +279,10 @@ namespace OlyMapper
                 CurrentLocation myfinalcurrloc = CurrentLocation.Where_Am_I(myloc._LocId, mycurrloc);
                 myloc.Calc_CurrentLoc = myfinalcurrloc._current_loc;
                 myloc.Calc_CurrentRegion = myfinalcurrloc._current_region;
+                //if (myloc._LI_Where != 0)
+                //{
+                //    Console.WriteLine(myloc._LocId_Conv + " = " + Program._locations.Find(k => k._LocId == myloc._LI_Where)._Name);
+                //}
             }
             // not sure what to do about this
             foreach (Location _myloc in Program._locations)
