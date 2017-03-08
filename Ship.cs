@@ -18,7 +18,7 @@ namespace OlyMapper
         public int _SL_Damage { get; set; }
         public int _SL_Defense { get; set; }
         public int _SL_Capacity { get; set; }
-        public string _SL_Moving { get; set; }
+        public int _SL_Moving { get; set; }
         public int _SL_Bound_Storm { get; set; }
         public int _SL_Effort_Required { get; set; }
         public int _SL_Effort_Given { get; set; }
@@ -54,77 +54,17 @@ namespace OlyMapper
                 _ShipId = Convert.ToInt32(InputKey),
                 _First_Line = myfl[0].ToString(),
                 _Name = myna[0].ToString(),
-                _Ship_Type = mychartype
+                _Ship_Type = mychartype,
+                _LI_Here_List = JSON.list_Token(j1, "LI.hl"),
+                _LI_Where = JSON.int_Token(j1, "LI.wh"),
+                _SL_Bound_Storm = JSON.int_Token(j1, "SL.bs"),
+                _SL_Capacity = JSON.int_Token(j1, "SL.ca"),
+                _SL_Damage = JSON.int_Token(j1, "SL.da"),
+                _SL_Defense = JSON.int_Token(j1, "SL.de"),
+                _SL_Effort_Given = JSON.int_Token(j1, "SL.eg"),
+                _SL_Effort_Required = JSON.int_Token(j1, "SL.er"),
+                _SL_Moving = JSON.int_Token(j1, "SL.mo")
             });
-            var Ship = (Program._ships.Find(x => x._ShipId == Convert.ToInt32(InputKey)));
-            if (Ship != null)
-            {
-                if (Ship._ShipId.Equals(Convert.ToInt32(InputKey)))
-                {
-                    if (j1.SelectToken("LI.hl") != null && j1.SelectToken("LI.hl").HasValues)
-                    {
-                        JArray myhl;
-                        myhl = (JArray)j1.SelectToken("LI.hl");
-                        List<int> myhla;
-                        myhla = myhl.ToObject<List<int>>();
-                        Ship._LI_Here_List = myhla.ToList();
-                    }
-                    if (j1.SelectToken("LI.wh") != null && j1.SelectToken("LI.wh").HasValues)
-                    {
-                        JArray mywh;
-                        mywh = (JArray)j1.SelectToken("LI.wh");
-                        Ship._LI_Where = Convert.ToInt32(mywh[0]);
-                    }
-                    Ship._SL_Damage = 0;
-                    if (j1.SelectToken("SL.da") != null && j1.SelectToken("SL.da").HasValues)
-                    {
-                        JArray myda;
-                        myda = (JArray)j1.SelectToken("SL.da");
-                        Ship._SL_Damage = Convert.ToInt32(myda[0]);
-                    }
-                    Ship._SL_Defense = 0;
-                    if (j1.SelectToken("SL.de") != null && j1.SelectToken("SL.de").HasValues)
-                    {
-                        JArray myde;
-                        myde = (JArray)j1.SelectToken("SL.de");
-                        Ship._SL_Defense = Convert.ToInt32(myde[0]);
-                    }
-                    Ship._SL_Capacity = 0;
-                    if (j1.SelectToken("SL.ca") != null && j1.SelectToken("SL.ca").HasValues)
-                    {
-                        JArray myca;
-                        myca = (JArray)j1.SelectToken("SL.ca");
-                        Ship._SL_Capacity = Convert.ToInt32(myca[0]);
-                    }
-                    if (j1.SelectToken("SL.mo") != null && j1.SelectToken("SL.mo").HasValues)
-                    {
-                        JArray mymo;
-                        mymo = (JArray)j1.SelectToken("SL.mo");
-                        Ship._SL_Moving = mymo[0].ToString();
-                    }
-                    Ship._SL_Bound_Storm = 0;
-                    if (j1.SelectToken("SL.bs") != null && j1.SelectToken("SL.bs").HasValues)
-                    {
-                        JArray mybs;
-                        mybs = (JArray)j1.SelectToken("SL.bs");
-                        Ship._SL_Bound_Storm = Convert.ToInt32(mybs[0]);
-                    }
-                    Ship._SL_Effort_Required = 0;
-                    if (j1.SelectToken("SL.er") != null && j1.SelectToken("SL.er").HasValues)
-                    {
-                        JArray myer;
-                        myer = (JArray)j1.SelectToken("SL.er");
-                        Ship._SL_Effort_Required = Convert.ToInt32(myer[0]);
-                    }
-                    Ship._SL_Effort_Given = 0;
-                    if (j1.SelectToken("SL.eg") != null && j1.SelectToken("SL.eg").HasValues)
-                    {
-                        JArray myeg;
-                        myeg = (JArray)j1.SelectToken("SL.eg");
-                        Ship._SL_Effort_Given = Convert.ToInt32(myeg[0]);
-                    }
-                }
-            }
         }
         public static int determine_ship_weight(List<Stack> ship_stack)
         {
@@ -136,7 +76,6 @@ namespace OlyMapper
                     total_weight += Character.determine_unit_weights(Program._characters.Find(x => x._CharId == stack_entry._entityid))._total_weight;
                 }
             }
-
             return total_weight;
         }
     }

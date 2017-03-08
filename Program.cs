@@ -126,39 +126,7 @@ namespace OlyMapper
         {
             foreach (Location _myloc in _locations.FindAll(x => x._LocId >= 10000 && x._LocId <= 49999))
             {
-                //
-                if (_myloc._LocId != 0)
-                {
-                    if (_myloc._Loc_Type.Equals("sewer") || _myloc._Loc_Type.Equals("island"))
-                    {
-                        //not sure what to do yet
-                    }
-                    else
-                    {
-                        if (_myloc._Loc_Type.Equals("region"))
-                        {
-                            //Write_Region_HTML_File(_myloc);
-                        }
-                        else
-                        {
-                            if (_myloc._SL_Capacity.CompareTo(0) > 0 || _myloc._SL_Defense.CompareTo(0) > 0 || _myloc._SL_Effort_Required.CompareTo(0) > 0)
-                            {
-                                //Write_Subloc_HTML_File(_myloc);
-                            }
-                            else
-                            {
-                                if (!_myloc._Loc_Type.Equals("region"))
-                                {
-                                    HTML_Loc.Write_Loc_HTML_File(_myloc, path);
-                                }
-                                else
-                                {
-                                    Console.WriteLine(_myloc._LocId + " | " + _myloc._LocId_Conv + "|" + _myloc._Name + "|" + _myloc._Loc_Type + "|" + _myloc._First_Line);
-                                }
-                            }
-                        }
-                    }
-                }
+                HTML_Loc.Write_Loc_HTML_File(_myloc, path);
             }
         }
         private static void Generate_City_Pages( string path)

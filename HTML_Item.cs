@@ -31,9 +31,9 @@ namespace OlyMapper
                         w.WriteLine("<td>" + _item._Name + " [" + _item._ItemId_Conv + "]</td>");
                         w.WriteLine("<td>" + (_item._Item_Type != "0" ? _item._Item_Type : "std item") + "</td>");
                         w.WriteLine("<td>" + _item._Weight + "</td>");
-                        w.WriteLine("<td>" + (_item._IT_Man_Item == "1" ? "yes" : "") + "</td>");
-                        w.WriteLine("<td>" + (_item._IT_Prominent == "1" ? "yes" : "") + "</td>");
-                        w.WriteLine("<td>" + (_item._IT_Animal == "1" ? "yes" : "") + "</td>");
+                        w.WriteLine("<td>" + (_item._IT_Man_Item == 1 ? "yes" : "") + "</td>");
+                        w.WriteLine("<td>" + (_item._IT_Prominent == 1 ? "yes" : "") + "</td>");
+                        w.WriteLine("<td>" + (_item._IT_Animal == 1 ? "yes" : "") + "</td>");
                         w.WriteLine("<td>" + _item._Land_Capacity + "</td>");
                         w.WriteLine("<td>" + _item._Ride_Capacity + "</td>");
                         w.WriteLine("<td>" + _item._Fly_Capacity + "</td>");

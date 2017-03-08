@@ -211,10 +211,10 @@ namespace OlyMapper
                 bool printUnknown = false;
                 for (int i = 0; i < iterations; i++)
                 {
-                    string _skill = _myChar._CH_Skills_List[(i * 5) + 0];
-                    string _know = _myChar._CH_Skills_List[(i * 5) + 1];
-                    string _days_studied = _myChar._CH_Skills_List[(i * 5) + 2];
-                    if (_know == "2")
+                    int _skill = _myChar._CH_Skills_List[(i * 5) + 0];
+                    int _know = _myChar._CH_Skills_List[(i * 5) + 1];
+                    int _days_studied = _myChar._CH_Skills_List[(i * 5) + 2];
+                    if (_know == 2)
                     {
                         if (!printKnown)
                         {
@@ -222,13 +222,13 @@ namespace OlyMapper
                             w.WriteLine("<ul style=\"list-style-type:none\">");
                             printKnown = true;
                         }
-                        if (Program._skills.Find(x => x._SkillId == Convert.ToInt32(_skill)) != null)
+                        if (Program._skills.Find(x => x._SkillId == _skill) != null)
                         {
-                            Skill _myskill = Program._skills.Find(x => x._SkillId == Convert.ToInt32(_skill));
+                            Skill _myskill = Program._skills.Find(x => x._SkillId == _skill);
                             w.WriteLine("<li>" + (_myskill._SK_Required_Skill != 0 ? "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" : "") + _myskill._Name + " [" + _myskill._SkillId + "]</li>");
                         }
                     }
-                    if (_know == "1")
+                    if (_know == 1)
                     {
                         if (!printUnknown)
                         {
@@ -240,9 +240,9 @@ namespace OlyMapper
                             w.WriteLine("<ul style=\"list-style-type:none\">");
                             printUnknown = true;
                         }
-                        if (Program._skills.Find(x => x._SkillId == Convert.ToInt32(_skill)) != null)
+                        if (Program._skills.Find(x => x._SkillId == _skill) != null)
                         {
-                            Skill _myskill = Program._skills.Find(x => x._SkillId == Convert.ToInt32(_skill));
+                            Skill _myskill = Program._skills.Find(x => x._SkillId == _skill);
                             w.WriteLine("<li>" + _myskill._Name + " [" + _myskill._SkillId + "], {0}/{1}</li>", _days_studied, _myskill._SK_Time_to_learn);
                         }
                     }
@@ -337,7 +337,7 @@ namespace OlyMapper
             w.WriteLine("<td>" + _myChar._CH_Break_Point + (_myChar._CH_Break_Point.Equals(0) ? "% (fight to the death)" : "%") + " </td>");
             w.WriteLine("</tr>");
             // vision protection
-            if (_myChar._CM_Vision_Protect != null)
+            if (_myChar._CM_Vision_Protect != 0)
             {
                 w.WriteLine("<tr>");
                 w.WriteLine("<td>Receive Vision:</td>");
@@ -391,11 +391,11 @@ namespace OlyMapper
                 StringBuilder outline2 = new StringBuilder();
                 StringBuilder outline3 = new StringBuilder();
                 outline2.Append("Stacked Over:");
-                foreach (string _stacked_under in _myChar._LI_Here_List)
+                foreach (int _stacked_under in _myChar._LI_Here_List)
                 {
-                    if (Program._characters.Find(x => x._CharId == Convert.ToInt32(_stacked_under)) != null)
+                    if (Program._characters.Find(x => x._CharId == _stacked_under) != null)
                     {
-                        Character _mychar_over = Program._characters.Find(x => x._CharId == Convert.ToInt32(_stacked_under));
+                        Character _mychar_over = Program._characters.Find(x => x._CharId == _stacked_under);
                         if (_mychar_over._Char_Type == "0")
                         {
                             outline2.Append("<br>");

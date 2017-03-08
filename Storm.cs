@@ -12,7 +12,7 @@ namespace OlyMapper
         public int _StormId { get; set; }
         public string _First_Line { get; set; }
         public string _Storm_Type { get; set; }
-        public string _Storm_Strength { get; set; }
+        public int _Storm_Strength { get; set; }
         public int _Where { get; set; }
         public static void Add(string InputKey, string InputString)
         {
@@ -44,25 +44,10 @@ namespace OlyMapper
             {
                 _StormId = Convert.ToInt32(InputKey),
                 _First_Line = myfl[0].ToString(),
-                _Storm_Type = mystormtype
+                _Storm_Type = mystormtype,
+                _Where = JSON.int_Token(j1, "LI.wh"),
+                _Storm_Strength = JSON.int_Token(j1, "MI.ss")
             });
-            //foreach (var Location in Program._locations)
-            var Storm = (Program._storms.Find(x => x._StormId == Convert.ToInt32(InputKey)));
-            if (Storm != null)
-            {
-                if (j1.SelectToken("MI.ss") != null && j1.SelectToken("MI.ss").HasValues)
-                {
-                    JArray myss;
-                    myss = (JArray)j1.SelectToken("MI.ss");
-                    Storm._Storm_Strength = myss[0].ToString();
-                }
-                if (j1.SelectToken("LI.wh") != null && j1.SelectToken("LI.wh").HasValues)
-                {
-                    JArray mywh;
-                    mywh = (JArray)j1.SelectToken("LI.wh");
-                    Storm._Where = Convert.ToInt32(mywh[0].ToString());
-                }
-            }
         }
     }
 }

@@ -29,23 +29,23 @@ namespace OlyMapper
         public int _CH_Prisoner { get; set; }
         public int _CH_Rank { get; set; }
         public int _CH_Sick { get; set; }
-        public List<string> _CH_Skills_List { get; set; }
+        public List<int> _CH_Skills_List { get; set; }
         public int _CM_Magician { get; set; }
         public int _CM_Pledged_To { get; set; }
         public int _CM_Max_Aura { get; set; }
         public int _CM_Cur_Aura { get; set; }
-        public string _CM_Vision_Protect { get; set; }
+        public int _CM_Vision_Protect { get; set; }
         public int _CM_Hide_Self { get; set; }
         public List<int> _CM_Already_Visioned { get; set; }
         public int _LI_Where { get; set; }
-        public List<string> _LI_Here_List { get; set; }
+        public List<int> _LI_Here_List { get; set; }
         public int _MI_Garrison_Castle { get; set; }
         public string _MI_Cmd_Allow { get; set; }
         public List<int> _Item_List { get; set; }
         public List<string> _Trade_List { get; set; }
-        public List<string> _Defend_List { get; set; }
-        public List<string> _Neutral_List { get; set; }
-        public List<string> _Hostile_List { get; set; }
+        public List<int> _Defend_List { get; set; }
+        public List<int> _Neutral_List { get; set; }
+        public List<int> _Hostile_List { get; set; }
         public int Accumulated_Weight { get; set; }
         public int Accumulated_Land_Cap { get; set; }
         public int Accumulated_Riding_Cap { get; set; }
@@ -76,12 +76,43 @@ namespace OlyMapper
                 _First_Line = myfl[0].ToString(),
                 _Char_Type = mychartype,
                 _PlayerId = 0,
+                _Item_List = JSON.list_Token(j1,"il"),
+                _Defend_List = JSON.list_Token(j1, "ad"),
+                _Hostile_List = JSON.list_Token(j1, "ah"),
+                _Neutral_List = JSON.list_Token(j1, "an"),
                 Accumulated_Weight = 0,
                 Accumulated_Riding_Cap = 0,
                 Accumulated_Men = 0,
                 Accumulated_Land_Cap = 0,
                 Accumulated_Flying_Cap = 0,
-                Ultimate_Lord = 0
+                Ultimate_Lord = 0,
+                _CH_Attack = JSON.int_Token(j1, "CH.at"),
+                _CH_Behind = JSON.int_Token(j1, "CH.bh"),
+                _CH_Break_Point = JSON.int_Token(j1, "CH.bp"),
+                _CH_Contact = JSON.list_Token(j1, "CH.ct"),
+                _CH_Defense = JSON.int_Token(j1, "CH.df"),
+                _CH_Guard = JSON.int_Token(j1, "CH.gu"),
+                _CH_Health = JSON.int_Token(j1, "CH.he"),
+                _CH_LOY_Kind = JSON.int_Token(j1, "CH.lk", -2),
+                _CH_Lord = JSON.int_Token(j1, "CH.lo"),
+                _CH_LOY_Rate = JSON.int_Token(j1, "CH.lr"),
+                _CH_Missile = JSON.int_Token(j1, "CH.mi"),
+                _CH_NPC_Unit_Type = JSON.int_Token(j1, "CH.ni"),
+                _CH_Prisoner = JSON.int_Token(j1, "CH.pr"),
+                _CH_Rank = JSON.int_Token(j1, "CH.ra"),
+                _CH_Sick = JSON.int_Token(j1, "CH.si"),
+                _CH_Skills_List = JSON.list_Token(j1, "CH.sl"),
+                _CM_Cur_Aura = JSON.int_Token(j1, "CM.ca"),
+                _CM_Hide_Self = JSON.int_Token(j1, "CM.hs"),
+                _CM_Magician = JSON.int_Token(j1, "CM.im"),
+                _CM_Max_Aura = JSON.int_Token(j1, "CM.ma"),
+                _CM_Pledged_To = JSON.int_Token(j1, "CM.pl"),
+                _CM_Already_Visioned = JSON.list_Token(j1, "CM.vi"),
+                _CM_Vision_Protect = JSON.int_Token(j1, "CM.vp"),
+                _LI_Here_List = JSON.list_Token(j1, "LI.hl"),
+                _LI_Where = JSON.int_Token(j1, "LI.wh"),
+                _MI_Cmd_Allow = JSON.string_Token(j1, "MI.ca"),
+                _MI_Garrison_Castle = JSON.int_Token(j1, "MI.gc")
             });
             var Character = (Program._characters.Find(x => x._CharId == Convert.ToInt32(InputKey)));
             if (Character != null)
@@ -102,204 +133,50 @@ namespace OlyMapper
                         }
                     }
                 }
-                if (j1.SelectToken("CH.at") != null && j1.SelectToken("CH.at").HasValues)
-                {
-                    JArray myat;
-                    myat = (JArray)j1.SelectToken("CH.at");
-                    Character._CH_Attack = Convert.ToInt32(myat[0]);
-                }
-                Character._CH_Behind = 0;
-                if (j1.SelectToken("CH.bh") != null && j1.SelectToken("CH.bh").HasValues)
-                {
-                    JArray mybh;
-                    mybh = (JArray)j1.SelectToken("CH.bh");
-                    Character._CH_Behind = Convert.ToInt32(mybh[0]);
-                }
-                if (j1.SelectToken("CH.bp") != null && j1.SelectToken("CH.bp").HasValues)
-                {
-                    JArray mybp;
-                    mybp = (JArray)j1.SelectToken("CH.bp");
-                    Character._CH_Break_Point = Convert.ToInt32(mybp[0]);
-                }
-                if (j1.SelectToken("CH.ct") != null && j1.SelectToken("CH.ct").HasValues)
-                {
-                    JArray myct;
-                    List<int> mycta;
-                    myct = (JArray)j1.SelectToken("CH.ct");
-                    mycta = myct.ToObject<List<int>>();
-                    Character._CH_Contact = mycta.ToList();
-                }
-                if (j1.SelectToken("CH.df") != null && j1.SelectToken("CH.df").HasValues)
-                {
-                    JArray mydf;
-                    mydf = (JArray)j1.SelectToken("CH.df");
-                    Character._CH_Defense = Convert.ToInt32(mydf[0]);
-                }
-                Character._CH_Guard = 0;
-                if (j1.SelectToken("CH.gu") != null && j1.SelectToken("CH.gu").HasValues)
-                {
-                    JArray mygu;
-                    mygu = (JArray)j1.SelectToken("CH.gu");
-                    Character._CH_Guard = Convert.ToInt32(mygu[0]);
-                }
-                if (j1.SelectToken("CH.he") != null && j1.SelectToken("CH.he").HasValues)
-                {
-                    JArray myhe;
-                    myhe = (JArray)j1.SelectToken("CH.he");
-                    Character._CH_Health = Convert.ToInt32(myhe[0]);
-                }
-                Character._CH_LOY_Kind = -2;
-                if (j1.SelectToken("CH.lk") != null && j1.SelectToken("CH.lk").HasValues)
-                {
-                    JArray mylk;
-                    mylk = (JArray)j1.SelectToken("CH.lk");
-                    Character._CH_LOY_Kind = Convert.ToInt32(mylk[0]);
-                }
-                if (j1.SelectToken("CH.lo") != null && j1.SelectToken("CH.lo").HasValues)
-                {
-                    JArray mylo;
-                    mylo = (JArray)j1.SelectToken("CH.lo");
-                    Character._CH_Lord = Convert.ToInt32(mylo[0]);
-                }
-                Character._CH_LOY_Rate = 0;
-                if (j1.SelectToken("CH.lr") != null && j1.SelectToken("CH.lr").HasValues)
-                {
-                    JArray mylr;
-                    mylr = (JArray)j1.SelectToken("CH.lr");
-                    Character._CH_LOY_Rate = Convert.ToInt32(mylr[0]);
-                }
-                Character._CH_Missile = 0;
-                if (j1.SelectToken("CH.mi") != null && j1.SelectToken("CH.mi").HasValues)
-                {
-                    JArray mymi;
-                    mymi = (JArray)j1.SelectToken("CH.mi");
-                    Character._CH_Missile = Convert.ToInt32(mymi[0]);
-                }
-                Character._CH_NPC_Unit_Type = 0;
-                if (j1.SelectToken("CH.ni") != null && j1.SelectToken("CH.ni").HasValues)
-                {
-                    JArray myni;
-                    myni = (JArray)j1.SelectToken("CH.ni");
-                    Character._CH_NPC_Unit_Type = Convert.ToInt32(myni[0]);
-                }
-                Character._CH_Prisoner = 0;
-                if (j1.SelectToken("CH.pr") != null && j1.SelectToken("CH.pr").HasValues)
-                {
-                    JArray mypr;
-                    mypr = (JArray)j1.SelectToken("CH.pr");
-                    Character._CH_Prisoner = Convert.ToInt32(mypr[0]);
-                }
-                Character._CH_Rank = 0;
-                if (j1.SelectToken("CH.ra") != null && j1.SelectToken("CH.ra").HasValues)
-                {
-                    JArray myra;
-                    myra = (JArray)j1.SelectToken("CH.ra");
-                    Character._CH_Rank = Convert.ToInt32(myra[0]);
-                }
-                Character._CH_Sick = 0;
-                if (j1.SelectToken("CH.si") != null && j1.SelectToken("CH.si").HasValues)
-                {
-                    JArray mysi;
-                    mysi = (JArray)j1.SelectToken("CH.si");
-                    Character._CH_Sick = Convert.ToInt32(mysi[0]);
-                }
-                if (j1.SelectToken("CH.sl") != null && j1.SelectToken("CH.sl").HasValues)
-                {
-                    JArray mysl;
-                    mysl = (JArray)j1.SelectToken("CH.sl");
-                    List<string> mysla;
-                    mysla = mysl.ToObject<List<string>>();
-                    Character._CH_Skills_List = mysla.ToList();
-                }
-                Character._CM_Pledged_To = 0;
-                if (j1.SelectToken("CM.pl") != null && j1.SelectToken("CM.pl").HasValues)
-                {
-                    JArray mypl;
-                    mypl = (JArray)j1.SelectToken("CM.pl");
-                    Character._CM_Pledged_To = Convert.ToInt32(mypl[0].ToString());
-                }
-                if (j1.SelectToken("CM.vp") != null && j1.SelectToken("CM.vp").HasValues)
-                {
-                    JArray myvp;
-                    myvp = (JArray)j1.SelectToken("CM.vp");
-                    Character._CM_Vision_Protect = myvp[0].ToString();
-                }
-                Character._CM_Magician = 0;
-                if (j1.SelectToken("CM.im") != null && j1.SelectToken("CM.im").HasValues)
-                {
-                    JArray myim;
-                    myim = (JArray)j1.SelectToken("CM.im");
-                    Character._CM_Magician = Convert.ToInt32(myim[0]);
-                }
-                Character._CM_Max_Aura = 0;
-                if (j1.SelectToken("CM.ma") != null && j1.SelectToken("CM.ma").HasValues)
-                {
-                    JArray myma;
-                    myma = (JArray)j1.SelectToken("CM.ma");
-                    Character._CM_Max_Aura = Convert.ToInt32(myma[0]);
-                }
-                Character._CM_Cur_Aura = 0;
-                if (j1.SelectToken("CM.ca") != null && j1.SelectToken("CM.ca").HasValues)
-                {
-                    JArray myca;
-                    myca = (JArray)j1.SelectToken("CM.ca");
-                    Character._CM_Cur_Aura = Convert.ToInt32(myca[0]);
-                }
-                Character._CM_Hide_Self = 0;
-                if (j1.SelectToken("CM.hs") != null && j1.SelectToken("CM.hs").HasValues)
-                {
-                    JArray myhs;
-                    myhs = (JArray)j1.SelectToken("CM.hs");
-                    Character._CM_Hide_Self = Convert.ToInt32(myhs[0]);
-                }
-                if (j1.SelectToken("CM.vi") != null && j1.SelectToken("CM.vi").HasValues)
-                {
-                    JArray myvi;
-                    myvi = (JArray)j1.SelectToken("CM.vi");
-                    List<int> myvia;
-                    myvia = myvi.ToObject<List<int>>();
-                    Character._CM_Already_Visioned = new List<int>();
-                    for (int i = 0; i < myvi.Count; i++)
-                    {
-                        Character._CM_Already_Visioned.Add (Convert.ToInt32(myvia[i]));
-                    }
-                }
-                Character._LI_Where = 0;
-                if (j1.SelectToken("LI.wh") != null && j1.SelectToken("LI.wh").HasValues)
-                {
-                    JArray mywh;
-                    mywh = (JArray)j1.SelectToken("LI.wh");
-                    Character._LI_Where = Convert.ToInt32(mywh[0].ToString());
-                }
-                if (j1.SelectToken("LI.hl") != null && j1.SelectToken("LI.hl").HasValues)
-                {
-                    JArray myhl;
-                    myhl = (JArray)j1.SelectToken("LI.hl");
-                    List<string> myhla;
-                    myhla = myhl.ToObject<List<string>>();
-                    Character._LI_Here_List = myhla.ToList();
-                }
-                if (j1.SelectToken("MI.ca") != null && j1.SelectToken("MI.ca").HasValues)
-                {
-                    JArray myca;
-                    myca = (JArray)j1.SelectToken("MI.ca");
-                    Character._MI_Cmd_Allow = myca[0].ToString();
-                }
-                Character._MI_Garrison_Castle = 0;
-                if (j1.SelectToken("MI.gc") != null && j1.SelectToken("MI.gc").HasValues)
-                {
-                    JArray mygc;
-                    mygc = (JArray)j1.SelectToken("MI.gc");
-                    Character._MI_Garrison_Castle = Convert.ToInt32(mygc[0].ToString());
-                }
-                if (j1.SelectToken("il") != null && j1.SelectToken("il").HasValues)
-                {
-                    JArray myil;
-                    List<int> myila;
-                    myil = (JArray)j1.SelectToken("il");
-                    myila = myil.ToObject<List<int>>();
-                    Character._Item_List = myila.ToList();
-                }
+                //if (j1.SelectToken("CH.ct") != null && j1.SelectToken("CH.ct").HasValues)
+                //{
+                //    JArray myct;
+                //    List<int> mycta;
+                //    myct = (JArray)j1.SelectToken("CH.ct");
+                //    mycta = myct.ToObject<List<int>>();
+                //    Character._CH_Contact = mycta.ToList();
+                //}
+                //if (j1.SelectToken("CH.sl") != null && j1.SelectToken("CH.sl").HasValues)
+                //{
+                //    JArray mysl;
+                //    mysl = (JArray)j1.SelectToken("CH.sl");
+                //    List<string> mysla;
+                //    mysla = mysl.ToObject<List<string>>();
+                //    Character._CH_Skills_List = mysla.ToList();
+                //}
+                //if (j1.SelectToken("CM.vi") != null && j1.SelectToken("CM.vi").HasValues)
+                //{
+                //    JArray myvi;
+                //    myvi = (JArray)j1.SelectToken("CM.vi");
+                //    List<int> myvia;
+                //    myvia = myvi.ToObject<List<int>>();
+                //    Character._CM_Already_Visioned = new List<int>();
+                //    for (int i = 0; i < myvi.Count; i++)
+                //    {
+                //        Character._CM_Already_Visioned.Add (Convert.ToInt32(myvia[i]));
+                //    }
+                //}
+                //if (j1.SelectToken("LI.hl") != null && j1.SelectToken("LI.hl").HasValues)
+                //{
+                //    JArray myhl;
+                //    myhl = (JArray)j1.SelectToken("LI.hl");
+                //    List<string> myhla;
+                //    myhla = myhl.ToObject<List<string>>();
+                //    Character._LI_Here_List = myhla.ToList();
+                //}
+                //if (j1.SelectToken("il") != null && j1.SelectToken("il").HasValues)
+                //{
+                //    JArray myil;
+                //    List<int> myila;
+                //    myil = (JArray)j1.SelectToken("il");
+                //    myila = myil.ToObject<List<int>>();
+                //    Character._Item_List = myila.ToList();
+                //}
                 if (j1.SelectToken("tl") != null && j1.SelectToken("tl").HasValues)
                 {
                     JArray mytl;
@@ -308,30 +185,30 @@ namespace OlyMapper
                     mytla = mytl.ToObject<List<string>>();
                     Character._Trade_List = mytla.ToList();
                 }
-                if (j1.SelectToken("ad") != null && j1.SelectToken("ad").HasValues)
-                {
-                    JArray myad;
-                    List<string> myada;
-                    myad = (JArray)j1.SelectToken("ad");
-                    myada = myad.ToObject<List<string>>();
-                    Character._Defend_List = myada.ToList();
-                }
-                if (j1.SelectToken("ah") != null && j1.SelectToken("ah").HasValues)
-                {
-                    JArray myah;
-                    List<string> myaha;
-                    myah = (JArray)j1.SelectToken("ah");
-                    myaha = myah.ToObject<List<string>>();
-                    Character._Hostile_List = myaha.ToList();
-                }
-                if (j1.SelectToken("an") != null && j1.SelectToken("an").HasValues)
-                {
-                    JArray myan;
-                    List<string> myana;
-                    myan = (JArray)j1.SelectToken("an");
-                    myana = myan.ToObject<List<string>>();
-                    Character._Neutral_List = myana.ToList();
-                }
+                //if (j1.SelectToken("ad") != null && j1.SelectToken("ad").HasValues)
+                //{
+                //    JArray myad;
+                //    List<string> myada;
+                //    myad = (JArray)j1.SelectToken("ad");
+                //    myada = myad.ToObject<List<string>>();
+                //    Character._Defend_List = myada.ToList();
+                //}
+                //if (j1.SelectToken("ah") != null && j1.SelectToken("ah").HasValues)
+                //{
+                //    JArray myah;
+                //    List<string> myaha;
+                //    myah = (JArray)j1.SelectToken("ah");
+                //    myaha = myah.ToObject<List<string>>();
+                //    Character._Hostile_List = myaha.ToList();
+                //}
+                //if (j1.SelectToken("an") != null && j1.SelectToken("an").HasValues)
+                //{
+                //    JArray myan;
+                //    List<string> myana;
+                //    myan = (JArray)j1.SelectToken("an");
+                //    myana = myan.ToObject<List<string>>();
+                //    Character._Neutral_List = myana.ToList();
+                //}
             }
         }
         public static void Post_PlayerId()
@@ -368,9 +245,9 @@ namespace OlyMapper
                 int iterations = _mychar._CH_Skills_List.Count / 4;
                 for (int i = 0; i < iterations; i++)
                 {
-                    if (_mychar._CH_Skills_List[(i * 4) + 0] == "750")
+                    if (_mychar._CH_Skills_List[(i * 4) + 0] == 750)
                     {
-                        if (!_mychar._CH_Skills_List[(i * 4) + 1].Equals("0"))
+                        if (!_mychar._CH_Skills_List[(i * 4) + 1].Equals(0))
                         {
                             return true;
                         }

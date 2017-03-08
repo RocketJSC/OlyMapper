@@ -40,26 +40,11 @@ namespace OlyMapper
             {
                 _SkillId = Convert.ToInt32(InputKey),
                 _First_Line = myfl[0].ToString(),
-                _Name = myna[0].ToString()
+                _Name = myna[0].ToString(),
+                _SK_Required_Skill = JSON.int_Token(j1, "SK.rs"),
+                _SK_Time_to_learn = JSON.int_Token(j1, "SK.tl")
+
             });
-            //foreach (var Location in Program._locations)
-            var Skill = (Program._skills.Find(x => x._SkillId == Convert.ToInt32(InputKey)));
-            if (Skill != null)
-            {
-                if (j1.SelectToken("SK.tl") != null && j1.SelectToken("SK.tl").HasValues)
-                {
-                    JArray mytl;
-                    mytl = (JArray)j1.SelectToken("SK.tl");
-                    Skill._SK_Time_to_learn = Convert.ToInt32(mytl[0]);
-                }
-                Skill._SK_Required_Skill = 0;
-                if (j1.SelectToken("SK.rs") != null && j1.SelectToken("SK.rs").HasValues)
-                {
-                    JArray myrs;
-                    myrs = (JArray)j1.SelectToken("SK.rs");
-                    Skill._SK_Required_Skill = Convert.ToInt32(myrs[0]);
-                }
-            }
         }
     }
 }

@@ -30,9 +30,9 @@ namespace OlyMapper
                 if (myloc._LI_Here_List != null)
                 {
                     level++;
-                    foreach (string loc in myloc._LI_Here_List)
+                    foreach (int loc in myloc._LI_Here_List)
                     {
-                        stack_list = chase_structure(Convert.ToInt32(loc), stack_list, level);
+                        stack_list = chase_structure(loc, stack_list, level);
                     }
                 }
             }
@@ -45,9 +45,9 @@ namespace OlyMapper
                     if (mychar._LI_Here_List != null)
                     {
                         level++;
-                        foreach (string chars in mychar._LI_Here_List)
+                        foreach (int chars in mychar._LI_Here_List)
                         {
-                            stack_list = chase_structure(Convert.ToInt32(chars), stack_list, level);
+                            stack_list = chase_structure(chars, stack_list, level);
                         }
                     }
                 }

@@ -355,20 +355,20 @@ namespace OlyMapper
                                                 Location city = null;
                                                 Location graveyard = null;
                                                 int Count = 0;
-                                                foreach (string _here_id in _myloc._LI_Here_List)
+                                                foreach (int _here_id in _myloc._LI_Here_List)
                                                 {
-                                                    if (Convert.ToInt32(_here_id) >= 56760 && Convert.ToInt32(_here_id) <= 78999)
+                                                    if (_here_id >= 56760 && _here_id <= 78999)
                                                     {
                                                         Count++;
-                                                        if (Program._locations.Find(z => z._LocId == Convert.ToInt32(_here_id))._Loc_Type.Contains("city"))
+                                                        if (Program._locations.Find(z => z._LocId == _here_id)._Loc_Type.Contains("city"))
                                                         {
-                                                            city = Program._locations.Find(z => z._LocId == Convert.ToInt32(_here_id));
+                                                            city = Program._locations.Find(z => z._LocId == _here_id);
                                                         }
                                                         else
                                                         {
-                                                            if (Program._locations.Find(z => z._LocId == Convert.ToInt32(_here_id))._Loc_Type.Contains("graveyard"))
+                                                            if (Program._locations.Find(z => z._LocId == _here_id)._Loc_Type.Contains("graveyard"))
                                                             {
-                                                                graveyard = Program._locations.Find(z => z._LocId == Convert.ToInt32(_here_id));
+                                                                graveyard = Program._locations.Find(z => z._LocId == _here_id);
                                                             }
                                                             else
                                                             {
@@ -644,20 +644,20 @@ namespace OlyMapper
                                                 Location loc1 = null;
                                                 Location loc2 = null;
                                                 int Count = 0;
-                                                foreach (string _here_id in _myloc._LI_Here_List)
+                                                foreach (int _here_id in _myloc._LI_Here_List)
                                                 {
-                                                    if (Convert.ToInt32(_here_id) >= 56760)
+                                                    if (_here_id >= 56760)
                                                     {
                                                         Count++;
                                                         if (loc2 == null)
                                                         {
-                                                            loc2 = Program._locations.Find(z => z._LocId == Convert.ToInt32(_here_id));
+                                                            loc2 = Program._locations.Find(z => z._LocId == _here_id);
                                                         }
                                                         else
                                                         {
                                                             if (loc1 == null)
                                                             {
-                                                                loc1 = Program._locations.Find(z => z._LocId == Convert.ToInt32(_here_id));
+                                                                loc1 = Program._locations.Find(z => z._LocId == _here_id);
                                                             }
                                                         }
                                                     }
@@ -874,7 +874,7 @@ namespace OlyMapper
                                                     Location loc1 = null;
                                                     Location loc2 = null;
                                                     int Count = 0;
-                                                    foreach (string _here_id in _myloc._LI_Here_List)
+                                                    foreach (int _here_id in _myloc._LI_Here_List)
                                                     {
                                                         if (Convert.ToInt32(_here_id) >= 56760)
                                                         {
@@ -1005,11 +1005,11 @@ namespace OlyMapper
                     {
                         if (myloc._SL_Teaches != null)
                         {
-                            foreach (String myskillid in myloc._SL_Teaches)                            {
+                            foreach (int myskillid in myloc._SL_Teaches)                            {
                                 _skillxref.Add(new SkillXref
                                 {
-                                    _skillid = Convert.ToInt32(myskillid),
-                                    _locid = Convert.ToInt32(myloc._LocId),
+                                    _skillid = myskillid,
+                                    _locid = myloc._LocId,
                                     _regionid = myloc.Calc_CurrentRegion
                                 });
                             }

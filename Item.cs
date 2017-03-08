@@ -19,9 +19,9 @@ namespace OlyMapper
         public int _Land_Capacity { get; set; }
         public int _Ride_Capacity { get; set; }
         public int _Fly_Capacity { get; set; }
-        public string _IT_Prominent { get; set; }
-        public string _IT_Man_Item { get; set; }
-        public string _IT_Animal { get; set; }
+        public int _IT_Prominent { get; set; }
+        public int _IT_Man_Item { get; set; }
+        public int _IT_Animal { get; set; }
         public int _IT_Attack { get; set; }
         public int _IT_Defense { get; set; }
         public int _IT_Missile { get; set; }
@@ -68,166 +68,30 @@ namespace OlyMapper
                 _ItemId_Conv = Utilities.to_oid(InputKey),
                 _First_Line = myfl[0].ToString(),
                 _Name = myna[0].ToString(),
-                _Item_Type = myitemtype
+                _Item_Type = myitemtype,
+                _IM_Attack_Bonus = JSON.int_Token(j1, "IM.ab"),
+                _IM_Aura = JSON.int_Token(j1, "IM.au"),
+                _IM_Aura_Bonus = JSON.int_Token(j1, "IM.ba"),
+                _IM_Defense_Bonus = JSON.int_Token(j1, "IM.db"),
+                _IM_May_Study = JSON.int_Token(j1, "IM.ms"),
+                _IM_Missile_Bonus = JSON.int_Token(j1, "IM.mb"),
+                _IM_Use_Key = JSON.int_Token(j1, "IM.uk"),
+                _IT_Animal = JSON.int_Token(j1, "IT.an"),
+                _IT_Attack = JSON.int_Token(j1, "IT.at"),
+                _IT_Defense = JSON.int_Token(j1, "IT.df"),
+                _Fly_Capacity = JSON.int_Token(j1, "IT.fc"),
+                _Land_Capacity = JSON.int_Token(j1, "IT.lc"),
+                _IM_Lore = JSON.int_Token(j1, "IM.lo"),
+                _IT_Missile = JSON.int_Token(j1, "IT.mi"),
+                _IM_Project_Cast = JSON.int_Token(j1, "IM.pc"),
+                _Plural = JSON.string_Token(j1, "IT.pl"),
+                _IT_Prominent = JSON.int_Token(j1, "IT.pr"),
+                _IT_Man_Item = JSON.int_Token(j1, "IT.mu"),
+                _Ride_Capacity = JSON.int_Token(j1, "IT.rc"),
+                _Weight = JSON.int_Token(j1, "IT.wt"),
+                _IT_Who_Has = JSON.int_Token(j1, "IT.un"),
+                _PL_Unit = JSON.int_Token(j1, "PL.un")
             });
-            //foreach (var Location in Program._locations)
-            var Itemz = (Program._items.Find(x => x._ItemId == Convert.ToInt32(InputKey)));
-            if (Itemz != null)
-            {
-                if (j1.SelectToken("IT.pl") != null && j1.SelectToken("IT.pl").HasValues)
-                {
-                    JArray mypl;
-                    mypl = (JArray)j1.SelectToken("IT.pl");
-                    Itemz._Plural = mypl[0].ToString();
-                }
-                Itemz._Weight = 0;
-                if (j1.SelectToken("IT.wt") != null && j1.SelectToken("IT.wt").HasValues)
-                {
-                    JArray mywt;
-                    mywt = (JArray)j1.SelectToken("IT.wt");
-                    Itemz._Weight = Convert.ToInt32(mywt[0]);
-                }
-                Itemz._Land_Capacity = 0;
-                if (j1.SelectToken("IT.lc") != null && j1.SelectToken("IT.lc").HasValues)
-                {
-                    JArray mylc;
-                    mylc = (JArray)j1.SelectToken("IT.lc");
-                    Itemz._Land_Capacity = Convert.ToInt32(mylc[0]);
-                }
-                Itemz._Ride_Capacity = 0;
-                if (j1.SelectToken("IT.rc") != null && j1.SelectToken("IT.rc").HasValues)
-                {
-                    JArray myrc;
-                    myrc = (JArray)j1.SelectToken("IT.rc");
-                    Itemz._Ride_Capacity = Convert.ToInt32(myrc[0]);
-                }
-                Itemz._Fly_Capacity = 0;
-                if (j1.SelectToken("IT.fc") != null && j1.SelectToken("IT.fc").HasValues)
-                {
-                    JArray myfc;
-                    myfc = (JArray)j1.SelectToken("IT.fc");
-                    Itemz._Fly_Capacity = Convert.ToInt32(myfc[0]);
-                }
-                Itemz._IT_Prominent = "0";
-                if (j1.SelectToken("IT.pr") != null && j1.SelectToken("IT.pr").HasValues)
-                {
-                    JArray mypr;
-                    mypr = (JArray)j1.SelectToken("IT.pr");
-                    Itemz._IT_Prominent = mypr[0].ToString();
-                }
-                Itemz._IT_Man_Item = "0";
-                if (j1.SelectToken("IT.mu") != null && j1.SelectToken("IT.mu").HasValues)
-                {
-                    JArray mymu;
-                    mymu = (JArray)j1.SelectToken("IT.mu");
-                    Itemz._IT_Man_Item = mymu[0].ToString();
-                }
-                Itemz._IT_Animal = "0";
-                if (j1.SelectToken("IT.an") != null && j1.SelectToken("IT.an").HasValues)
-                {
-                    JArray myan;
-                    myan = (JArray)j1.SelectToken("IT.an");
-                    Itemz._IT_Animal = myan[0].ToString();
-                }
-                Itemz._IT_Who_Has = 0;
-                if (j1.SelectToken("IT.un") != null && j1.SelectToken("IT.un").HasValues)
-                {
-                    JArray myun;
-                    myun = (JArray)j1.SelectToken("IT.un");
-                    Itemz._IT_Who_Has = Convert.ToInt32(myun[0]);
-                }
-                Itemz._IT_Attack = 0;
-                if (j1.SelectToken("IT.at") != null && j1.SelectToken("IT.at").HasValues)
-                {
-                    JArray myat;
-                    myat = (JArray)j1.SelectToken("IT.at");
-                    Itemz._IT_Attack = Convert.ToInt32(myat[0]);
-                }
-                Itemz._IT_Defense = 0;
-                if (j1.SelectToken("IT.df") != null && j1.SelectToken("IT.df").HasValues)
-                {
-                    JArray mydf;
-                    mydf = (JArray)j1.SelectToken("IT.df");
-                    Itemz._IT_Defense = Convert.ToInt32(mydf[0]);
-                }
-                Itemz._IT_Missile = 0;
-                if (j1.SelectToken("IT.mi") != null && j1.SelectToken("IT.mi").HasValues)
-                {
-                    JArray mymi;
-                    mymi = (JArray)j1.SelectToken("IT.mi");
-                    Itemz._IT_Missile = Convert.ToInt32(mymi[0]);
-                }
-                Itemz._IM_Aura = 0;
-                if (j1.SelectToken("IM.au") != null && j1.SelectToken("IM.au").HasValues)
-                {
-                    JArray myau;
-                    myau = (JArray)j1.SelectToken("IM.au");
-                    Itemz._IM_Aura = Convert.ToInt32(myau[0]);
-                }
-                Itemz._IM_Aura_Bonus = 0;
-                if (j1.SelectToken("IM.ba") != null && j1.SelectToken("IM.ba").HasValues)
-                {
-                    JArray myba;
-                    myba = (JArray)j1.SelectToken("IM.ba");
-                    Itemz._IM_Aura_Bonus = Convert.ToInt32(myba[0]);
-                }
-                Itemz._IM_Attack_Bonus = 0;
-                if (j1.SelectToken("IM.ab") != null && j1.SelectToken("IM.ab").HasValues)
-                {
-                    JArray myab;
-                    myab = (JArray)j1.SelectToken("IM.ab");
-                    Itemz._IM_Attack_Bonus = Convert.ToInt32(myab[0]);
-                }
-                Itemz._IM_Defense_Bonus = 0;
-                if (j1.SelectToken("IM.db") != null && j1.SelectToken("IM.db").HasValues)
-                {
-                    JArray mydb;
-                    mydb = (JArray)j1.SelectToken("IM.db");
-                    Itemz._IM_Defense_Bonus = Convert.ToInt32(mydb[0]);
-                }
-                Itemz._IM_Missile_Bonus = 0;
-                if (j1.SelectToken("IM.mb") != null && j1.SelectToken("IM.mb").HasValues)
-                {
-                    JArray mymb;
-                    mymb = (JArray)j1.SelectToken("IM.mb");
-                    Itemz._IM_Missile_Bonus = Convert.ToInt32(mymb[0]);
-                }
-                Itemz._IM_May_Study = 0;
-                if (j1.SelectToken("IM.ms") != null && j1.SelectToken("IM.ms").HasValues)
-                {
-                    JArray myms;
-                    myms = (JArray)j1.SelectToken("IM.ms");
-                    Itemz._IM_May_Study = Convert.ToInt32(myms[0]);
-                }
-                Itemz._IM_Use_Key = 0;
-                if (j1.SelectToken("IM.uk") != null && j1.SelectToken("IM.uk").HasValues)
-                {
-                    JArray myuk;
-                    myuk = (JArray)j1.SelectToken("IM.uk");
-                    Itemz._IM_Use_Key = Convert.ToInt32(myuk[0]);
-                }
-                Itemz._IM_Project_Cast = 0;
-                if (j1.SelectToken("IM.pc") != null && j1.SelectToken("IM.pc").HasValues)
-                {
-                    JArray mypc;
-                    mypc = (JArray)j1.SelectToken("IM.pc");
-                    Itemz._IM_Project_Cast = Convert.ToInt32(mypc[0]);
-                }
-                Itemz._IM_Lore = 0;
-                if (j1.SelectToken("IM.lo") != null && j1.SelectToken("IM.lo").HasValues)
-                {
-                    JArray mylo;
-                    mylo = (JArray)j1.SelectToken("IM.lo");
-                    Itemz._IM_Lore = Convert.ToInt32(mylo[0]);
-                }
-                Itemz._PL_Unit = 0;
-                if (j1.SelectToken("PL.un") != null && j1.SelectToken("PL.un").HasValues)
-                {
-                    JArray myun;
-                    myun = (JArray)j1.SelectToken("PL.un");
-                    Itemz._PL_Unit = Convert.ToInt32(myun[0]);
-                }
-            }
         }
         public static string Determine_Use (Itemz _myitem)
         {
@@ -400,11 +264,11 @@ namespace OlyMapper
                         int iterations = _myloctrade._Trade_List.Count / 8;
                         for (int i = 0; i < iterations; i++)
                         {
-                            if ((_myloctrade._Trade_List[(i * 8) + 1]) == _myitem._ItemId.ToString())
+                            if ((_myloctrade._Trade_List[(i * 8) + 1]) == _myitem._ItemId)
                             {
-                                if (_myloctrade._Trade_List[(i * 8) + 0] == "1" || _myloctrade._Trade_List[(i * 8) + 0] == "2")
+                                if (_myloctrade._Trade_List[(i * 8) + 0] == 1 || _myloctrade._Trade_List[(i * 8) + 0] == 2)
                                 {
-                                    if (_myloctrade._Trade_List[(i * 8) + 0] == "1")
+                                    if (_myloctrade._Trade_List[(i * 8) + 0] == 1)
                                     {
                                         if (outline.Length > 0)
                                         {
@@ -412,7 +276,7 @@ namespace OlyMapper
                                         }
                                         outline.Append("buy: " + _myloctrade._Name + " " + Utilities.format_anchor(_myloctrade._LocId_Conv));
                                     }
-                                    if (_myloctrade._Trade_List[(i * 8) + 0] == "2")
+                                    if (_myloctrade._Trade_List[(i * 8) + 0] == 2)
                                     {
                                         if (outline.Length > 0)
                                         {
@@ -479,7 +343,7 @@ namespace OlyMapper
                 myweight._fly_weight += item_weight;
             }
             myweight._total_weight += item_weight;
-            if(myitem._IT_Animal == "1")
+            if(myitem._IT_Animal == 1)
             {
                 myweight._animals += qty;
             }

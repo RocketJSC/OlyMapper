@@ -65,6 +65,10 @@ namespace OlyMapper
             {
                 w.WriteLine("<p>" + Utilities.format_anchor2("main_map_leaf_" + Utilities.to_oid(((1000 * (_myloc._LocId / 1000)) + (10 * (int)((_myloc._LocId % 100) / 10))).ToString()), "Return to map</p>"));
             }
+            else
+            {
+                // also need to write it for structures
+            }
         }
 
         private static void Write_Loc_Page_Header(Location _myloc, StreamWriter w)
@@ -88,12 +92,9 @@ namespace OlyMapper
                 outline3.Append((Program._locations.Find(x => x._LocId == Convert.ToInt32(_myloc._LI_Where))._LocId_Conv));
                 outline3.Append("]");
             }
-            if (_myloc._SL_Safe != null)
+            if (_myloc._SL_Safe == 1)
             {
-                if (_myloc._SL_Safe.Equals("1"))
-                {
-                    outline3.Append(", safe haven");
-                }
+                outline3.Append(", safe haven");
             }
             if (_myloc._LO_Hidden == 1)
             {
@@ -113,7 +114,7 @@ namespace OlyMapper
             // Print Province Controlled By
             if (_myloc._LI_Here_List != null)
             {
-                foreach (String _my_inner in _myloc._LI_Here_List)
+                foreach (int _my_inner in _myloc._LI_Here_List)
                 {
                     Character _my_dest_char = Program._characters.Find(x => x._CharId == Convert.ToInt32(_my_inner));
                     if (_my_dest_char != null)
@@ -251,10 +252,10 @@ namespace OlyMapper
             {
                 w.WriteLine("<H4>Cities rumored to be nearby:</H4>");
                 w.WriteLine("<ul>");
-                foreach (String locationnb in _myloc._SL_Near_Cities)
+                foreach (int locationnb in _myloc._SL_Near_Cities)
                 {
                     StringBuilder outline = new StringBuilder();
-                    Location _nearby_city = Program._locations.Find(x => x._LocId == Convert.ToInt32(locationnb));
+                    Location _nearby_city = Program._locations.Find(x => x._LocId == locationnb);
                     Location _city_province = Program._locations.Find(x => x._LocId == _nearby_city._LI_Where);
                     outline.Append("<li>");
                     outline.Append(_nearby_city._Name + " ");
@@ -275,9 +276,9 @@ namespace OlyMapper
             {
                 w.WriteLine("<H4>Skills taught here:</H4>");
                 w.WriteLine("<ul>");
-                foreach (String skill in _myloc._SL_Teaches)
+                foreach (int skill in _myloc._SL_Teaches)
                 {
-                    Skill _myskill = Program._skills.Find(x => x._SkillId == Convert.ToInt32(skill));
+                    Skill _myskill = Program._skills.Find(x => x._SkillId == skill);
                     w.WriteLine("<li>" + _myskill._Name + " [" + skill + "]</li>");
                 }
                 w.WriteLine("</ul>");
@@ -294,10 +295,10 @@ namespace OlyMapper
                 int iterations = _myloc._Trade_List.Count / 8;
                 for (int i = 0; i < iterations; i++)
                 {
-                    if (_myloc._Trade_List[(i * 8) + 0] == "1"
-                    || _myloc._Trade_List[(i * 8) + 0] == "2")
+                    if (_myloc._Trade_List[(i * 8) + 0] == 1
+                    || _myloc._Trade_List[(i * 8) + 0] == 2)
                     {
-                        Itemz _myitem = Program._items.Find(x => x._ItemId == Convert.ToInt32(_myloc._Trade_List[(i * 8) + 1]));
+                        Itemz _myitem = Program._items.Find(x => x._ItemId == _myloc._Trade_List[(i * 8) + 1]);
                         if (_myitem != null)
                         {
                             _trades.Add(new Trade
@@ -307,9 +308,9 @@ namespace OlyMapper
                                 _Who_id = _myloc._LocId,
                                 _Who_id_Conv = _myloc._LocId_Conv,
                                 _Who_Type = 1,
-                                _Trade_Kind = Convert.ToInt32(_myloc._Trade_List[(i * 8) + 0]),
-                                _Number = Convert.ToInt32(_myloc._Trade_List[(i * 8) + 2]),
-                                _Price = Convert.ToInt32(_myloc._Trade_List[(i * 8) + 3]),
+                                _Trade_Kind = _myloc._Trade_List[(i * 8) + 0],
+                                _Number = _myloc._Trade_List[(i * 8) + 2],
+                                _Price = _myloc._Trade_List[(i * 8) + 3],
                                 _Weight = _myitem._Weight,
                                 _Item_Name = _myitem._Name
                             });
@@ -570,30 +571,30 @@ namespace OlyMapper
             Boolean seen_here = false;
             Boolean ships_docked = false;
             // Determine if Inner Locations/Seen Here
-            foreach (String _my_inner in _myloc._LI_Here_List)
+            foreach (int _my_inner in _myloc._LI_Here_List)
             {
-                Location _my_dest_loc = Program._locations.Find(x => x._LocId == Convert.ToInt32(_my_inner));
+                Location _my_dest_loc = Program._locations.Find(x => x._LocId == _my_inner);
                 if (_my_dest_loc != null)
                 {
                     print_inner = true;
                 }
                 else
                 {
-                    Character _my_dest_char = Program._characters.Find(x => x._CharId == Convert.ToInt32(_my_inner));
+                    Character _my_dest_char = Program._characters.Find(x => x._CharId == _my_inner);
                     if (_my_dest_char != null)
                     {
                         seen_here = true;
                     }
                     else
                     {
-                        Ship _my_dest_ship = Program._ships.Find(x => x._ShipId == Convert.ToInt32(_my_inner));
+                        Ship _my_dest_ship = Program._ships.Find(x => x._ShipId == _my_inner);
                         if (_my_dest_ship != null)
                         {
                             ships_docked = true;
                         }
                         else
                         {
-                            Storm _my_dest_storm = Program._storms.Find(x => x._StormId == Convert.ToInt32(_my_inner));
+                            Storm _my_dest_storm = Program._storms.Find(x => x._StormId == _my_inner);
                             if (_my_dest_storm != null)
                             {
                                 // storm
@@ -609,53 +610,66 @@ namespace OlyMapper
             if (print_inner)
             {
                 w.WriteLine("<H4>Inner Locations:</H4>");
-                w.WriteLine("<ul>");
-                print_inner = true;
-                foreach (String _my_inner in _myloc._LI_Here_List)
-                {
-                    Location _my_dest_loc = Program._locations.Find(x => x._LocId == Convert.ToInt32(_my_inner));
-                    if (_my_dest_loc != null)
-                    {
-                        Write_Sub_Locs_HTML(_myloc, w, _my_dest_loc);
-                    }
-                    //else
-                    //{
-                    //    break;
-                    //}
-                }
-                w.WriteLine("</ul>");
+                Write_Inner_Locs(_myloc, w);
             }
             if (seen_here)
             {
                 w.WriteLine("<H4>Seen Here:</H4>");
-                w.WriteLine("<ul>");
-                print_inner = true;
-                foreach (String _my_inner in _myloc._LI_Here_List)
-                {
-                    Character _my_char = Program._characters.Find(x => x._CharId == Convert.ToInt32(_my_inner));
-                    if (_my_char != null)
-                    {
-                        Write_Characters_HTML(_my_char, w);
-                    }
-                }
-                w.WriteLine("</ul>");
+                Write_Seen_Here(_myloc, w);
             }
             if (ships_docked)
             {
                 w.WriteLine("<H4>" + (_myloc._Loc_Type != "ocean" ? "Ships docked at port:" : "Ships sighted:") + "</H4>");
-                w.WriteLine("<ul>");
-                print_inner = true;
-                foreach (String _my_inner in _myloc._LI_Here_List)
-                {
-                    Ship _my_ship = Program._ships.Find(x => x._ShipId == Convert.ToInt32(_my_inner));
-                    if (_my_ship != null)
-                    {
-                        Write_Ships_HTML(_my_ship, w);
-                    }
-                }
-                w.WriteLine("</ul>");
+                Write_Ships_Docked(_myloc, w);
             }
         }
+
+        private static void Write_Ships_Docked(Location _myloc, StreamWriter w)
+        {
+            w.WriteLine("<ul>");
+            foreach (int _my_inner in _myloc._LI_Here_List)
+            {
+                Ship _my_ship = Program._ships.Find(x => x._ShipId == _my_inner);
+                if (_my_ship != null)
+                {
+                    Write_Ships_HTML(_my_ship, w);
+                }
+            }
+            w.WriteLine("</ul>");
+        }
+
+        private static void Write_Seen_Here(Location _myloc, StreamWriter w)
+        {
+            w.WriteLine("<ul>");
+            foreach (int _my_inner in _myloc._LI_Here_List)
+            {
+                Character _my_char = Program._characters.Find(x => x._CharId == _my_inner);
+                if (_my_char != null)
+                {
+                    Write_Characters_HTML(_my_char, w);
+                }
+            }
+            w.WriteLine("</ul>");
+        }
+
+        private static void Write_Inner_Locs(Location _myloc, StreamWriter w)
+        {
+            w.WriteLine("<ul>");
+            foreach (int _my_inner in _myloc._LI_Here_List)
+            {
+                Location _my_dest_loc = Program._locations.Find(x => x._LocId == _my_inner);
+                if (_my_dest_loc != null)
+                {
+                    Write_Sub_Locs_HTML(_myloc, w, _my_dest_loc);
+                }
+                //else
+                //{
+                //    break;
+                //}
+            }
+            w.WriteLine("</ul>");
+        }
+
         public static void Write_Hidden_Accesses_HTML(Location _myloc, StreamWriter w)
         {
             bool firstline = true;
@@ -691,13 +705,13 @@ namespace OlyMapper
             outline.Append(" ");
             outline.Append(Utilities.format_anchor(_my_dest_loc._LocId_Conv));
             outline.Append(", " + _my_dest_loc._Loc_Type);
-            outline.Append(_my_dest_loc._LO_Hidden.Equals(1) ? " ,hidden":"");
+            outline.Append(_my_dest_loc._LO_Hidden.Equals(1) ? ", hidden":"");
             outline.Append((!_myloc._Loc_Type.Contains("city") && _my_dest_loc._SL_Defense == 0) ? ", 1 day" : "");
             outline.Append(_my_dest_loc._SL_Defense != 0 ?", defense " + _my_dest_loc._SL_Defense:"");
             if (_my_dest_loc._Loc_Type.Contains("castle"))
             {
                 // level
-                if (_my_dest_loc._SL_Castle_Level != null)
+                if (_my_dest_loc._SL_Castle_Level != 0)
                 {
                     outline.Append(", level " + _my_dest_loc._SL_Castle_Level);
                 }
@@ -740,30 +754,30 @@ namespace OlyMapper
                 if (_my_dest_loc._LI_Here_List != null)
                 {
                     w.WriteLine("<ul>");
-                    foreach (String _my_inner in _my_dest_loc._LI_Here_List)
+                    foreach (int _my_inner in _my_dest_loc._LI_Here_List)
                     {
-                        Location _my_dest_loc2 = Program._locations.Find(x => x._LocId == Convert.ToInt32(_my_inner));
+                        Location _my_dest_loc2 = Program._locations.Find(x => x._LocId == _my_inner);
                         if (_my_dest_loc2 != null)
                         {
                             Write_Sub_Locs_HTML(_myloc, w, _my_dest_loc2);
                         }
                         else
                         {
-                            Character _my_char_loc2 = Program._characters.Find(x => x._CharId == Convert.ToInt32(_my_inner));
+                            Character _my_char_loc2 = Program._characters.Find(x => x._CharId == _my_inner);
                             if (_my_char_loc2 != null)
                             {
                                 Write_Characters_HTML(_my_char_loc2, w);
                             }
                             else
                             {
-                                Ship _my_ship_loc2 = Program._ships.Find(x => x._ShipId == Convert.ToInt32(_my_inner));
+                                Ship _my_ship_loc2 = Program._ships.Find(x => x._ShipId == _my_inner);
                                 if (_my_ship_loc2 != null)
                                 {
                                     Write_Ships_HTML(_my_ship_loc2, w);
                                 }
                                 else
                                 {
-                                    Storm _my_storm_loc2 = Program._storms.Find(x => x._StormId == Convert.ToInt32(_my_inner));
+                                    Storm _my_storm_loc2 = Program._storms.Find(x => x._StormId == _my_inner);
                                     if (_my_storm_loc2 != null)
                                     {
                                         //Write_Storms_HTML(_my_ship_loc2, w);
@@ -817,7 +831,7 @@ namespace OlyMapper
                 int num_items = _myChar._Item_List.Count / 2;
                 for (int i = 0; i < num_items; i++)
                 {
-                    if (Program._items.Find(x => x._ItemId == _myChar._Item_List[Convert.ToInt32((i * 2) + 0)])._IT_Prominent == "1")
+                    if (Program._items.Find(x => x._ItemId == _myChar._Item_List[Convert.ToInt32((i * 2) + 0)])._IT_Prominent == 1)
                     {
                         outline.Append(", " + _myChar._Item_List[(i * 2) + 1] + " " +
                             (Convert.ToInt32(_myChar._Item_List[(i * 2) + 1]) == 1 ?
@@ -835,9 +849,9 @@ namespace OlyMapper
             if (_myChar._LI_Here_List != null)
             {
                 w.WriteLine("<ul>");
-                foreach (String _my_stacked_charid in _myChar._LI_Here_List)
+                foreach (int _my_stacked_charid in _myChar._LI_Here_List)
                 {
-                    Character _my_stacked_char = Program._characters.Find(x => x._CharId == Convert.ToInt32(_my_stacked_charid));
+                    Character _my_stacked_char = Program._characters.Find(x => x._CharId ==_my_stacked_charid);
                     Write_Characters_HTML(_my_stacked_char, w);
                 }
                 w.WriteLine("</ul>");

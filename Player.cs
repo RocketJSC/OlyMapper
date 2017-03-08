@@ -57,83 +57,18 @@ namespace OlyMapper
                 _FactionId_Conv = Utilities.to_oid(InputKey),
                 _First_Line = myfl[0].ToString(),
                 _Name = myna[0].ToString(),
-                _Player_Type = myplayertype
+                _Player_Type = myplayertype,
+                _Email_Address = JSON.string_Token(j1, "PL.em"),
+                _Fast_Study_Points = JSON.int_Token(j1, "PL.fs"),
+                _First_Turn = JSON.int_Token(j1, "PL.ft"),
+                _Full_Name = JSON.string_Token(j1,"PL.fn"),
+                _Known = JSON.list_Token(j1, "PL.kn"),
+                _Last_Turn = JSON.int_Token(j1, "PL.lt"),
+                _Noble_Points = JSON.int_Token(j1, "PL.np"),
+                _Password = JSON.string_Token(j1, "PL.pw"),
+                _Unformed_Unit_List = JSON.list_Token(j1, "PL.uf"),
+                _Unit_List = JSON.list_Token(j1, "PL.un")
             });
-            //foreach (var Location in Program._locations)
-            var Player = (Program._players.Find(x => x._FactionId == Convert.ToInt32(InputKey)));
-            if (Player != null)
-            {
-                if (j1.SelectToken("PL.un") != null && j1.SelectToken("PL.un").HasValues)
-                {
-                    JArray myun;
-                    List<int> myuna;
-                    myun = (JArray)j1.SelectToken("PL.un");
-                    myuna = myun.ToObject<List<int>>();
-                    Player._Unit_List = myuna.ToList();
-                }
-                if (j1.SelectToken("PL.uf") != null && j1.SelectToken("PL.uf").HasValues)
-                {
-                    JArray myuf;
-                    List<int> myufa;
-                    myuf = (JArray)j1.SelectToken("PL.uf");
-                    myufa = myuf.ToObject<List<int>>();
-                    Player._Unformed_Unit_List = myufa.ToList();
-                }
-                if (j1.SelectToken("PL.kn") != null && j1.SelectToken("PL.kn").HasValues)
-                {
-                    JArray mykn;
-                    List<int> mykna;
-                    mykn = (JArray)j1.SelectToken("PL.kn");
-                    mykna = mykn.ToObject<List<int>>();
-                    Player._Known = mykna.ToList();
-                }
-                if (j1.SelectToken("PL.fn") != null && j1.SelectToken("PL.fn").HasValues)
-                {
-                    JArray myfn;
-                    myfn = (JArray)j1.SelectToken("PL.fn");
-                    for (int i = 0; i < myfn.Count; i++)
-                    {
-                        Player._Full_Name = (Player._Full_Name + " " + myfn[i].ToString()).TrimStart();
-                    }
-                    //Player._Full_Name = myfn[0].ToString();
-                }
-                if (j1.SelectToken("PL.em") != null && j1.SelectToken("PL.em").HasValues)
-                {
-                    JArray myem;
-                    myem = (JArray)j1.SelectToken("PL.em");
-                    Player._Email_Address = myem[0].ToString();
-                }
-                if (j1.SelectToken("PL.pw") != null && j1.SelectToken("PL.pw").HasValues)
-                {
-                    JArray mypw;
-                    mypw = (JArray)j1.SelectToken("PL.pw");
-                    Player._Password = mypw[0].ToString();
-                }
-                if (j1.SelectToken("PL.np") != null && j1.SelectToken("PL.np").HasValues)
-                {
-                    JArray mynp;
-                    mynp = (JArray)j1.SelectToken("PL.np");
-                    Player._Noble_Points = Convert.ToInt32(mynp[0]);
-                }
-                if (j1.SelectToken("PL.fs") != null && j1.SelectToken("PL.fs").HasValues)
-                {
-                    JArray myfs;
-                    myfs = (JArray)j1.SelectToken("PL.fs");
-                    Player._Fast_Study_Points = Convert.ToInt32(myfs[0]);
-                }
-                if (j1.SelectToken("PL.ft") != null && j1.SelectToken("PL.ft").HasValues)
-                {
-                    JArray myft;
-                    myft = (JArray)j1.SelectToken("PL.ft");
-                    Player._First_Turn = Convert.ToInt32(myft[0]);
-                }
-                if (j1.SelectToken("PL.lt") != null && j1.SelectToken("PL.lt").HasValues)
-                {
-                    JArray mylt;
-                    mylt = (JArray)j1.SelectToken("PL.lt");
-                    Player._Last_Turn = Convert.ToInt32(mylt[0]);
-                }
-            }
         }
     }
 }
