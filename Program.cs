@@ -29,7 +29,7 @@ namespace OlyMapper
                 _Loc_Type = "",
                 _First_Line = ""
             });
-            string path = "d:\\Olympia\\turn164";
+            string path = "d:\\Olympia\\turn165";
             Console.WriteLine("Reading JSON file.");
             _players = new List<Player>();
             _items = new List<Itemz>();
@@ -37,7 +37,7 @@ namespace OlyMapper
             _skills = new List<Skill>();
             _ships = new List<Ship>();
             _storms = new List<Storm>();
-            JObject o1 = JObject.Parse(File.ReadAllText(@"d:\Olympia\lib-164.json"));
+            JObject o1 = JObject.Parse(File.ReadAllText(@"d:\Olympia\lib-165.json"));
             Process_JSON_File(o1);
             // Display totals
             Console.WriteLine("+ Loaded " + _locations.Count + " locations");
@@ -177,7 +177,7 @@ namespace OlyMapper
                 {
                     if (_myloc._Loc_Type.Equals("sewer") || _myloc._Loc_Type.Equals("island"))
                     {
-                        //not sure what to do yet
+                        HTML_Loc.Write_Loc_HTML_File(_myloc, path);
                     }
                     else
                     {
