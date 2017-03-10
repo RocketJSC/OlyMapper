@@ -684,7 +684,6 @@ namespace OlyMapper
             }
             w.WriteLine("</ul>");
         }
-
         private static void Write_Inner_Locs(Location _myloc, StreamWriter w)
         {
             w.WriteLine("<ul>");
@@ -766,16 +765,20 @@ namespace OlyMapper
                 // what about collapsed??
             }
             // owner
-            //if (Program._locations.Find(x => x._LocId == _myloc._LI_Where)._Loc_Type.Equals("region"))
-            //{
-            //}
-            //else
-            //{
-                if (_my_dest_loc._LI_Here_List != null)
+            if (_my_dest_loc._LI_Here_List != null)
+            {
+                if (_my_dest_loc._LI_Here_List.Count > 0)
                 {
-                    outline.Append(", owner: ");
+                    Character text_character = Program._characters.Find(x => x._CharId == _my_dest_loc._LI_Here_List[0]);
+                    if (text_character != null)
+                    {
+                        if (text_character._Char_Type != "garrison")
+                        {
+                            outline.Append(", owner: ");
+                        }
+                    }
                 }
-            //}
+            }
             outline.Append("</li>");
             w.WriteLine(outline);
             // check for inner locations and/or characters
