@@ -218,6 +218,7 @@ namespace OlyMapper
                             w.WriteLine("<link href=\"map.css\" rel=\"stylesheet\" type=\"text/css\">");
                             w.WriteLine("</HEAD>");
                             w.WriteLine("<BODY>");
+                            w.WriteLine(Utilities.format_anchor2("main_map", "Return to Main Map"));
                             w.WriteLine("<table>");
                             // determine nav
                             bool TopNav = false;
@@ -522,6 +523,7 @@ namespace OlyMapper
                                 w.WriteLine("</tr>");
                             }
                             w.WriteLine("</table>");
+                            w.WriteLine(Utilities.format_anchor2("main_map", "Return to Main Map"));
                             w.WriteLine("</BODY>");
                             w.WriteLine("</HTML>");
                         }
@@ -778,6 +780,7 @@ namespace OlyMapper
                             w.WriteLine("<link href=\"map.css\" rel=\"stylesheet\" type=\"text/css\">");
                             w.WriteLine("</HEAD>");
                             w.WriteLine("<BODY>");
+                            w.WriteLine(Utilities.format_anchor2("hades_map.html","Return to Main Map"));
                             w.WriteLine("<table>");
                             // determine nav
                             bool TopNav = false;
@@ -986,6 +989,7 @@ namespace OlyMapper
                                 w.WriteLine("</tr>");
                             }
                             w.WriteLine("</table>");
+                            w.WriteLine(Utilities.format_anchor2("hades_map.html", "Return to Main Map"));
                             w.WriteLine("</BODY>");
                             w.WriteLine("</HTML>");
                         }

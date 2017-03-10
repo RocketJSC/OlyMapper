@@ -29,7 +29,16 @@ namespace OlyMapper
                 _Loc_Type = "",
                 _First_Line = ""
             });
-            string path = "d:\\Olympia\\turn165";
+            Console.Write("Enter turn: ");
+            int number;
+            string input = Console.ReadLine();
+            if (!Int32.TryParse(input, out number))
+            {
+                Console.WriteLine("** Invalid  Turn Number ({0}) **", number);
+                Console.ReadLine();
+                return;
+            }
+            string path = "d:\\Olympia\\turn" + number;
             Console.WriteLine("Reading JSON file.");
             _players = new List<Player>();
             _items = new List<Itemz>();
@@ -37,7 +46,32 @@ namespace OlyMapper
             _skills = new List<Skill>();
             _ships = new List<Ship>();
             _storms = new List<Storm>();
-            JObject o1 = JObject.Parse(File.ReadAllText(@"d:\Olympia\lib-165.json"));
+            JObject o1;
+            try
+            {
+                o1 = JObject.Parse(File.ReadAllText(@"d:\Olympia\lib-" + number + ".json"));
+            }
+            catch (JsonReaderException jex)
+            {
+                Console.WriteLine("** Unable to Parse JSON File ({0}) **", (@"d:\Olympia\lib-" + number + ".json"));
+                Console.WriteLine(jex.Message);
+                Console.ReadLine();
+                return;
+            }
+            catch (JsonException jex)
+            {
+                Console.WriteLine("** Unable to handle JSON File ({0}) **", (@"d:\Olympia\lib-" + number + ".json"));
+                Console.WriteLine(jex.Message);
+                Console.ReadLine();
+                return;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("** Unable to read JSON File ({0}) **", (@"d:\Olympia\lib-" + number + ".json"));
+                Console.WriteLine(ex.Message);
+                Console.ReadLine();
+                return;
+            }
             Process_JSON_File(o1);
             // Display totals
             Console.WriteLine("+ Loaded " + _locations.Count + " locations");
@@ -175,26 +209,19 @@ namespace OlyMapper
                 //
                 if (_myloc._LocId != 0)
                 {
-                    if (_myloc._Loc_Type.Equals("sewer") || _myloc._Loc_Type.Equals("island"))
+                    if (_myloc._Loc_Type.Equals("region"))
                     {
-                        HTML_Loc.Write_Loc_HTML_File(_myloc, path);
+                        //Write_Region_HTML_File(_myloc);
                     }
                     else
                     {
-                        if (_myloc._Loc_Type.Equals("region"))
+                        if (!_myloc._Loc_Type.Equals("region"))
                         {
-                            //Write_Region_HTML_File(_myloc);
+                            HTML_Loc.Write_Loc_HTML_File(_myloc, path);
                         }
                         else
                         {
-                            if (!_myloc._Loc_Type.Equals("region"))
-                            {
-                                HTML_Loc.Write_Loc_HTML_File(_myloc, path);
-                            }
-                            else
-                            {
-                                Console.WriteLine(_myloc._LocId + " | " + _myloc._LocId_Conv + "|" + _myloc._Name + "|" + _myloc._Loc_Type + "|" + _myloc._First_Line);
-                            }
+                            Console.WriteLine(_myloc._LocId + " | " + _myloc._LocId_Conv + "|" + _myloc._Name + "|" + _myloc._Loc_Type + "|" + _myloc._First_Line);
                         }
                     }
                 }
@@ -344,11 +371,6 @@ namespace OlyMapper
                 // copy map.css
                 System.IO.File.Copy(System.IO.Path.Combine("d:\\Olympia", "map.css"), System.IO.Path.Combine(path,"map.css"),false);
             }
-            //if (!System.IO.File.Exists(System.IO.Path.Combine(path, "map.gif")))
-            //{
-            //    // copy map.css
-            //    System.IO.File.Copy(System.IO.Path.Combine("d:\\Olympia", "map.gif"), System.IO.Path.Combine(path, "map.gif"), false);
-            //}
             if (!System.IO.File.Exists(System.IO.Path.Combine(path, "grey.gif")))
             {
                 // copy map.css

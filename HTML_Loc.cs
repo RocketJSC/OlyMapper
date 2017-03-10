@@ -27,6 +27,7 @@ namespace OlyMapper
                     Write_Loc_Map_Anchor(_myloc, w);
                     Write_Loc_Page_Header(_myloc, w);
                     Write_Barrier(_myloc, w);
+                    Write_Shroud(_myloc, w);
                     Write_Controlled_By(_myloc, w);
                     Write_Routes_Out(_myloc, w);
                     Write_Nearby_Cities(_myloc, w);
@@ -58,7 +59,13 @@ namespace OlyMapper
                 w.WriteLine("<p>A magical barrier surrounds {0} [{1}].</p>", _myloc._Name, _myloc._LocId_Conv);
             }
         }
-
+        private static void Write_Shroud(Location _myloc, StreamWriter w)
+        {
+            if (_myloc._LO_Shrouded > 0)
+            {
+                w.WriteLine("<p>A magical shroud surrounds {0} [{1}].</p>", _myloc._Name, _myloc._LocId_Conv);
+            }
+        }
         private static void Write_Loc_Map_Anchor(Location _myloc, StreamWriter w)
         {
             if (_myloc._LocId >= 10000 && _myloc._LocId < 18000)
@@ -67,7 +74,34 @@ namespace OlyMapper
             }
             else
             {
-                // also need to write it for structures
+                if (_myloc._LocId >= 18000 && _myloc._LocId < 24000)
+                {
+                    w.WriteLine("<p>" + Utilities.format_anchor2("faery_map_leaf_" + Utilities.to_oid(((1000 * (_myloc._LocId / 1000)) + (10 * (int)((_myloc._LocId % 100) / 10))).ToString()), "Return to map</p>"));
+                }
+                else
+                {
+                    if (_myloc._LocId >= 24000 && _myloc._LocId < 30000)
+                    {
+                        w.WriteLine("<p>" + Utilities.format_anchor2("hades_map_leaf_" + Utilities.to_oid(((1000 * (_myloc._LocId / 1000)) + (10 * (int)((_myloc._LocId % 100) / 10))).ToString()), "Return to map</p>"));
+                    }
+                    else
+                    {
+                        if ((_myloc._LocId >= 56760 && _myloc._LocId < 58760) || (_myloc._LocId >= 59000 && _myloc._LocId < 79000))
+                        {
+                            string[] loc_array =_myloc.Calc_CurrentLoc.Split('|');
+                            if (loc_array.Count() > 0)
+                            {
+                                string top_loc = loc_array[loc_array.Count() - 1];
+                                int int_loc = Convert.ToInt32(Utilities.to_int(top_loc));
+                                w.WriteLine("<p>" + Utilities.format_anchor2("main_map_leaf_" + Utilities.to_oid(((1000 * (int_loc / 1000)) + (10 * (int)((int_loc % 100) / 10))).ToString()), "Return to map</p>"));
+                            }
+                        }
+                        else
+                        {
+                            // also need to write it for structures
+                        }
+                    }
+                }
             }
         }
 
@@ -108,7 +142,6 @@ namespace OlyMapper
             outline3.Append("</H3>");
             w.WriteLine(outline3);
         }
-
         private static void Write_Controlled_By(Location _myloc, StreamWriter w)
         {
             // Print Province Controlled By
@@ -146,7 +179,7 @@ namespace OlyMapper
                                         {
                                             outline.Append(" in ");
                                             outline.Append(_my_dest_loc3._Name + " ");
-                                            outline.Append("[" + _my_dest_loc3._LocId_Conv + "]");
+                                            outline.Append(Utilities.format_anchor(_my_dest_loc3._LocId_Conv));
                                         }
                                     }
                                 }
@@ -662,10 +695,6 @@ namespace OlyMapper
                 {
                     Write_Sub_Locs_HTML(_myloc, w, _my_dest_loc);
                 }
-                //else
-                //{
-                //    break;
-                //}
             }
             w.WriteLine("</ul>");
         }
@@ -687,7 +716,7 @@ namespace OlyMapper
                                 w.WriteLine("<ul>");
                                 firstline = false;
                             }
-                            w.WriteLine("<li>" + _myplayer._Name + " [" + _myplayer._FactionId_Conv + "]</li>");
+                            w.WriteLine("<li>{0} [{1}]</li>", _myplayer._Name, _myplayer._FactionId_Conv);
                         }
                     }
                 }
@@ -737,61 +766,59 @@ namespace OlyMapper
                 // what about collapsed??
             }
             // owner
-            if (Program._locations.Find(x => x._LocId == _myloc._LI_Where)._Loc_Type.Equals("region"))
-            {
-                outline.Append("</li>");
-                w.WriteLine(outline);
-            }
-            else
-            {
+            //if (Program._locations.Find(x => x._LocId == _myloc._LI_Where)._Loc_Type.Equals("region"))
+            //{
+            //}
+            //else
+            //{
                 if (_my_dest_loc._LI_Here_List != null)
                 {
                     outline.Append(", owner: ");
                 }
-                outline.Append("</li>");
-                w.WriteLine(outline);
-                // check for inner locations and/or characters
-                if (_my_dest_loc._LI_Here_List != null)
+            //}
+            outline.Append("</li>");
+            w.WriteLine(outline);
+            // check for inner locations and/or characters
+            if (_my_dest_loc._LI_Here_List != null)
+            {
+                w.WriteLine("<ul>");
+                foreach (int _my_inner in _my_dest_loc._LI_Here_List)
                 {
-                    w.WriteLine("<ul>");
-                    foreach (int _my_inner in _my_dest_loc._LI_Here_List)
+                    Location _my_dest_loc2 = Program._locations.Find(x => x._LocId == _my_inner);
+                    if (_my_dest_loc2 != null)
                     {
-                        Location _my_dest_loc2 = Program._locations.Find(x => x._LocId == _my_inner);
-                        if (_my_dest_loc2 != null)
+                        Write_Sub_Locs_HTML(_myloc, w, _my_dest_loc2);
+                    }
+                    else
+                    {
+                        Character _my_char_loc2 = Program._characters.Find(x => x._CharId == _my_inner);
+                        if (_my_char_loc2 != null)
                         {
-                            Write_Sub_Locs_HTML(_myloc, w, _my_dest_loc2);
+                            Write_Characters_HTML(_my_char_loc2, w);
                         }
                         else
                         {
-                            Character _my_char_loc2 = Program._characters.Find(x => x._CharId == _my_inner);
-                            if (_my_char_loc2 != null)
+                            Ship _my_ship_loc2 = Program._ships.Find(x => x._ShipId == _my_inner);
+                            if (_my_ship_loc2 != null)
                             {
-                                Write_Characters_HTML(_my_char_loc2, w);
+                                Write_Ships_HTML(_my_ship_loc2, w);
                             }
                             else
                             {
-                                Ship _my_ship_loc2 = Program._ships.Find(x => x._ShipId == _my_inner);
-                                if (_my_ship_loc2 != null)
+                                Storm _my_storm_loc2 = Program._storms.Find(x => x._StormId == _my_inner);
+                                if (_my_storm_loc2 != null)
                                 {
-                                    Write_Ships_HTML(_my_ship_loc2, w);
+                                    //Write_Storms_HTML(_my_ship_loc2, w);
                                 }
                                 else
                                 {
-                                    Storm _my_storm_loc2 = Program._storms.Find(x => x._StormId == _my_inner);
-                                    if (_my_storm_loc2 != null)
-                                    {
-                                        //Write_Storms_HTML(_my_ship_loc2, w);
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("What is it?? {0}", _my_inner);
-                                    }
+                                    Console.WriteLine("What is it?? {0}", _my_inner);
                                 }
                             }
                         }
                     }
-                    w.WriteLine("</ul>");
                 }
+                w.WriteLine("</ul>");
             }
         }
         public static void Write_Characters_HTML(Character _myChar, StreamWriter w)
@@ -833,10 +860,21 @@ namespace OlyMapper
                 {
                     if (Program._items.Find(x => x._ItemId == _myChar._Item_List[Convert.ToInt32((i * 2) + 0)])._IT_Prominent == 1)
                     {
-                        outline.Append(", " + _myChar._Item_List[(i * 2) + 1] + " " +
+                        string temp_str = _myChar._Item_List[(i * 2) + 1] + " " +
                             (Convert.ToInt32(_myChar._Item_List[(i * 2) + 1]) == 1 ?
                             Program._items.Find(x => x._ItemId == _myChar._Item_List[Convert.ToInt32((i * 2) + 0)])._Name :
-                            Program._items.Find(x => x._ItemId == _myChar._Item_List[Convert.ToInt32((i * 2) + 0)])._Plural));
+                            Program._items.Find(x => x._ItemId == _myChar._Item_List[Convert.ToInt32((i * 2) + 0)])._Plural);
+                        if (outline.Length + temp_str.Length > 100 )
+                        {
+                            outline.Append(",<br>");
+                            w.WriteLine(outline);
+                            outline.Clear();
+                        }
+                        else
+                        {
+                            outline.Append(", ");
+                        }
+                        outline.Append(temp_str);
                     }
                 }
             }

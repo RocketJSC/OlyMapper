@@ -147,7 +147,7 @@ namespace OlyMapper
                                 break;
                             }
                         }
-                        return Convert.ToString(Byte1 +  Convert.ToInt32(oid.Substring(2, 2)) + 56760);
+                        return Convert.ToString(Byte1 +  Convert.ToInt32(oid.Substring(1, 2)) + 56760);
                     }
                     else
                     {
@@ -163,7 +163,7 @@ namespace OlyMapper
                                     break;
                                 }
                             }
-                            return Convert.ToString(Byte1 + Convert.ToInt32(oid.Substring(2, 3)) + 59000);
+                            return Convert.ToString(Byte1 + Convert.ToInt32(oid.Substring(1, 3)) + 59000);
                         }
                         else
                         {
@@ -320,7 +320,7 @@ namespace OlyMapper
                 case 60: return "marquess";
                 case 70: return "duke";
                 case 80: return "king";
-                default: return "undefined";
+                default: return "undefined rank";
             }
         }
         public static string xlate_experience(int experience_id)
