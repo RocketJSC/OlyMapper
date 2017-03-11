@@ -853,7 +853,10 @@ namespace OlyMapper
             //concealed
             if (_myChar._CM_Hide_Self.Equals(1))
             {
-                outline.Append(", concealed (maybe)");
+                if (Character.ReallyHidden(_myChar))
+                {
+                    outline.Append(", concealed (maybe)");
+                }
             }
             // get possessions
             if (_myChar._Item_List != null)

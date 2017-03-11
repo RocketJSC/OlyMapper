@@ -133,50 +133,6 @@ namespace OlyMapper
                         }
                     }
                 }
-                //if (j1.SelectToken("CH.ct") != null && j1.SelectToken("CH.ct").HasValues)
-                //{
-                //    JArray myct;
-                //    List<int> mycta;
-                //    myct = (JArray)j1.SelectToken("CH.ct");
-                //    mycta = myct.ToObject<List<int>>();
-                //    Character._CH_Contact = mycta.ToList();
-                //}
-                //if (j1.SelectToken("CH.sl") != null && j1.SelectToken("CH.sl").HasValues)
-                //{
-                //    JArray mysl;
-                //    mysl = (JArray)j1.SelectToken("CH.sl");
-                //    List<string> mysla;
-                //    mysla = mysl.ToObject<List<string>>();
-                //    Character._CH_Skills_List = mysla.ToList();
-                //}
-                //if (j1.SelectToken("CM.vi") != null && j1.SelectToken("CM.vi").HasValues)
-                //{
-                //    JArray myvi;
-                //    myvi = (JArray)j1.SelectToken("CM.vi");
-                //    List<int> myvia;
-                //    myvia = myvi.ToObject<List<int>>();
-                //    Character._CM_Already_Visioned = new List<int>();
-                //    for (int i = 0; i < myvi.Count; i++)
-                //    {
-                //        Character._CM_Already_Visioned.Add (Convert.ToInt32(myvia[i]));
-                //    }
-                //}
-                //if (j1.SelectToken("LI.hl") != null && j1.SelectToken("LI.hl").HasValues)
-                //{
-                //    JArray myhl;
-                //    myhl = (JArray)j1.SelectToken("LI.hl");
-                //    List<string> myhla;
-                //    myhla = myhl.ToObject<List<string>>();
-                //    Character._LI_Here_List = myhla.ToList();
-                //}
-                //if (j1.SelectToken("il") != null && j1.SelectToken("il").HasValues)
-                //{
-                //    JArray myil;
-                //    List<int> myila;
-                //    myil = (JArray)j1.SelectToken("il");
-                //    myila = myil.ToObject<List<int>>();
-                //    Character._Item_List = myila.ToList();
-                //}
                 if (j1.SelectToken("tl") != null && j1.SelectToken("tl").HasValues)
                 {
                     JArray mytl;
@@ -185,30 +141,6 @@ namespace OlyMapper
                     mytla = mytl.ToObject<List<string>>();
                     Character._Trade_List = mytla.ToList();
                 }
-                //if (j1.SelectToken("ad") != null && j1.SelectToken("ad").HasValues)
-                //{
-                //    JArray myad;
-                //    List<string> myada;
-                //    myad = (JArray)j1.SelectToken("ad");
-                //    myada = myad.ToObject<List<string>>();
-                //    Character._Defend_List = myada.ToList();
-                //}
-                //if (j1.SelectToken("ah") != null && j1.SelectToken("ah").HasValues)
-                //{
-                //    JArray myah;
-                //    List<string> myaha;
-                //    myah = (JArray)j1.SelectToken("ah");
-                //    myaha = myah.ToObject<List<string>>();
-                //    Character._Hostile_List = myaha.ToList();
-                //}
-                //if (j1.SelectToken("an") != null && j1.SelectToken("an").HasValues)
-                //{
-                //    JArray myan;
-                //    List<string> myana;
-                //    myan = (JArray)j1.SelectToken("an");
-                //    myana = myan.ToObject<List<string>>();
-                //    Character._Neutral_List = myana.ToList();
-                //}
             }
         }
         public static void Post_PlayerId()
@@ -375,6 +307,54 @@ namespace OlyMapper
             }
 
             return myweight;
+        }
+        public static Boolean ReallyHidden(Character mychar)
+        {
+            if (mychar._CM_Hide_Self == 1)
+            {
+                if (mychar._Item_List != null)
+                {
+                    int iterations = mychar._Item_List.Count / 2;
+                    for (int i = 0; i < iterations; i++)
+                    {
+                        if (Program._items.Find(x => x._ItemId == mychar._Item_List[i * 2]) != null)
+                        {
+                            Itemz myitem = Program._items.Find(x => x._ItemId == mychar._Item_List[i * 2]);
+                            if (Itemz.Is_Fighter(myitem) || myitem._IT_Man_Item == 1)
+                            {
+                                return false;
+                            }
+                        }
+                    }
+                }
+                if (mychar._LI_Here_List != null)
+                {
+                    return false;
+                }
+                if (Program._characters.Find(x=>x._CharId == mychar._LI_Where) != null)
+                {
+                    return false;
+                }
+                if (Program._ships.Find(x=>x._ShipId == mychar._LI_Where) != null)
+                {
+                    if (Program._ships.Find(x=>x._ShipId == mychar._LI_Where)._LI_Here_List[0] == mychar._CharId)
+                    {
+                        return false;
+                    }
+                }
+                if (Program._locations.Find(x => x._LocId == mychar._LI_Where) != null)
+                {
+                    if (Program._locations.Find(x => x._LocId == mychar._LI_Where)._SL_Defense > 0)
+                    {
+                        if (Program._locations.Find(x => x._LocId == mychar._LI_Where)._LI_Here_List[0] == mychar._CharId)
+                        {
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+            return false;
         }
     }
 }

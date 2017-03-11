@@ -293,7 +293,7 @@ namespace OlyMapper
             {
                 w.WriteLine("<tr>");
                 w.WriteLine("<td>Concealed:</td>");
-                w.WriteLine("<td>Yes (but not sure if alone)</td>");
+                w.WriteLine("<td>{0}</td>", Character.ReallyHidden(_myChar) == true ? "Yes" : "Yes, but not alone");
                 w.WriteLine("</tr>");
             }
         }
