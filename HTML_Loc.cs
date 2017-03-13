@@ -70,30 +70,74 @@ namespace OlyMapper
         {
             if (_myloc._LocId >= 10000 && _myloc._LocId < 18000)
             {
-                w.WriteLine("<p>" + Utilities.format_anchor2("main_map_leaf_" + Utilities.to_oid(((1000 * (_myloc._LocId / 1000)) + (10 * (int)((_myloc._LocId % 100) / 10))).ToString()), "Return to map</p>"));
+                int x_coord = (10 * (int)((_myloc._LocId % 100) / 10));
+                if (x_coord >= 70)
+                {
+                    x_coord = 60;
+                }
+                int y_coord = (1000 * (_myloc._LocId / 1000));
+                if (y_coord >= 17000)
+                {
+                    y_coord = 16000;
+                }
+                w.WriteLine("<p>" + 
+                    Utilities.format_anchor2("main_map_leaf_" + 
+                    Utilities.to_oid((y_coord + x_coord).ToString()), 
+                    "Return to map</p>"));
             }
             else
             {
                 if (_myloc._LocId >= 18000 && _myloc._LocId < 24000)
                 {
-                    w.WriteLine("<p>" + Utilities.format_anchor2("faery_map_leaf_" + Utilities.to_oid(((1000 * (_myloc._LocId / 1000)) + (10 * (int)((_myloc._LocId % 100) / 10))).ToString()), "Return to map</p>"));
+                    int x_coord = (10 * (int)((_myloc._LocId % 100) / 10));
+                    if (x_coord >= 50)
+                    {
+                        x_coord = 40;
+                    }
+                    int y_coord = (1000 * (_myloc._LocId / 1000));
+                    if (y_coord >= 23000)
+                    {
+                        y_coord = 22000;
+                    }
+                    w.WriteLine("<p>" + Utilities.format_anchor2("faery_map_leaf_" + Utilities.to_oid((y_coord + x_coord).ToString()), "Return to map</p>"));
                 }
                 else
                 {
                     if (_myloc._LocId >= 24000 && _myloc._LocId < 30000)
                     {
-                        w.WriteLine("<p>" + Utilities.format_anchor2("hades_map_leaf_" + Utilities.to_oid(((1000 * (_myloc._LocId / 1000)) + (10 * (int)((_myloc._LocId % 100) / 10))).ToString()), "Return to map</p>"));
+                        int x_coord = (10 * (int)((_myloc._LocId % 100) / 10));
+                        if (x_coord >= 50)
+                        {
+                            x_coord = 40;
+                        }
+                        int y_coord = (1000 * (_myloc._LocId / 1000));
+                        if (y_coord >= 29000)
+                        {
+                            y_coord = 28000;
+                        }
+                        w.WriteLine("<p>" + Utilities.format_anchor2("hades_map_leaf_" + Utilities.to_oid((y_coord + x_coord).ToString()), "Return to map</p>"));
                     }
                     else
                     {
+                        // only works if in main map
                         if ((_myloc._LocId >= 56760 && _myloc._LocId < 58760) || (_myloc._LocId >= 59000 && _myloc._LocId < 79000))
                         {
                             string[] loc_array =_myloc.Calc_CurrentLoc.Split('|');
+                            int x_coord = (10 * (int)((_myloc._LocId % 100) / 10));
+                            if (x_coord >= 70)
+                            {
+                                x_coord = 60;
+                            }
+                            int y_coord = (1000 * (_myloc._LocId / 1000));
+                            if (y_coord >= 17000)
+                            {
+                                y_coord = 16000;
+                            }
                             if (loc_array.Count() > 0)
                             {
                                 string top_loc = loc_array[loc_array.Count() - 1];
                                 int int_loc = Convert.ToInt32(Utilities.to_int(top_loc));
-                                w.WriteLine("<p>" + Utilities.format_anchor2("main_map_leaf_" + Utilities.to_oid(((1000 * (int_loc / 1000)) + (10 * (int)((int_loc % 100) / 10))).ToString()), "Return to map</p>"));
+                                w.WriteLine("<p>" + Utilities.format_anchor2("main_map_leaf_" + Utilities.to_oid((y_coord + x_coord).ToString()), "Return to map</p>"));
                             }
                         }
                         else
