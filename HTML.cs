@@ -53,7 +53,7 @@ namespace OlyMapper
                     w.WriteLine("</BODY>");
                     w.WriteLine("</HTML>");
                 }
-                fs.Close();
+                fs.Dispose();
             }
         }
         public static void Write_Main_Map_HTML_File(string path )
@@ -124,7 +124,7 @@ namespace OlyMapper
                     w.WriteLine("</BODY>");
                     w.WriteLine("</html>");
                 }
-                fs.Close();
+                fs.Dispose();
             }
         }
         public static void Write_Hades_Map_HTML_File(string path)
@@ -195,7 +195,7 @@ namespace OlyMapper
                     w.WriteLine("</BODY>");
                     w.WriteLine("</html>");
                 }
-                fs.Close();
+                fs.Dispose();
             }
         }
         public static void Write_Main_Map_Leaves_HTML_File(string path)
@@ -527,7 +527,7 @@ namespace OlyMapper
                             w.WriteLine("</BODY>");
                             w.WriteLine("</HTML>");
                         }
-                        fs.Close();
+                        fs.Dispose();
                     }
                 }
             }
@@ -755,7 +755,7 @@ namespace OlyMapper
                             w.WriteLine("</BODY>");
                             w.WriteLine("</HTML>");
                         }
-                        fs.Close();
+                        fs.Dispose();
                     }
                 }
             }
@@ -993,7 +993,7 @@ namespace OlyMapper
                             w.WriteLine("</BODY>");
                             w.WriteLine("</HTML>");
                         }
-                        fs.Close();
+                        fs.Dispose();
                     }
                 }
             }
@@ -1053,7 +1053,7 @@ namespace OlyMapper
                     w.WriteLine("</BODY>");
                     w.WriteLine("</HTML>");
                 }
-                fs.Close();
+                fs.Dispose();
             }
         }
         public static void Generate_Player_List_HTML(string path)
@@ -1092,7 +1092,7 @@ namespace OlyMapper
                     w.WriteLine("</BODY>");
                     w.WriteLine("</HTML>");
                 }
-                fs.Close();
+                fs.Dispose();
             }
         }
         public static void Generate_Ship_List_HTML(string path)
@@ -1191,7 +1191,7 @@ namespace OlyMapper
                     w.WriteLine("</BODY>");
                     w.WriteLine("</HTML>");
                 }
-                fs.Close();
+                fs.Dispose();
             }
         }
     }

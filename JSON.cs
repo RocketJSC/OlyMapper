@@ -27,7 +27,7 @@ namespace OlyMapper
             {
                 JArray mytoken;
                 mytoken = (JArray)j1.SelectToken(token);
-                return Convert.ToInt32(mytoken[0]);
+                return (int)(mytoken[0]);
             }
             return default_value;
         }

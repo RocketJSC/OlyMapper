@@ -48,7 +48,7 @@ namespace OlyMapper
                     w.WriteLine("</BODY>");
                     w.WriteLine("</HTML>");
                 }
-                fs.Close();
+                fs.Dispose();
             }
         }
 

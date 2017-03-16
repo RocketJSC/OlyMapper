@@ -38,7 +38,7 @@ namespace OlyMapper
                 Console.ReadLine();
                 return;
             }
-            string path = "d:\\Olympia\\turn" + number;
+            string path = "turn" + number;
             Console.WriteLine("Reading JSON file.");
             _players = new List<Player>();
             _items = new List<Itemz>();
@@ -49,25 +49,25 @@ namespace OlyMapper
             JObject o1;
             try
             {
-                o1 = JObject.Parse(File.ReadAllText(@"d:\Olympia\lib-" + number + ".json"));
+                o1 = JObject.Parse(File.ReadAllText(@"lib-" + number + ".json"));
             }
             catch (JsonReaderException jex)
             {
-                Console.WriteLine("** Unable to Parse JSON File ({0}) **", (@"d:\Olympia\lib-" + number + ".json"));
+                Console.WriteLine("** Unable to Parse JSON File ({0}) **", (@"lib-" + number + ".json"));
                 Console.WriteLine(jex.Message);
                 Console.ReadLine();
                 return;
             }
             catch (JsonException jex)
             {
-                Console.WriteLine("** Unable to handle JSON File ({0}) **", (@"d:\Olympia\lib-" + number + ".json"));
+                Console.WriteLine("** Unable to handle JSON File ({0}) **", (@"lib-" + number + ".json"));
                 Console.WriteLine(jex.Message);
                 Console.ReadLine();
                 return;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("** Unable to read JSON File ({0}) **", (@"d:\Olympia\lib-" + number + ".json"));
+                Console.WriteLine("** Unable to read JSON File ({0}) **", (@"lib-" + number + ".json"));
                 Console.WriteLine(ex.Message);
                 Console.ReadLine();
                 return;
@@ -369,23 +369,13 @@ namespace OlyMapper
             if (!System.IO.File.Exists(System.IO.Path.Combine(path,"map.css")))
             {
                 // copy map.css
-                System.IO.File.Copy(System.IO.Path.Combine("d:\\Olympia", "map.css"), System.IO.Path.Combine(path,"map.css"),false);
+                System.IO.File.Copy(System.IO.Path.Combine("", "map.css"), System.IO.Path.Combine(path,"map.css"),false);
             }
             if (!System.IO.File.Exists(System.IO.Path.Combine(path, "grey.gif")))
             {
                 // copy map.css
-                System.IO.File.Copy(System.IO.Path.Combine("d:\\Olympia", "grey.gif"), System.IO.Path.Combine(path, "grey.gif"), false);
+                System.IO.File.Copy(System.IO.Path.Combine("", "grey.gif"), System.IO.Path.Combine(path, "grey.gif"), false);
             }
-            if (!System.IO.File.Exists(System.IO.Path.Combine(path, "main_thumbnail.gif")))
-            {
-                // copy map.css
-                System.IO.File.Copy(System.IO.Path.Combine("d:\\Olympia", "main_thumbnail.gif"), System.IO.Path.Combine(path, "main_thumbnail.gif"), false);
-            }
-            //if (!System.IO.File.Exists(System.IO.Path.Combine(path, "hades_thumbnail.gif")))
-            //{
-            //    // copy map.css
-            //    System.IO.File.Copy(System.IO.Path.Combine("d:\\Olympia", "hades_thumbnail.gif"), System.IO.Path.Combine(path, "hades_thumbnail.gif"), false);
-            //}
         }
     }
 }

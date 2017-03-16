@@ -86,7 +86,7 @@ namespace OlyMapper
                     }
                     w.WriteLine(" ");
                 }
-                fs.Close();
+                fs.Dispose();
             }
         }
     }

@@ -1,0 +1,653 @@
+﻿# faction accepts
+accept ad3 0 # Sulking Swans
+accept dk3 0 # Einarinn
+accept dq4 0 # Order of the Ebon Hand
+accept ez0 0 # Kelly's Heroes
+accept fi4 0 # Jaezred Chaulssin
+accept fm5 0 # Kingdom of heaven
+accept hq4 0 # The Highlanders
+accept hv5 0 # University of Woolamaloo
+accept hx7 0 # The League of Legends
+accept ig7 0 # Yo Mamma
+accept ja1 0 # Oleg's Olympians
+accept jq9 0 # Sea Sharks
+accept ju1 0 # House Xorlarrin
+accept lr2 0 # Thirteen Dragons
+accept mu2 0 # Glorious Death
+accept nd1 0 # Drow House Szind
+accept pj6 0 # House Dun'Robar
+accept pl2 0 # Ardat-Yakshi
+accept qj2 0 # Bixby
+accept qm9 0 # The Tom Tom Club
+accept re5 0 # Bloodaxe Mercenaries
+accept sm8 0 # T r na n g
+accept vh3 0 # Clan Battlehammer
+accept yc5 0 # Knights of Winter
+accept ye8 0 # Hat Creek Ranch
+accept yr6 0 # House of Broken Chains
+accept zb1 0 # Atnerk's Amigos
+ 
+# character stacking admits
+admit 6232 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Bruce
+admit 7010 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Bruce
+admit 1933 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Bruce
+admit 8747 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Bruce
+admit 3141 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Bruce
+admit 4835 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Bruce
+admit 6856 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Bruce
+ 
+# castle admits
+admit 1013 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Slavers Outpost
+admit 1160 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # University of Woolamaloo
+admit 1522 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Summoners Rift
+admit 1775 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Oleg's Palace
+admit 1976 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Fortress Artemis
+admit 2028 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Mountain Field
+admit 2363 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Starfleet Command
+admit 3049 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The Great Library
+admit 3300 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Swamp Castle
+admit 3355 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Castle Erebus
+admit 3537 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # High Cliff
+admit 3716 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The Eser Central
+admit 4226 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Drow Peak
+admit 4256 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Amber Keep
+admit 4261 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Kato's Domain
+admit 4415 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Genius of Love
+admit 4423 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Livonia Order
+admit 4747 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # X
+admit 5208 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Bloodkeep
+admit 5777 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Hat Creek Ranch
+admit 6811 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # wilderness
+admit 6866 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Lloth's Tribute
+admit 6999 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Azure City
+admit 7131 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Sun Crown
+admit 7152 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Castle Azada
+admit 7506 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Ishdol Resort
+admit 7776 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Twisted Treeline
+admit 7986 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Geirrod guardhouse
+admit 8103 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Castle
+admit 8969 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Slavers Outpost
+admit 9000 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Menzoberranzan
+admit 9107 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Stronghold of Order
+admit 9575 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Castle
+admit 9955 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Ched Nasad
+ 
+# tower admits
+admit 1003 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # .
+admit 1032 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Fang of Balat
+admit 1049 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Silapakorn
+admit 1055 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tur de Scathanna
+admit 1134 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The Public Library
+admit 1169 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Seagate Tower
+admit 1188 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Belfort
+admit 1194 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Dark school
+admit 1197 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Conjuration
+admit 1205 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New tower
+admit 1330 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Great Library of Artemis
+admit 1380 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Wootan's Keep
+admit 1428 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Samaya Vysokaya
+admit 1536 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Eastwatch
+admit 1590 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Lepidoptera
+admit 1595 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Rocky Tower
+admit 1600 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Hidden Cave
+admit 1639 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Cave I
+admit 1681 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Freehold
+admit 1692 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tosla Spire
+admit 1803 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Hestan Donjon
+admit 1808 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Old Tower
+admit 1851 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Divination
+admit 1859 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # just hats
+admit 1875 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Harbourmasters Tower
+admit 1902 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Old tower
+admit 1930 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Vezha
+admit 1970 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Mallorn Tower
+admit 2113 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Seneca
+admit 2124 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The Encyclopedia
+admit 2169 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The Spiders Sting
+admit 2242 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Oleg
+admit 2312 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Davis
+admit 2327 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # W
+admit 2417 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Esperanza tower
+admit 2448 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Iron Tower
+admit 2570 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Golden Tower
+admit 2608 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Rocky tower
+admit 2667 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Yew Tower
+admit 2685 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Circle Tower
+admit 2729 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Inner Tower
+admit 2743 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Needle of Knowledge
+admit 2761 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # W
+admit 2765 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Mama
+admit 2769 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # AK Tower 2
+admit 2792 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tower Nyx
+admit 2987 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Nogales
+admit 3067 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # SMU
+admit 3100 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Greedy Oleg
+admit 3115 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Black Watch
+admit 3156 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # W
+admit 3173 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Storm Tower
+admit 3266 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Wolfsbane
+admit 3320 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Qwer
+admit 3329 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # R
+admit 3374 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New tower
+admit 3418 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Hidden yew tower
+admit 3478 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Evocation
+admit 3564 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # thrushnest
+admit 3602 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New tower
+admit 3633 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New tower
+admit 3751 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Earth
+admit 3799 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Air
+admit 3896 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tzower
+admit 3989 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Nexus
+admit 4193 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New tower
+admit 4205 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Sucher
+admit 4254 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New tower
+admit 4303 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Atnerks' Tower
+admit 4341 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Kniyma Trade Center
+admit 4530 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Ancient Scripts
+admit 4552 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Fryea's Needle
+admit 4556 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Rustige plaats
+admit 4558 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Mountain Tower I
+admit 4581 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Enchantment
+admit 4601 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tower of the Star
+admit 4694 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # W
+admit 4748 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Ishdol University
+admit 4819 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # crowsnest
+admit 4840 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Prairie View
+admit 4856 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New tower
+admit 4893 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New tower
+admit 5009 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # E
+admit 5138 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # turnul1
+admit 5167 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New tower
+admit 5184 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Lighthouse
+admit 5272 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Illusion
+admit 5301 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New tower
+admit 5378 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Library
+admit 5408 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # AK South 2
+admit 5436 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Saturniidae
+admit 5501 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # High school 5501
+admit 5525 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Necromancy
+admit 5551 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Skybox
+admit 5593 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # kingstower
+admit 5708 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Cave
+admit 5731 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # No Loudmouths Allowed!
+admit 5760 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Olympia Freedom Tower
+admit 5766 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New tower
+admit 5787 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Also Oleg's Tower
+admit 5804 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Q
+admit 5892 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tower of ar55
+admit 5975 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Laval
+admit 6130 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # House of secrets
+admit 6176 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Far Water Public Library
+admit 6177 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Azada Tower
+admit 6189 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Dusk
+admit 6235 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # High building
+admit 6251 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New tower
+admit 6310 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Omaha II
+admit 6372 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Capella
+admit 6473 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tower of Celoydorf
+admit 6540 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Imperial Trading School
+admit 6583 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Leaning Tower
+admit 6605 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Drunken Rage
+admit 6627 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tower of Fluffy Unicorns
+admit 6629 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Astronomy
+admit 6651 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Sinister Refuge
+admit 6676 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The Odalisk
+admit 6805 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # lesna szkola
+admit 6838 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Riot
+admit 6888 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # school for Zeck
+admit 6941 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Lost wisdom
+admit 6966 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Osswid's Second Tower
+admit 7066 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Chadron
+admit 7123 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Upper Deck
+admit 7158 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Unseen University
+admit 7218 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The Clock Tower
+admit 7251 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Univ. of Alice Springs
+admit 7272 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Club Level
+admit 7274 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New tower
+admit 7278 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New tower
+admit 7281 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Ancients Point Tower
+admit 7341 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Oleg's Tower
+admit 7365 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The Academy
+admit 7389 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Legion Spire
+admit 7394 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Holy Tower
+admit 7421 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Fire
+admit 7429 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Oxbow
+admit 7518 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Q
+admit 7573 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Kato's Tower
+admit 7708 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Noble tower 1
+admit 7713 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The Lighthouse
+admit 7764 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Blackwatch
+admit 7835 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # stille plek
+admit 7847 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Battlefield Tower
+admit 7856 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New tower
+admit 8120 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # R
+admit 8121 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New tower
+admit 8164 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Qwer
+admit 8179 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Orthanc
+admit 8184 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # TCU
+admit 8235 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Transmutation
+admit 8371 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New tower
+admit 8422 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Rocky Tower
+admit 8431 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Mithril Tower
+admit 8438 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Free Lord Research Center
+admit 8485 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # House for Annika
+admit 8509 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Nexus
+admit 8519 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Yellow tower
+admit 8557 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Ravens Roost
+admit 8642 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Garamor's Hope
+admit 8645 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Riot
+admit 8653 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # W
+admit 8736 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Blue tower
+admit 8737 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New tower
+admit 8749 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Nogis
+admit 8754 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Q
+admit 8863 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Redcliff academy
+admit 8985 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The Library
+admit 9022 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Inside
+admit 9082 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # tower
+admit 9093 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Canaletto
+admit 9124 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tucson
+admit 9135 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Moody
+admit 9181 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Emory
+admit 9253 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Sint-Rombouts
+admit 9317 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Zelyonyi Angel
+admit 9338 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Lair's Tower
+admit 9401 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The purple tower
+admit 9431 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # observatory
+admit 9481 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tower of Art
+admit 9522 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Steen
+admit 9536 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Sherman
+admit 9547 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Arcane Research Centre
+admit 9570 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Lucent Singularity
+admit 9571 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Creighton
+admit 9634 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Abjuration
+admit 9687 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New tower
+admit 9726 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Ospreyview
+admit 9757 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The Quill
+admit 9778 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Seeker
+admit 9857 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Raven's Nest
+admit 9960 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Friedberg
+admit 9991 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New tower
+ 
+# mine admits
+admit 1379 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New mine
+admit 1457 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Deep hole
+admit 1706 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New mine
+admit 2116 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Rialto
+admit 2222 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New mine
+admit 2545 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Fountain II
+admit 2702 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Sierra Madre
+admit 2845 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Dorado II
+admit 3204 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New mine
+admit 3224 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New mine
+admit 3502 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # mina2
+admit 3543 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Dawnstone mine
+admit 3632 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New mine
+admit 3666 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Osswid's Mine
+admit 3727 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New mine
+admit 3908 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Osswid's Mine
+admit 3959 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # starmine2
+admit 4042 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Osswid's Mine
+admit 4076 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New mine
+admit 4084 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New mine
+admit 4120 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New mine
+admit 4153 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Pastry Mine
+admit 4328 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # R
+admit 4523 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # kirli delik
+admit 4839 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Fountain
+admit 5104 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New mine
+admit 5157 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Fountain II
+admit 5355 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Balthasars Mine
+admit 5587 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # uder
+admit 5651 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The Burrow
+admit 5797 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The Deep
+admit 5833 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New mine
+admit 6000 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Mine cg47
+admit 6054 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New mine
+admit 6381 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Dorado
+admit 6491 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Fountain II
+admit 6504 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # R
+admit 6532 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Rocky Outcrop
+admit 6545 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Fountain
+admit 6963 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Deep Hole
+admit 7020 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New mine
+admit 7100 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Placer
+admit 7262 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New mine
+admit 7646 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # E
+admit 7897 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New mine
+admit 7929 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New mine
+admit 7978 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New mine
+admit 7983 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Panhandle
+admit 8043 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New mine
+admit 8082 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Mountain mine
+admit 8242 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Osswid's Mine
+admit 8325 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Eldorado
+admit 8544 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New mine
+admit 9062 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New mine
+admit 9127 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # R
+admit 9195 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Deep hole
+admit 9427 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Fountain
+admit 9468 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Rocking chair
+ 
+# inn admits
+admit 1034 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Green tavern
+admit 1112 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # oaspetii
+admit 1186 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Fireplace Inn
+admit 1221 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Riot
+admit 1248 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Sala
+admit 1306 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The Typsy Griffin
+admit 1321 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Plano
+admit 1324 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 1376 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 1525 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Wolve's Den
+admit 1538 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Dark Harvale Inn
+admit 1574 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Amarillo
+admit 1578 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 1751 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Rocky hill
+admit 1822 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 1836 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Myyewgrove2
+admit 1892 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Silver glass
+admit 1931 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 1999 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Astra Eck
+admit 2187 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The purple inn
+admit 2269 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 2329 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Stars Tavern N5
+admit 2406 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tijinggrad
+admit 2436 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # De Colonial
+admit 2449 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # E
+admit 2483 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Wichitah
+admit 2820 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tehachapi
+admit 3109 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Queue
+admit 3158 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # W
+admit 3164 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 3217 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Natchez
+admit 3357 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Kaffehaus
+admit 3442 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Inny
+admit 3463 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 3501 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Esperanza inn
+admit 3624 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Paris
+admit 3780 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # W
+admit 3806 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 3808 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Labua
+admit 3856 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 3992 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Q
+admit 4032 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Azada Inn
+admit 4052 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Queue
+admit 4192 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Woraburi
+admit 4287 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Deja
+admit 4395 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 4430 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Far Water Welcome Center
+admit 4487 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Chama
+admit 4495 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 4719 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Quarry Office
+admit 4801 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 4887 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Riot
+admit 5062 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The lost souls
+admit 5227 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Utopia Planitia
+admit 5302 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 5303 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 5304 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Ishdol Tavern
+admit 5405 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Riot
+admit 5450 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 5561 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # House of Knev's wife
+admit 5586 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 5638 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Q
+admit 5646 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # X
+admit 5717 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 5815 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Salem Inn
+admit 5903 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 5953 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Landfall
+admit 6291 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Purple mountain inn
+admit 6349 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Dalhart
+admit 6525 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 6623 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Queue
+admit 6680 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Lost star
+admit 6687 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Meg's Bow Shop
+admit 6697 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Naka
+admit 6741 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # E
+admit 6836 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Great Hall
+admit 6913 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Q
+admit 7029 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Rabbit Resort
+admit 7070 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Miner Inn
+admit 7136 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Busy Bee Cafe
+admit 7294 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Q
+admit 7353 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Ogalla
+admit 7459 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Riot
+admit 7496 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # W
+admit 7604 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 7719 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Green Dragon
+admit 7798 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Route ak56
+admit 7959 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Palomino III    0 8754
+admit 7976 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 8025 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # E
+admit 8064 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Erawan
+admit 8094 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 8099 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Q
+admit 8205 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # W
+admit 8300 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Defecation
+admit 8327 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 8427 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Laramie
+admit 8490 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # W
+admit 8590 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Crazy Horse II
+admit 8610 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 8693 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 8763 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Oriental
+admit 8827 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Q
+admit 8848 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 8933 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 8996 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Albuquerque II
+admit 9313 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+admit 9420 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Lomas
+admit 9445 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tosdis inn
+admit 9549 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Zala Vasarnica
+admit 9566 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Myyewgrove3
+admit 9671 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Floydada
+admit 9788 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Fields of Death
+admit 9822 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New inn
+ 
+# temple admits
+admit 1016 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The lost chastity
+admit 1017 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Forsaken Murphy
+admit 1059 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Sapphire
+admit 1071 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Silver Reign II
+admit 1252 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Rocky Temple
+admit 1511 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The eye of God
+admit 1629 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Nexus
+admit 1659 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Mountain church
+admit 1810 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The Word
+admit 1938 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # St Cuthbert s
+admit 1956 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # W
+admit 1986 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Fountain
+admit 1995 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Q
+admit 2047 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The Dry Bean
+admit 2057 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # vixen
+admit 2097 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Kato's Temple
+admit 2114 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Pantheon of the Wolves
+admit 2153 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The green church
+admit 2227 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Q
+admit 2256 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Atnerks' Temple
+admit 2310 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New temple
+admit 2724 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Praice Temple
+admit 2822 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Q
+admit 2837 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Flame of the Devine
+admit 2892 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The Library
+admit 2907 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New temple
+admit 2968 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # R
+admit 3042 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Far Water Public Temple
+admit 3228 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # templul
+admit 3408 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Temple of Zeus
+admit 3452 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Nexus
+admit 3527 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Geirrod post
+admit 3548 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Temple of Order
+admit 3605 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Mallorn Temple
+admit 3619 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Hidden yew temple
+admit 3648 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Silver Temple
+admit 3669 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Esperanza church
+admit 3755 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Spearmint Rhino
+admit 3857 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Socrates Place
+admit 3862 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # W
+admit 3956 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Moulin Rouge
+admit 3987 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New temple
+admit 4043 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The House of Banjo
+admit 4066 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # J-temple
+admit 4128 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Q
+admit 4310 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Mountain church
+admit 4374 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Rastafarianism
+admit 4459 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Hammer Hall
+admit 4471 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New temple
+admit 4497 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Henge
+admit 4506 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Nexus
+admit 4607 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Library
+admit 4750 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Old Temple
+admit 4795 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Voyeur II
+admit 4921 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Yew Temple
+admit 4963 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Nexus
+admit 4995 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Moulin Vert II
+admit 5003 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Temple of the Unknown God
+admit 5036 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Q
+admit 5076 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Q
+admit 5144 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # W
+admit 5156 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Elysian
+admit 5161 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Olympic Club III
+admit 5190 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Holometabola
+admit 5261 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # E
+admit 5428 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The blue church
+admit 5466 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Sontsil Abby
+admit 5516 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Storm Temple
+admit 5658 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Rocky Temple
+admit 5702 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Temple To Jupiter
+admit 5758 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Osswid's Temple
+admit 5874 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Knockouts
+admit 5878 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Geirrod post
+admit 5882 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # X
+admit 6003 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Temple of Tosla
+admit 6008 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Wasterlands gods
+admit 6091 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Venganza
+admit 6122 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Second Temple
+admit 6126 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New temple
+admit 6166 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New temple
+admit 6212 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tempel
+admit 6230 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # church
+admit 6456 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Lair Temple
+admit 6459 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # W
+admit 6467 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # W
+admit 6482 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Temple of Kelemvor
+admit 6541 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New temple
+admit 6693 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Temple of Om
+admit 6744 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Sirens
+admit 6845 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Salem temple
+admit 6900 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Spearmint Rhino
+admit 7044 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Birkrigg
+admit 7093 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # E
+admit 7099 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # battlefield Temple
+admit 7135 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Azada
+admit 7199 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # W
+admit 7247 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # House of Liberty
+admit 7261 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Mountain Temple I
+admit 7319 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Minxx
+admit 7344 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New temple
+admit 7373 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Battlefield Temple
+admit 7376 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Q
+admit 7395 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Temple to Artemis
+admit 7403 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Q
+admit 7439 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # House of Lolth
+admit 7454 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The Holy Whiskey
+admit 7539 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Temple of Dagon
+admit 7545 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Inner Temple
+admit 7585 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New temple
+admit 7634 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Creator
+admit 7821 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Iron temple
+admit 7848 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Bounders
+admit 7876 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Church of Celoydorf
+admit 7969 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Circle Temple
+admit 8055 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Hades
+admit 8138 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Zumbaweh
+admit 8200 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Q
+admit 8285 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New temple
+admit 8330 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Mountain church
+admit 8515 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Library
+admit 8522 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New temple
+admit 8740 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New temple
+admit 8741 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Rocky Temple
+admit 8778 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Q
+admit 8786 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Church of ar55
+admit 8847 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The Devine Whisper
+admit 8929 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Q
+admit 8938 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New temple
+admit 8998 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Lolth
+admit 9021 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Peace of Horizon
+admit 9084 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Holier than thou
+admit 9109 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Luna Grove
+admit 9163 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Yellow temple
+admit 9184 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Q
+admit 9331 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Temple of Castle
+admit 9458 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Qwer
+admit 9475 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Q
+admit 9512 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Lair's Temple
+admit 9557 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Temple of Light
+admit 9629 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Hot
+admit 9666 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Selvetarm
+admit 9672 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New temple
+admit 9743 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # the Caretaker Help
+admit 9766 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # W
+admit 9817 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Cheetahs
+admit 9819 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Vhaeraun
+admit 9825 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New temple
+admit 9846 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Rocky church
+ 
+# ship admits
+admit 1074 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New roundship
+admit 1146 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Kelly's Tub 2
+admit 1210 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Lethargy
+admit 1227 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Pret
+admit 1251 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # wy'sza geometria
+admit 1415 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tub 13
+admit 1529 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Ironsides
+admit 1575 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New roundship
+admit 1667 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # spierdaj
+admit 1677 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tub 6
+admit 1863 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Swift Tub 12
+admit 2262 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tub 96
+admit 2622 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tub 20
+admit 2652 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tub 80
+admit 2730 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Avenger
+admit 2823 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Swift Tub 99
+admit 2978 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tub 94
+admit 3168 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tub 21
+admit 3212 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tub 98
+admit 3353 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Swift Tub 4
+admit 3466 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tub 91
+admit 3615 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tub 89
+admit 3622 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tub 1
+admit 4097 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Inconcievable
+admit 4722 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # F150
+admit 5019 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Hultor Hodor
+admit 5073 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Osswid's Roundship
+admit 5108 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tub 18
+admit 5125 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Ogalla
+admit 5476 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Swift Tub 3
+admit 5481 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tub 93
+admit 5546 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Mitu Mitu I
+admit 5581 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Vengeance
+admit 5628 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Swift Tub 30
+admit 5707 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Revenge
+admit 6236 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Swift Tub 5
+admit 6574 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # The Good News
+admit 6848 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tub 14
+admit 6953 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Swift Tub 8
+admit 7094 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tub 90
+admit 7606 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Hultor Hodor II
+admit 7624 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Orgasmatron
+admit 7648 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tub 95
+admit 7682 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Osswid's Swift Roundship
+admit 7729 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Swift Tub 17
+admit 7930 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Cork
+admit 8309 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Outlandish
+admit 8503 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # New roundship
+admit 8634 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Osswid's Roundship
+admit 8738 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Swift Frivolous
+admit 8776 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Tub 97
+admit 8798 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Teignmouth Electron
+admit 8957 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Swift Tub 92
+admit 9309 ad3 dk3 dq4 ez0 fi4 fm5 hq4 hv5 hx7 ig7 ja1 jq9 ju1 lr2 mu2 nd1 pj6 pl2 qj2 qm9 re5 sm8 vh3 yc5 ye8 yr6 zb1  # Ship of Fools
+ 

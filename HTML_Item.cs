@@ -60,7 +60,7 @@ namespace OlyMapper
                     w.WriteLine("</BODY>");
                     w.WriteLine("</HTML>");
                 }
-                fs.Close();
+                fs.Dispose();
             }
         }
         public static void Generate_Healing_Potion_List_HTML(string path)
@@ -125,7 +125,7 @@ namespace OlyMapper
                     w.WriteLine("</BODY>");
                     w.WriteLine("</HTML>");
                 }
-                fs.Close();
+                fs.Dispose();
             }
         }
         public static void Generate_Projected_Cast_Potion_List_HTML(string path)
@@ -191,7 +191,7 @@ namespace OlyMapper
                     w.WriteLine("</BODY>");
                     w.WriteLine("</HTML>");
                 }
-                fs.Close();
+                fs.Dispose();
             }
         }
     }

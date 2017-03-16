@@ -33,7 +33,7 @@ namespace OlyMapper
                     w.WriteLine("</BODY>");
                     w.WriteLine("</HTML>");
                 }
-                fs.Close();
+                fs.Dispose();
             }
         }
         private static void Write_Char_Page_Header(Character _myChar, StreamWriter w)
