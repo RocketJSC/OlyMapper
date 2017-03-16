@@ -5,6 +5,10 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>
   </PropertyGroup>
 
+<PropertyGroup>
+  <RuntimeIdentifiers>win10-x86;centos.7-x64</RuntimeIdentifiers>
+</PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
   </ItemGroup>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>OlyMapper</id>
+    <version>1.0.0</version>
+    <authors>OlyMapper</authors>
+    <owners>OlyMapper</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp1.1">
+        <dependency id="Microsoft.NETCore.App" version="1.1.1" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="9.0.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <contentFiles>
+      <files include="any/netcoreapp1.1/Microsoft.DiaSymReader.Native.x86.dll" buildAction="Content" />
+      <files include="any/netcoreapp1.1/Microsoft.DiaSymReader.Native.amd64.dll" buildAction="Content" />
+      <files include="any/netcoreapp1.1/Microsoft.DiaSymReader.Native.arm.dll" buildAction="Content" />
+    </contentFiles>
+  </metadata>
+  <files>
+    <file src="C:\Users\lindahl\documents\visual studio 2017\Projects\OlyMapper\bin\Release\netcoreapp1.1\OlyMapper.runtimeconfig.json" target="lib\netcoreapp1.1\OlyMapper.runtimeconfig.json" />
+    <file src="C:\Users\lindahl\documents\visual studio 2017\Projects\OlyMapper\bin\Release\netcoreapp1.1\OlyMapper.dll" target="lib\netcoreapp1.1\OlyMapper.dll" />
+    <file src="C:\Users\lindahl\.nuget\packages\microsoft.diasymreader.native\1.4.1\runtimes\win\native\Microsoft.DiaSymReader.Native.x86.dll" target="content\Microsoft.DiaSymReader.Native.x86.dll" />
+    <file src="C:\Users\lindahl\.nuget\packages\microsoft.diasymreader.native\1.4.1\runtimes\win\native\Microsoft.DiaSymReader.Native.x86.dll" target="contentFiles\any\netcoreapp1.1\Microsoft.DiaSymReader.Native.x86.dll" />
+    <file src="C:\Users\lindahl\.nuget\packages\microsoft.diasymreader.native\1.4.1\runtimes\win\native\Microsoft.DiaSymReader.Native.amd64.dll" target="content\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <file src="C:\Users\lindahl\.nuget\packages\microsoft.diasymreader.native\1.4.1\runtimes\win\native\Microsoft.DiaSymReader.Native.amd64.dll" target="contentFiles\any\netcoreapp1.1\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <file src="C:\Users\lindahl\.nuget\packages\microsoft.diasymreader.native\1.4.1\runtimes\win\native\Microsoft.DiaSymReader.Native.arm.dll" target="content\Microsoft.DiaSymReader.Native.arm.dll" />
+    <file src="C:\Users\lindahl\.nuget\packages\microsoft.diasymreader.native\1.4.1\runtimes\win\native\Microsoft.DiaSymReader.Native.arm.dll" target="contentFiles\any\netcoreapp1.1\Microsoft.DiaSymReader.Native.arm.dll" />
+  </files>
+</package>

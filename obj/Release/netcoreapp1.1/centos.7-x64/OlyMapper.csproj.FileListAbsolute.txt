@@ -1,0 +1,16 @@
+C:\Users\lindahl\Documents\Visual Studio 2017\Projects\OlyMapper\bin\Release\netcoreapp1.1\centos.7-x64\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\lindahl\Documents\Visual Studio 2017\Projects\OlyMapper\bin\Release\netcoreapp1.1\centos.7-x64\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\lindahl\Documents\Visual Studio 2017\Projects\OlyMapper\bin\Release\netcoreapp1.1\centos.7-x64\Microsoft.DiaSymReader.Native.arm.dll
+C:\Users\lindahl\Documents\Visual Studio 2017\Projects\OlyMapper\bin\Release\netcoreapp1.1\centos.7-x64\libhostpolicy.so
+C:\Users\lindahl\Documents\Visual Studio 2017\Projects\OlyMapper\bin\Release\netcoreapp1.1\centos.7-x64\libhostfxr.so
+C:\Users\lindahl\Documents\Visual Studio 2017\Projects\OlyMapper\bin\Release\netcoreapp1.1\centos.7-x64\OlyMapper
+C:\Users\lindahl\Documents\Visual Studio 2017\Projects\OlyMapper\bin\Release\netcoreapp1.1\centos.7-x64\OlyMapper.dll.config
+C:\Users\lindahl\Documents\Visual Studio 2017\Projects\OlyMapper\bin\Release\netcoreapp1.1\centos.7-x64\OlyMapper.deps.json
+C:\Users\lindahl\Documents\Visual Studio 2017\Projects\OlyMapper\bin\Release\netcoreapp1.1\centos.7-x64\OlyMapper.runtimeconfig.json
+C:\Users\lindahl\Documents\Visual Studio 2017\Projects\OlyMapper\bin\Release\netcoreapp1.1\centos.7-x64\OlyMapper.runtimeconfig.dev.json
+C:\Users\lindahl\Documents\Visual Studio 2017\Projects\OlyMapper\bin\Release\netcoreapp1.1\centos.7-x64\OlyMapper.dll
+C:\Users\lindahl\Documents\Visual Studio 2017\Projects\OlyMapper\bin\Release\netcoreapp1.1\centos.7-x64\OlyMapper.pdb
+C:\Users\lindahl\Documents\Visual Studio 2017\Projects\OlyMapper\obj\Release\netcoreapp1.1\centos.7-x64\OlyMapper.csprojResolveAssemblyReference.cache
+C:\Users\lindahl\Documents\Visual Studio 2017\Projects\OlyMapper\obj\Release\netcoreapp1.1\centos.7-x64\OlyMapper.AssemblyInfo.cs
+C:\Users\lindahl\Documents\Visual Studio 2017\Projects\OlyMapper\obj\Release\netcoreapp1.1\centos.7-x64\OlyMapper.dll
+C:\Users\lindahl\Documents\Visual Studio 2017\Projects\OlyMapper\obj\Release\netcoreapp1.1\centos.7-x64\OlyMapper.pdb
