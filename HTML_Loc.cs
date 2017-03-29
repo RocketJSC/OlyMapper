@@ -123,21 +123,26 @@ namespace OlyMapper
                         if ((_myloc._LocId >= 56760 && _myloc._LocId < 58760) || (_myloc._LocId >= 59000 && _myloc._LocId < 79000))
                         {
                             string[] loc_array =_myloc.Calc_CurrentLoc.Split('|');
-                            int x_coord = (10 * (int)((_myloc._LocId % 100) / 10));
-                            if (x_coord >= 70)
+                            Location _myloc2 = Program._locations.Find(x=> x._LocId == Convert.ToInt32(Utilities.to_int(loc_array[loc_array.Count() - 1])));
+                            if (_myloc2 != null)
                             {
-                                x_coord = 60;
-                            }
-                            int y_coord = (1000 * (_myloc._LocId / 1000));
-                            if (y_coord >= 17000)
-                            {
-                                y_coord = 16000;
-                            }
-                            if (loc_array.Count() > 0)
-                            {
-                                string top_loc = loc_array[loc_array.Count() - 1];
-                                int int_loc = Convert.ToInt32(Utilities.to_int(top_loc));
-                                w.WriteLine("<p>" + Utilities.format_anchor2("main_map_leaf_" + Utilities.to_oid((y_coord + x_coord).ToString()), "Return to map</p>"));
+                                if (_myloc2._LocId >= 10000 && _myloc2._LocId < 18000)
+                                {
+                                    int x_coord = (10 * (int)((_myloc2._LocId % 100) / 10));
+                                    if (x_coord >= 70)
+                                    {
+                                        x_coord = 60;
+                                    }
+                                    int y_coord = (1000 * (_myloc2._LocId / 1000));
+                                    if (y_coord >= 17000)
+                                    {
+                                        y_coord = 16000;
+                                    }
+                                    w.WriteLine("<p>" +
+                                        Utilities.format_anchor2("main_map_leaf_" +
+                                        Utilities.to_oid((y_coord + x_coord).ToString()),
+                                        "Return to map</p>"));
+                                }
                             }
                         }
                         else
