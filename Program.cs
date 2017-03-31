@@ -3,8 +3,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;                                           
+using OlyCommonClasses;
 
 namespace OlyMapper
 {
@@ -30,9 +29,9 @@ namespace OlyMapper
                 _First_Line = ""
             });
             Console.Write("Enter turn: ");
-            int number;
+            //int number;
             string input = Console.ReadLine();
-            if (!Int32.TryParse(input, out number))
+            if (!Int32.TryParse(input, out int number))
             {
                 Console.WriteLine("** Invalid  Turn Number ({0}) **", number);
                 Console.ReadLine();
@@ -69,10 +68,33 @@ namespace OlyMapper
             {
                 Console.WriteLine("** Unable to read JSON File ({0}) **", (@"lib-" + number + ".json"));
                 Console.WriteLine(ex.Message);
-                Console.ReadLine();
-                return;
+                try
+                {
+                    o1 = JObject.Parse(File.ReadAllText(@"lib-next-" + number + ".json"));
+                }
+                catch (JsonReaderException jex)
+                {
+                    Console.WriteLine("** Unable to Parse JSON File ({0}) **", (@"lib-next-" + number + ".json"));
+                    Console.WriteLine(jex.Message);
+                    Console.ReadLine();
+                    return;
+                }
+                catch (JsonException jex)
+                {
+                    Console.WriteLine("** Unable to handle JSON File ({0}) **", (@"lib-next-" + number + ".json"));
+                    Console.WriteLine(jex.Message);
+                    Console.ReadLine();
+                    return;
+                }
+                catch (Exception ex2)
+                {
+                    Console.WriteLine("** Unable to read JSON File ({0}) **", (@"lib-next-" + number + ".json"));
+                    Console.WriteLine(ex2.Message);
+                    Console.ReadLine();
+                    return;
+                }
             }
-            Process_JSON_File(o1);
+            Process_JSON_File(o1, _characters, _items,  _locations, _players, _ships, _skills, _storms);
             // Display totals
             Console.WriteLine("+ Loaded " + _locations.Count + " locations");
             Console.WriteLine("+ Loaded " + _items.Count + " items");
@@ -83,22 +105,22 @@ namespace OlyMapper
             Console.WriteLine("+ Loaded " + _ships.Count + " ships");
             // sort lists
             Console.WriteLine("Sorting lists.");
-            Program._players.Sort((x, y) => x._FactionId.CompareTo(y._FactionId));
+            _players.Sort((x, y) => x._FactionId.CompareTo(y._FactionId));
             // identify port cities
             Console.WriteLine("Identifying port cities.");
-            Location.Identify_Port_Cities();
+            Location.Identify_Port_Cities(_locations);
             // post playerid to character
             Console.WriteLine("Posting player ids to characters.");
-            Character.Post_PlayerId();
+            Character.Post_PlayerId(_characters, _players);
             // post playerid to character
             Console.WriteLine("Posting weight to characters.");
-            Character.Determine_Ultimate_Lord();
+            Character.Determine_Ultimate_Lord(_characters);
             // posting region to locations
             Console.WriteLine("Posting region to locations.");
-            Location.Set_Region();
+            Location.Set_Region(_characters, _items, _locations, _players, _ships);
             // assign castle indicator
             Console.WriteLine("Posting indicator to castle.");
-            Location.Castle_Indicator();
+            Location.Castle_Indicator(_locations);
             // create directory for html files, if needed
             DirectoryInfo di = Directory.CreateDirectory(path);
             Console.WriteLine("File Cleanup.");
@@ -110,26 +132,28 @@ namespace OlyMapper
             Console.WriteLine("Writing HTML pages.");
             // dump items
             Console.WriteLine("+ Writing Master Item List HTML page.");
-            HTML_Item.Generate_Item_List_HTML(path);
+            HTML_Item.Generate_Item_List_HTML(path, _characters, _items,_locations, _ships, _skills);
             Console.WriteLine("+ Writing Master Healing Potion List HTML page.");
-            HTML_Item.Generate_Healing_Potion_List_HTML(path);
+            HTML_Item.Generate_Healing_Potion_List_HTML(path, _characters, _items, _locations,_ships, _skills);
             Console.WriteLine("+ Writing Master Project Cast Potion List HTML page.");
-            HTML_Item.Generate_Projected_Cast_Potion_List_HTML(path);
+            HTML_Item.Generate_Projected_Cast_Potion_List_HTML(path, _characters, _items, _locations, _ships, _skills);
+            Console.WriteLine("+ Writing Master Orb List HTML page.");
+            HTML_Item.Generate_Orb_List_HTML(path, _characters, _items);
             // dump players
             Console.WriteLine("+ Writing Master Player HTML page.");
-            HTML.Generate_Player_List_HTML(path);
+            HTML.Generate_Player_List_HTML(path, _players);
             // dump ships
             Console.WriteLine("+ Writing Master Ship HTML page.");
-            HTML.Generate_Ship_List_HTML(path);
+            HTML.Generate_Ship_List_HTML(path, _characters,_items, _locations, _ships, _storms);
             // dump skills
             Console.WriteLine("+ Writing Master Skill Xref HTML page.");
-            HTML.Generate_Skill_Xref_List_HTML(path);
+            HTML.Generate_Skill_Xref_List_HTML(path, _locations, _skills);
             Console.WriteLine("+ Writing Province HTML pages.");
-            Generate_Province_Pages(path);
+            Generate_Province_Pages(path, _characters, _items, _locations, _ships);
             Console.WriteLine("+ Writing City HTML pages.");
-            Generate_City_Pages(path);
+            Generate_City_Pages(path, _characters, _items, _locations, _ships);
             Console.WriteLine("+ Writing Sublocation HTML pages.");
-            Generate_Sublocation_Pages(path);
+            Generate_Sublocation_Pages(path, _characters, _items, _locations, _ships);
             Console.WriteLine("+ Writing Structure HTML pages.");
             Generate_Structure_Pages(path);
             Console.WriteLine("+ Writing Character HTML pages.");
@@ -139,7 +163,7 @@ namespace OlyMapper
             Console.WriteLine("Writing Glue HTML pages.");
             Generate_Glue_Pages(path);
             Console.WriteLine("Writing Faction Accept/Admit Files.");
-            Resources.Generate_Admit_Accept_Faction_Files(path);
+            Resources.Generate_Admit_Accept_Faction_Files(path, _characters, _locations, _players, _ships);
             Console.WriteLine("Program Finished.  Press <ENTER> to Close.");
             Console.ReadLine();
         }
@@ -156,14 +180,14 @@ namespace OlyMapper
             }
         }
 
-        private static void Generate_Province_Pages(string path)
+        private static void Generate_Province_Pages(string path, List<Character> _characters, List<Itemz> _items, List<Location> _locations, List<Ship> _ships)
         {
             foreach (Location _myloc in _locations.FindAll(x => x._LocId >= 10000 && x._LocId <= 49999))
             {
-                HTML_Loc.Write_Loc_HTML_File(_myloc, path);
+                HTML_Loc.Write_Loc_HTML_File(_myloc, path, _characters, _items, _locations, _players, _ships, _skills, _storms);
             }
         }
-        private static void Generate_City_Pages( string path)
+        private static void Generate_City_Pages( string path, List<Character> _characters, List<Itemz> _items, List<Location> _locations, List<Ship> _ships)
         {
             foreach (Location _myloc in _locations.FindAll(x => x._LocId >= 56760 && x._LocId <= 58759))
             {
@@ -190,7 +214,7 @@ namespace OlyMapper
                             {
                                 if (!_myloc._Loc_Type.Equals("region"))
                                 {
-                                    HTML_Loc.Write_Loc_HTML_File(_myloc, path);
+                                    HTML_Loc.Write_Loc_HTML_File(_myloc, path, _characters, _items, _locations, _players, _ships, _skills, _storms);
                                 }
                                 else
                                 {
@@ -202,7 +226,7 @@ namespace OlyMapper
                 }
             }
         }
-        private static void Generate_Sublocation_Pages(string path)
+        private static void Generate_Sublocation_Pages(string path, List<Character> _characters, List<Itemz> _items, List<Location> _locations, List<Ship> _ships)
         {
             foreach (Location _myloc in _locations.FindAll(x => x._LocId >= 59000 && x._LocId <= 78999))
             {
@@ -217,7 +241,7 @@ namespace OlyMapper
                     {
                         if (!_myloc._Loc_Type.Equals("region"))
                         {
-                            HTML_Loc.Write_Loc_HTML_File(_myloc, path);
+                            HTML_Loc.Write_Loc_HTML_File(_myloc, path, _characters, _items, _locations, _players, _ships, _skills, _storms);
                         }
                         else
                         {
@@ -234,7 +258,7 @@ namespace OlyMapper
                 //
                 if (_myloc._LocId != 0)
                 {
-                    HTML_Loc.Write_Loc_HTML_File(_myloc, path);
+                    HTML_Loc.Write_Loc_HTML_File(_myloc, path, _characters, _items, _locations, _players, _ships, _skills, _storms);
                 }
             }
         }
@@ -246,7 +270,7 @@ namespace OlyMapper
                 {
                     if (!_mychar._Char_Type.Contains("garr"))
                     {
-                        HTML_Char.Write_Char_HTML_File(_mychar, path);
+                        HTML_Char.Write_Char_HTML_File(_mychar, path, _characters, _items, _locations, _ships, _skills);
                     }
                     else
                     {
@@ -261,11 +285,11 @@ namespace OlyMapper
             {
                 if (_myship._ShipId != 0)
                 {
-                    HTML_Ship.Write_Ship_HTML_File(_myship, path);
+                    HTML_Ship.Write_Ship_HTML_File(_myship, path,_characters,_items, _locations,_ships, _storms);
                 }
             }
         }
-        private static void Process_JSON_File(JObject o1)
+        private static void Process_JSON_File(JObject o1, List<Character> _characters, List<Itemz> _items, List<Location> _locations, List<Player> _players, List<Ship> _ships, List<Skill> _skills, List<Storm> _storms)
         {
             foreach (JToken child in o1.Children())
             {
@@ -275,7 +299,7 @@ namespace OlyMapper
                     if (var1.ToString().ToLower().Trim().Contains("player") == true)
                     {
                         String var2 = child.First.ToString();
-                        Player.Add(child.Path, var2);
+                        Player.Add(child.Path, var2, _players);
                     }
                     else
                     {
@@ -283,7 +307,7 @@ namespace OlyMapper
                         {
                             //Console.WriteLine("loc" + " " + child1.Value);
                             String var2 = child.First.ToString();
-                            Location.Add(child.Path, var2);
+                            Location.Add(child.Path, var2, _locations);
                         }
                         else
                         {
@@ -291,21 +315,21 @@ namespace OlyMapper
                             {
                                 //Console.WriteLine("char" + " " + child1.Value);
                                 String var2 = child.First.ToString();
-                                Character.Add(child.Path, var2);
+                                Character.Add(child.Path, var2, _characters);
                             }
                             else
                             {
                                 if (var1.ToString().ToLower().Trim().Contains("item") == true)
                                 {
                                     String var2 = child.First.ToString();
-                                    Itemz.Add(child.Path, var2);
+                                    Itemz.Add(child.Path, var2, _items);
                                 }
                                 else
                                 {
                                     if (var1.ToString().ToLower().Trim().Contains("ship") == true)
                                     {
                                         String var2 = child.First.ToString();
-                                        Ship.Add(child.Path, var2);
+                                        Ship.Add(child.Path, var2, _ships);
                                     }
                                     else
                                     {
@@ -319,14 +343,14 @@ namespace OlyMapper
                                             if (var1.ToString().ToLower().Trim().Contains("storm") == true)
                                             {
                                                 String var2 = child.First.ToString();
-                                                Storm.Add(child.Path, var2);
+                                                Storm.Add(child.Path, var2, _storms);
                                             }
                                             else
                                             {
                                                 if (var1.ToString().ToLower().Trim().Contains("skill") == true)
                                                 {
                                                     String var2 = child.First.ToString();
-                                                    Skill.Add(child.Path, var2);
+                                                    Skill.Add(child.Path, var2, _skills);
                                                 }
                                                 else
                                                 {
@@ -358,11 +382,11 @@ namespace OlyMapper
             HTML.Write_Main_Map_HTML_File(path);
             HTML.Write_Hades_Map_HTML_File(path);
             Console.WriteLine(".Writing Main Map Leaf HTML pages.");
-            HTML.Write_Main_Map_Leaves_HTML_File(path);
+            HTML.Write_Main_Map_Leaves_HTML_File(path, _characters, _locations);
             Console.WriteLine(".Writing Faery Map Leaf HTML pages.");
-            HTML.Write_Faery_Map_Leaves_HTML_File(path);
+            HTML.Write_Faery_Map_Leaves_HTML_File(path, _locations);
             Console.WriteLine(".Writing Hades Map Leaf HTML pages.");
-            HTML.Write_Hades_Map_Leaves_HTML_File(path);
+            HTML.Write_Hades_Map_Leaves_HTML_File(path, _locations);
         }
         public static void Copy_Critical_Files(string path)
         {
