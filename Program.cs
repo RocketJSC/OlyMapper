@@ -148,6 +148,9 @@ namespace OlyMapper
             // dump skills
             Console.WriteLine("+ Writing Master Skill Xref HTML page.");
             HTML.Generate_Skill_Xref_List_HTML(path, _locations, _skills);
+            // dump trades
+            Console.WriteLine("+ Writing Master Trade HTML pages.");
+            HTML.Generate_Trade_List_HTML(path, _characters, _items, _locations);
             Console.WriteLine("+ Writing Province HTML pages.");
             Generate_Province_Pages(path, _characters, _items, _locations, _ships);
             Console.WriteLine("+ Writing City HTML pages.");
