@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using OlyCommonClasses;
+using System.Linq;
 
 namespace OlyMapper
 {
@@ -38,7 +39,7 @@ namespace OlyMapper
                 return;
             }
             string path = "turn" + number;
-            Console.WriteLine("Reading JSON file.");
+            Console.WriteLine("Attempting to read JSON file: " + @"lib-" + number + ".json");
             _players = new List<Player>();
             _items = new List<Itemz>();
             _characters = new List<Character>();
@@ -68,6 +69,7 @@ namespace OlyMapper
             {
                 Console.WriteLine("** Unable to read JSON File ({0}) **", (@"lib-" + number + ".json"));
                 Console.WriteLine(ex.Message);
+                Console.WriteLine("Attempting to read JSON file: " + @"lib-next-" + number + ".json");
                 try
                 {
                     o1 = JObject.Parse(File.ReadAllText(@"lib-next-" + number + ".json"));
@@ -94,7 +96,7 @@ namespace OlyMapper
                     return;
                 }
             }
-            Process_JSON_File(o1, _characters, _items,  _locations, _players, _ships, _skills, _storms);
+            Process_JSON_File(o1, _characters, _items, _locations, _players, _ships, _skills, _storms);
             // Display totals
             Console.WriteLine("+ Loaded " + _locations.Count + " locations");
             Console.WriteLine("+ Loaded " + _items.Count + " items");
@@ -121,6 +123,9 @@ namespace OlyMapper
             // assign castle indicator
             Console.WriteLine("Posting indicator to castle.");
             Location.Castle_Indicator(_locations);
+            Console.WriteLine("Loading Trade Xref.");
+            // create tradexref data sturcture
+            List<TradeXref> _TradeXref_Unsorted = Load_Tradexref_DataSturucture();
             // create directory for html files, if needed
             DirectoryInfo di = Directory.CreateDirectory(path);
             Console.WriteLine("File Cleanup.");
@@ -132,9 +137,9 @@ namespace OlyMapper
             Console.WriteLine("Writing HTML pages.");
             // dump items
             Console.WriteLine("+ Writing Master Item List HTML page.");
-            HTML_Item.Generate_Item_List_HTML(path, _characters, _items,_locations, _ships, _skills);
+            HTML_Item.Generate_Item_List_HTML(path, _characters, _items, _locations, _ships, _skills);
             Console.WriteLine("+ Writing Master Healing Potion List HTML page.");
-            HTML_Item.Generate_Healing_Potion_List_HTML(path, _characters, _items, _locations,_ships, _skills);
+            HTML_Item.Generate_Healing_Potion_List_HTML(path, _characters, _items, _locations, _ships, _skills);
             Console.WriteLine("+ Writing Master Project Cast Potion List HTML page.");
             HTML_Item.Generate_Projected_Cast_Potion_List_HTML(path, _characters, _items, _locations, _ships, _skills);
             Console.WriteLine("+ Writing Master Orb List HTML page.");
@@ -144,21 +149,21 @@ namespace OlyMapper
             HTML.Generate_Player_List_HTML(path, _players);
             // dump ships
             Console.WriteLine("+ Writing Master Ship HTML page.");
-            HTML.Generate_Ship_List_HTML(path, _characters,_items, _locations, _ships, _storms);
+            HTML.Generate_Ship_List_HTML(path, _characters, _items, _locations, _ships, _storms);
             // dump skills
             Console.WriteLine("+ Writing Master Skill Xref HTML page.");
             HTML.Generate_Skill_Xref_List_HTML(path, _locations, _skills);
             // dump trades
             Console.WriteLine("+ Writing Master Trade HTML pages.");
-            HTML.Generate_Trade_List_HTML(path, _characters, _items, _locations);
+            HTML.Generate_Trade_List_HTML(path, _characters, _items, _locations, _TradeXref_Unsorted);
             Console.WriteLine("+ Writing Province HTML pages.");
-            Generate_Province_Pages(path, _characters, _items, _locations, _ships);
+            Generate_Province_Pages(path, _characters, _items, _locations, _ships, _TradeXref_Unsorted);
             Console.WriteLine("+ Writing City HTML pages.");
-            Generate_City_Pages(path, _characters, _items, _locations, _ships);
+            Generate_City_Pages(path, _characters, _items, _locations, _ships, _TradeXref_Unsorted);
             Console.WriteLine("+ Writing Sublocation HTML pages.");
-            Generate_Sublocation_Pages(path, _characters, _items, _locations, _ships);
+            Generate_Sublocation_Pages(path, _characters, _items, _locations, _ships, _TradeXref_Unsorted);
             Console.WriteLine("+ Writing Structure HTML pages.");
-            Generate_Structure_Pages(path);
+            Generate_Structure_Pages(path, _TradeXref_Unsorted);
             Console.WriteLine("+ Writing Character HTML pages.");
             Generate_Char_Pages(path);
             Console.WriteLine("+ Writing Ship HTML pages.");
@@ -169,6 +174,20 @@ namespace OlyMapper
             Resources.Generate_Admit_Accept_Faction_Files(path, _characters, _locations, _players, _ships);
             Console.WriteLine("Program Finished.  Press <ENTER> to Close.");
             Console.ReadLine();
+        }
+
+        private static List<TradeXref> Load_Tradexref_DataSturucture()
+        {
+            List<TradeXref> _TradeXref_Unsorted = new List<TradeXref>();
+            foreach (Location _location in _locations.Where(f => f._Trade_List != null))
+            {
+                TradeXref.Load_Sells(_location, null, _TradeXref_Unsorted);
+            }
+            foreach (Location _location in _locations.Where(f => f._Trade_List != null))
+            {
+                TradeXref.Load_Buys(_location, null, _TradeXref_Unsorted);
+            }
+            return _TradeXref_Unsorted;
         }
 
         private static void Cleanup_Files(string path)
@@ -183,14 +202,14 @@ namespace OlyMapper
             }
         }
 
-        private static void Generate_Province_Pages(string path, List<Character> _characters, List<Itemz> _items, List<Location> _locations, List<Ship> _ships)
+        private static void Generate_Province_Pages(string path, List<Character> _characters, List<Itemz> _items, List<Location> _locations, List<Ship> _ships, List<TradeXref> _TradeXref_Unsorted)
         {
             foreach (Location _myloc in _locations.FindAll(x => x._LocId >= 10000 && x._LocId <= 49999))
             {
-                HTML_Loc.Write_Loc_HTML_File(_myloc, path, _characters, _items, _locations, _players, _ships, _skills, _storms);
+                HTML_Loc.Write_Loc_HTML_File(_myloc, path, _characters, _items, _locations, _players, _ships, _skills, _storms, _TradeXref_Unsorted);
             }
         }
-        private static void Generate_City_Pages( string path, List<Character> _characters, List<Itemz> _items, List<Location> _locations, List<Ship> _ships)
+        private static void Generate_City_Pages( string path, List<Character> _characters, List<Itemz> _items, List<Location> _locations, List<Ship> _ships, List<TradeXref> _tradexrefs)
         {
             foreach (Location _myloc in _locations.FindAll(x => x._LocId >= 56760 && x._LocId <= 58759))
             {
@@ -217,7 +236,7 @@ namespace OlyMapper
                             {
                                 if (!_myloc._Loc_Type.Equals("region"))
                                 {
-                                    HTML_Loc.Write_Loc_HTML_File(_myloc, path, _characters, _items, _locations, _players, _ships, _skills, _storms);
+                                    HTML_Loc.Write_Loc_HTML_File(_myloc, path, _characters, _items, _locations, _players, _ships, _skills, _storms, _tradexrefs);
                                 }
                                 else
                                 {
@@ -229,7 +248,7 @@ namespace OlyMapper
                 }
             }
         }
-        private static void Generate_Sublocation_Pages(string path, List<Character> _characters, List<Itemz> _items, List<Location> _locations, List<Ship> _ships)
+        private static void Generate_Sublocation_Pages(string path, List<Character> _characters, List<Itemz> _items, List<Location> _locations, List<Ship> _ships, List<TradeXref> _tradexrefs)
         {
             foreach (Location _myloc in _locations.FindAll(x => x._LocId >= 59000 && x._LocId <= 78999))
             {
@@ -244,7 +263,7 @@ namespace OlyMapper
                     {
                         if (!_myloc._Loc_Type.Equals("region"))
                         {
-                            HTML_Loc.Write_Loc_HTML_File(_myloc, path, _characters, _items, _locations, _players, _ships, _skills, _storms);
+                            HTML_Loc.Write_Loc_HTML_File(_myloc, path, _characters, _items, _locations, _players, _ships, _skills, _storms, _tradexrefs);
                         }
                         else
                         {
@@ -254,14 +273,14 @@ namespace OlyMapper
                 }
             }
         }
-        private static void Generate_Structure_Pages(string path)
+        private static void Generate_Structure_Pages(string path, List<TradeXref> _tradexrefs)
         {
             foreach (Location _myloc in _locations.FindAll(x => x._LocId > 0 && x._LocId <= 9999))
             {
                 //
                 if (_myloc._LocId != 0)
                 {
-                    HTML_Loc.Write_Loc_HTML_File(_myloc, path, _characters, _items, _locations, _players, _ships, _skills, _storms);
+                    HTML_Loc.Write_Loc_HTML_File(_myloc, path, _characters, _items, _locations, _players, _ships, _skills, _storms, _tradexrefs);
                 }
             }
         }
@@ -277,7 +296,7 @@ namespace OlyMapper
                     }
                     else
                     {
-                        // we'll get garrisons later
+                        HTML_Char.Write_Char_HTML_File(_mychar, path, _characters, _items, _locations, _ships, _skills);
                     }
                 }
             }

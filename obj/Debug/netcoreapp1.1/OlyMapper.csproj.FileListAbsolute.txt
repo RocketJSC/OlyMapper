@@ -1,7 +1,6 @@
 C:\Users\lindahl\documents\visual studio 2017\Projects\OlyMapper\bin\Debug\netcoreapp1.1\OlyMapper.deps.json
 C:\Users\lindahl\documents\visual studio 2017\Projects\OlyMapper\bin\Debug\netcoreapp1.1\OlyMapper.runtimeconfig.json
 C:\Users\lindahl\documents\visual studio 2017\Projects\OlyMapper\bin\Debug\netcoreapp1.1\OlyMapper.runtimeconfig.dev.json
-C:\Users\lindahl\documents\visual studio 2017\Projects\OlyMapper\obj\Debug\netcoreapp1.1\OlyMapper.csprojResolveAssemblyReference.cache
 C:\Users\lindahl\documents\visual studio 2017\Projects\OlyMapper\obj\Debug\netcoreapp1.1\OlyMapper.AssemblyInfo.cs
 C:\Users\lindahl\documents\visual studio 2017\Projects\OlyMapper\bin\Debug\netcoreapp1.1\Microsoft.DiaSymReader.Native.x86.dll
 C:\Users\lindahl\documents\visual studio 2017\Projects\OlyMapper\bin\Debug\netcoreapp1.1\Microsoft.DiaSymReader.Native.amd64.dll
@@ -9,5 +8,8 @@ C:\Users\lindahl\documents\visual studio 2017\Projects\OlyMapper\bin\Debug\netco
 C:\Users\lindahl\documents\visual studio 2017\Projects\OlyMapper\bin\Debug\netcoreapp1.1\OlyMapper.dll.config
 C:\Users\lindahl\documents\visual studio 2017\Projects\OlyMapper\bin\Debug\netcoreapp1.1\OlyMapper.dll
 C:\Users\lindahl\documents\visual studio 2017\Projects\OlyMapper\bin\Debug\netcoreapp1.1\OlyMapper.pdb
+C:\Users\lindahl\documents\visual studio 2017\Projects\OlyMapper\bin\Debug\netcoreapp1.1\OlyCommonClasses.dll
+C:\Users\lindahl\documents\visual studio 2017\Projects\OlyMapper\bin\Debug\netcoreapp1.1\OlyCommonClasses.pdb
+C:\Users\lindahl\documents\visual studio 2017\Projects\OlyMapper\obj\Debug\netcoreapp1.1\OlyMapper.csprojResolveAssemblyReference.cache
 C:\Users\lindahl\documents\visual studio 2017\Projects\OlyMapper\obj\Debug\netcoreapp1.1\OlyMapper.dll
 C:\Users\lindahl\documents\visual studio 2017\Projects\OlyMapper\obj\Debug\netcoreapp1.1\OlyMapper.pdb

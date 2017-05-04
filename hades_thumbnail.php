@@ -1,6 +1,7 @@
 <?php
   $rows = "abcdfghjkmnpqrstvwxz";
-  $path = "d:\\Olympia\\turn164";
+  $turn = readline("Enter Turn: ");
+  $path = "turn$turn";
   $im = @imagecreate(60, 60);
   $y = 0;
   foreach (array("j", "k", "m") as $row) {

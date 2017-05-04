@@ -14,3 +14,5 @@ C:\Users\lindahl\Documents\Visual Studio 2017\Projects\OlyMapper\obj\Release\net
 C:\Users\lindahl\Documents\Visual Studio 2017\Projects\OlyMapper\obj\Release\netcoreapp1.1\win10-x86\OlyMapper.AssemblyInfo.cs
 C:\Users\lindahl\Documents\Visual Studio 2017\Projects\OlyMapper\obj\Release\netcoreapp1.1\win10-x86\OlyMapper.dll
 C:\Users\lindahl\Documents\Visual Studio 2017\Projects\OlyMapper\obj\Release\netcoreapp1.1\win10-x86\OlyMapper.pdb
+C:\Users\lindahl\documents\visual studio 2017\Projects\OlyMapper\bin\Release\netcoreapp1.1\win10-x86\OlyCommonClasses.dll
+C:\Users\lindahl\documents\visual studio 2017\Projects\OlyMapper\bin\Release\netcoreapp1.1\win10-x86\OlyCommonClasses.pdb
